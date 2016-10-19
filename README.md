@@ -34,10 +34,11 @@ rateChange(rateNum){
   let prevState=this.state.defaultRate;
   this.setState({defaultRate:rateNum});
   //write code to update your database here
+  //rateNum is the rating from the users
 }
 ...
 <Rate rate={this.state.defaultRate} length="5" change="yes" rateChange={this.rateChange.bind(this)}/>
 ```
-・You must use change="yes" to make <Rate> interactive<p>
+・You must use change="yes" to make this component interactive<p>
 ・You must define this.state.defaultRate as the default rate<p>
 ・rateChange(rateNum) will automaticlly get the rate of the users for you<p>
