@@ -37,7 +37,7 @@ import Rate from 'thousanday-react';
 <Rate rate="4" length="5"/>
 <Rate rate="3" length="5" font="14px" color="black" />
 ```
-Notice: You must define rate and length for every Rate
+Notice: You must define rate and length for every Rate component
 ###
 <b>2.2 use it to receive a rating from users</b>
 ```
@@ -59,7 +59,7 @@ rateChange(rateNum){
 ...
 <Rate rate={this.state.defaultRate} length="5" change="yes" rateChange={this.rateChange.bind(this)}/>
 ```
-Notice：
+Notice:<p>
  ・You must use change="yes" to make this component interactive<p>
  ・You must define this.state.defaultRate as the default rate<p>
  ・rateChange(rateNum) will automaticlly get the rating value(which will be a number) from the users for you<p>
