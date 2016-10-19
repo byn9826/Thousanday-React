@@ -1,0 +1,27 @@
+{
+  "name": "thousanday-react",
+  "version": "0.0.20",
+  "author": "Baozier",
+  "email" : "byn9826@gmail.com",
+  "description": "Some ReactUI components created in Thousanday Project.",
+  "url" : "https://github.com/byn9826/ReactUI-Thousanday",
+  "repository":{
+  	 "type" : "git", 
+  	 "url" : "https://github.com/byn9826/ReactUI-Thousanday"
+  },
+  "license": "MIT",
+  "main": "lib/index.js",
+  "scripts": {
+    "compile": "babel -d lib/ src/",
+    "prepublish": "npm run compile"
+  },
+  "dependencies": {
+    "react": "^15.3.2",
+    "react-dom": "^15.3.2"
+  },
+  "devDependencies": {
+    "babel-cli": "^6.3.17",
+    "babel-preset-es2015": "^6.16.0",
+    "babel-preset-react": "^6.16.0"
+  }
+}
