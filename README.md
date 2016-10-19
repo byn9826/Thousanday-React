@@ -6,6 +6,8 @@ Some ReactUI components
 npm install thousanday-react --save
 ```
 ##2. Rating Stars
+![Rating](https://raw.githubusercontent.com/byn9826/ReactUI-Thousanday/master/~pic/1-rate.PNG)<p>
+###
 2.1 use it as display only
 ```
 import Rate from './ui/Rate/Rate';
@@ -14,7 +16,7 @@ import Rate from './ui/Rate/Rate';
 ```
 You must define rate for a default rate and length for total stars<p>
 You can define font and color to change the size and color of the stars
-##
+###
 2.2 use it to receive a rating from users
 ```
 import Rate from './ui/Rate/Rate';
