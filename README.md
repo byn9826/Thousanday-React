@@ -10,7 +10,7 @@ npm install thousanday-react --save
 ###
 2.1 use it as display only
 ```
-import Rate from './ui/Rate/Rate';
+import Rate from 'thousanday-react';
 <Rate rate="4" length="5"/>
 <Rate rate="3" length="5" font="14px" color="black" />
 ```
@@ -19,7 +19,7 @@ You can define font and color to change the size and color of the stars
 ###
 2.2 use it to receive a rating from users
 ```
-import Rate from './ui/Rate/Rate';
+import Rate from 'thousanday-react';
 ...
 constructor(){
   super();
