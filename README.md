@@ -6,7 +6,7 @@ Some ReactUI components
 npm install thousanday-react --save
 ```
 ##2. Rating Stars
-![Rating](https://raw.githubusercontent.com/byn9826/ReactUI-Thousanday/master/~pic/1-rate.PNG)<p>
+![Rating](https://raw.githubusercontent.com/byn9826/ReactUI-Thousanday/master/~pic/1.PNG)<p>
 ###
 2.1 use it as display only
 ```
@@ -44,3 +44,6 @@ rateChange(rateNum){
 ・You must use change="yes" to make this component interactive<p>
 ・You must define this.state.defaultRate as the default rate<p>
 ・rateChange(rateNum) will automaticlly get the rate of the users for you<p>
+##Author&License
+Baozier<p>
+MIT
