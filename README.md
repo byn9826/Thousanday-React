@@ -7,6 +7,7 @@ npm install thousanday-react --save
 ```
 ##2. Rating Stars
 ![Rating](https://raw.githubusercontent.com/byn9826/ReactUI-Thousanday/master/~pic/1.PNG)<p>
+[Example](http://baozier.ca/react-rate)
 <table>
   <tr>
     <td>Params</td><td>example</td><td>Usage</td><td>Default</td>
