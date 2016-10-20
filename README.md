@@ -7,7 +7,6 @@ npm install thousanday-react --save
 ```
 ##2. Rating Stars
 ![Rating](https://raw.githubusercontent.com/byn9826/ReactUI-Thousanday/master/~pic/1.PNG)<p>
-[Example](http://baozier.ca/react-rate)
 <table>
   <tr>
     <td>Params</td><td>example</td><td>Usage</td><td>Default</td>
@@ -31,6 +30,7 @@ npm install thousanday-react --save
     <td>rateChange</td><td>{this.rateChange.bind(this)}</td><td>Receive a rate from users</td><td></td>
   </tr>
 </table>
+[Simple Example](http://baozier.ca/react-rate)
 ###
 <b>2.1 use it as display only</b>
 ```
