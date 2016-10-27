@@ -65,7 +65,7 @@ Notice:<p>
  ・You must define this.state.defaultRate as the default rate<p>
  ・rateChange(rateNum) will automaticlly get the rating value(which will be a number) from the users for you<p>
  
-Update:
-  From v0.0.20 to v0.1.0: Delete mouseover mouseLeave effects to make it more reliable.
+Update:<p>
+  From v0.0.20 to v0.1.0 - Delete mouseover mouseLeave effects to make it more reliable.
 ##License
 MIT
