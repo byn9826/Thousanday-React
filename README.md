@@ -97,6 +97,7 @@ Notice:<p>
     <td>border</td><td>"1px solid black"</td><td>border of the component</td><td>"0"</td>
   </tr>
 </table>
+[Simple Example](http://baozier.ca/react-upvote)
 ###
 <b>3.1 use upvote</b><p>
 The most simple way
