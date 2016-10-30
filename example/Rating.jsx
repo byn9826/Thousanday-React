@@ -1,6 +1,6 @@
 import React, {Component} from 'react';
 import ReactDOM from 'react-dom';
-import Rate from 'thousanday-react';
+import {Rate} from 'thousanday-react';
 
 class Rating extends Component{
 	constructor(){
