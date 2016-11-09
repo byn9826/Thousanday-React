@@ -5,9 +5,10 @@ Some ReactUI components
 ```
 npm install thousanday-react --save
 ```
-Components:<p>
+Components List:<p>
 [Rating Stars](#rate)<p>
 [Upvote it](#upvote)<p>
+[Inputbox character count](#inputbox)<p>
 
 ##<a name="rate">2. Rating Stars</a>
 ![Rating](https://raw.githubusercontent.com/byn9826/ReactUI-Thousanday/master/~pic/1.PNG)<p>
@@ -35,16 +36,14 @@ Components:<p>
   </tr>
 </table>
 [Simple Example](http://baozier.ca/react-rate)
-###
-<b>2.1 use it as display only</b>
+###<b>2.1 use it as display only</b>
 ```
 import {Rate} from 'thousanday-react';
 <Rate rate="4" length="5"/>
 <Rate rate="3" length="5" font="14px" color="black" />
 ```
 Notice: You must define rate and length for every Rate component
-###
-<b>2.2 use it to receive a rating from users</b>
+###<b>2.2 use it to receive a rating from users</b>
 ```
 import {Rate} from 'thousanday-react';
 ...
@@ -98,8 +97,7 @@ Notice:<p>
   </tr>
 </table>
 [Simple Example](http://baozier.ca/react-upvote)
-###
-<b>3.1 use upvote</b><p>
+###<b>3.1 use upvote</b><p>
 The most simple way
 ```
 import {Upvote} from 'thousanday-react';
@@ -126,6 +124,66 @@ upVote(){
 render(){
   <Upvote total={this.state.defaultVote}  upVote={this.upVote.bind(this)} differ={this.state.differ}/>
 }
+```
+##<a name="inputbox">4. Inputbox character count</a>
+![Inputbox](https://raw.githubusercontent.com/byn9826/ReactUI-Thousanday/master/~pic/3.JPG)<p>
+<table>
+  <tr>
+    <td>Params</td><td>example</td><td>Usage</td><td>Default</td>
+  </tr>
+  <tr>
+    <td>content</td><td>"This is the old content"</td><td>Initial content in the input</td><td>""</td>
+  </tr>
+  <tr>
+    <td>total</td><td>"50"</td><td>Maximum characters you allows in the input</td><td>Must Define it</td>
+  </tr>
+  <tr>
+    <td>width</td><td>"150px"</td><td>width of the component</td><td>"100%"</td>
+  </tr>
+  <tr>
+    <td>border</td><td>"1px dashed black"</td><td>border style of the input</td><td>"1px solid orange"</td>
+  </tr>
+  <tr>
+    <td>height</td><td>"30px"</td><td>height of the input</td><td>"20px"</td>
+  </tr>
+  <tr>
+    <td>fontSize</td><td>"15px"</td><td>fontsize inside the input</td><td>"13px"</td>
+  </tr>
+  <tr>
+    <td>border</td><td>"1px solid black"</td><td>border of the component</td><td>"0"</td>
+  </tr>
+  <tr>
+    <td>restrict</td><td>"off"</td><td>if user could still type after reach the maximum characters</td><td>"on"</td>
+  </tr>
+</table>
+[Simple Example](http://baozier.ca/react-inputbox)
+###<b>4.1 use inputbox character count</b><p>
+```
+import {Inputbox} from 'thousanday-react';
+...
+<Inputbox content="a simple one" total="50" />
+<Inputbox content="allow input after reach maximum" total="50" restrict="off" width="150px" />
+<Inputbox border="1px dashed orange" content="change style" total="50" width="200px"/>
+```
+You could get the updated input like this:
+```
+import {Inputbox} from 'thousanday-react';
+...
+constructor(props){
+		super(props);
+		this.state={
+        content:"content from db",
+		};
+	}
+...
+submitInput(){
+    let changedInput = this.refs.editInput.state.content;
+    this.setState({content:changedInput});
+    //update your db with variable changedInput
+	}
+...
+<Inputbox ref="editInput" content={this.state.content} total="50" />
+
 ```
 
 ##License
