@@ -5,12 +5,12 @@ Some ReactUI components
 ```
 npm install thousanday-react --save
 ```
-Components List:<p>
+##2. Components List
 [Rating Stars](#rate)<p>
 [Upvote it](#upvote)<p>
 [Inputbox character count](#inputbox)<p>
 
-##<a name="rate">2. Rating Stars</a>
+##<a name="rate">3. Rating Stars</a>
 ![Rating](https://raw.githubusercontent.com/byn9826/ReactUI-Thousanday/master/~pic/1.PNG)<p>
 <table>
   <tr>
@@ -36,14 +36,14 @@ Components List:<p>
   </tr>
 </table>
 [Simple Example](http://baozier.ca/react-rate)
-###<b>2.1 use it as display only</b>
+###<b>3.1 use it as display only</b>
 ```
 import {Rate} from 'thousanday-react';
 <Rate rate="4" length="5"/>
 <Rate rate="3" length="5" font="14px" color="black" />
 ```
 Notice: You must define rate and length for every Rate component
-###<b>2.2 use it to receive a rating from users</b>
+###<b>3.2 use it to receive a rating from users</b>
 ```
 import {Rate} from 'thousanday-react';
 ...
@@ -68,7 +68,7 @@ Notice:<p>
  ・You must define this.state.defaultRate as the default rate<p>
  ・rateChange(rateNum) will automaticlly get the rating value(which will be a number) from the users for you<p>
 
-##<a name="upvote">3. Upvote it</a>
+##<a name="upvote">4. Upvote it</a>
 ![Upvote](https://raw.githubusercontent.com/byn9826/ReactUI-Thousanday/master/~pic/2.PNG)<p>
 <table>
   <tr>
@@ -97,7 +97,7 @@ Notice:<p>
   </tr>
 </table>
 [Simple Example](http://baozier.ca/react-upvote)
-###<b>3.1 use upvote</b><p>
+###<b>4.1 use upvote</b><p>
 The most simple way
 ```
 import {Upvote} from 'thousanday-react';
@@ -125,7 +125,7 @@ render(){
   <Upvote total={this.state.defaultVote}  upVote={this.upVote.bind(this)} differ={this.state.differ}/>
 }
 ```
-##<a name="inputbox">4. Inputbox character count</a>
+##<a name="inputbox">5. Inputbox character count</a>
 ![Inputbox](https://raw.githubusercontent.com/byn9826/ReactUI-Thousanday/master/~pic/3.JPG)<p>
 <table>
   <tr>
@@ -157,7 +157,7 @@ render(){
   </tr>
 </table>
 [Simple Example](http://baozier.ca/react-inputbox)
-###<b>4.1 use inputbox character count</b><p>
+###<b>5.1 use inputbox character count</b><p>
 ```
 import {Inputbox} from 'thousanday-react';
 ...
