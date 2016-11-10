@@ -144,7 +144,7 @@ render(){
     <td>border</td><td>"1px dashed black"</td><td>border style of the input</td><td>"1px solid orange"</td>
   </tr>
   <tr>
-    <td>height</td><td>"30px"</td><td>height of the input</td><td>"20px"</td>
+    <td>height</td><td>"30px"</td><td>height of the input, auto for textarea</td><td>"20px"</td>
   </tr>
   <tr>
     <td>fontSize</td><td>"15px"</td><td>fontsize inside the input</td><td>"13px"</td>
@@ -154,6 +154,9 @@ render(){
   </tr>
   <tr>
     <td>restrict</td><td>"off"</td><td>if user could still type after reach the maximum characters</td><td>"on"</td>
+  </tr>
+  <tr>
+    <td>name</td><td>"comment"</td><td>the name for input or textarea tag</td><td>""</td>
   </tr>
 </table>
 [Simple Example](http://baozier.ca/react-inputbox)
@@ -184,6 +187,13 @@ submitInput(){
 ...
 <Inputbox ref="editInput" content={this.state.content} total="50" />
 
+```
+###<b>5.2 use inputarea character count</b><p>
+If you need textarea instead of input, it would be very similar
+```
+import {Inputarea} from 'thousanday-react';
+...
+<Inputarea content="This is a textarea" total="500" height="150px"/>
 ```
 
 ##License
