@@ -1,11 +1,11 @@
 import React, {Component} from 'react';
-class Inputbox extends Component{
+class Inputarea extends Component{
   constructor(props){
 		super(props);
 		this.state = {
       width:this.props.width||"100%",
       border:this.props.border||"1px solid orange",
-      height:this.props.height||"20px",
+      height:this.props.height||"auto",
       fontSize:this.props.fontSize||"13px",
       content:this.props.content||"",
       count:parseInt(this.props.total)-this.props.content.length,
@@ -47,10 +47,10 @@ class Inputbox extends Component{
     }
 		return(
 			<span style={spanStyle}>
-				<input name={this.state.name} style={inputStyle} value={this.state.content} onChange={this.editInput.bind(this)} />
+				<textarea name={this.state.name} style={inputStyle} value={this.state.content} onChange={this.editInput.bind(this)} />
         <span style={countStyle}>{this.state.count}/{this.state.length}</span>
 			</span>
 		)
 	}
 };
-export default Inputbox;
+export default Inputarea;
