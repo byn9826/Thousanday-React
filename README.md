@@ -1,5 +1,5 @@
 # ReactUI-Thousanday
-React UI components used in Thousanday Project, being continuous update.
+React UI components used in Thousanday Project, will update step by step.
 ##1. Install
 ```
 npm install thousanday-react --save
