@@ -98,7 +98,7 @@ Notice:<p>
     <td>border</td><td>"1px solid black"</td><td>border of the component</td><td>"0"</td>
   </tr>
   <tr>
-    <td>upVote</td><td>{this.upVote.bind(this)}</td><td>know if user click upvote</td><td></td>
+    <td>upVote</td><td>{this.upVote.bind(this)}</td><td>to know if user click upvote</td><td></td>
   </tr>
    <tr>
     <td>className</td><td>"a-className"</td><td>stlying by className</td><td>""</td>
