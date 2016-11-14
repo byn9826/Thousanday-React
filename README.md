@@ -37,7 +37,7 @@ npm install thousanday-react --save
     <td>rateChange</td><td>{this.rateChange.bind(this)}</td><td>Receive a rate from users</td><td></td>
   </tr>
 </table>
-[Simple Example](http://www.thousanday.com/reactui#rate)
+[Simple Example](http://www.thousanday.com/react#rate)
 ###<b>3.1 use it as display only</b>
 ```
 import {Rate} from 'thousanday-react';
