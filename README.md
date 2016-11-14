@@ -8,6 +8,7 @@ npm install thousanday-react --save
 [Rating Stars](#rate)<p>
 [Upvote it](#upvote)<p>
 [Inputbox character count](#inputbox)<p>
+[Imagebox](#imagebox)<p>
 
 ##<a name="rate">3. Rating Stars</a>
 ![Rating](https://raw.githubusercontent.com/byn9826/ReactUI-Thousanday/master/~pic/1.PNG)<p>
@@ -205,12 +206,24 @@ import {Inputarea} from 'thousanday-react';
 ```
 ##<a name="imagebox">6. Imagebox</a>
 ![Imagebox](https://raw.githubusercontent.com/byn9826/ReactUI-Thousanday/master/~pic/4.JPG)
-| Params    | example                       | Usage                              | Default        |
-|-----------|-------------------------------|------------------------------------|----------------|
-| slides    | "[["src","alt","href"],[]..]" | Input information for images       | Must Define it |
-| timmer    | "5000" (5 second)             | auto change main display image     | null           |
-| width     | "150px"                       | width of the component             | "100%"         |
-| className | "a-name"                      | styling by classname               | null           |
+<table>
+  <tr>
+    <td>Params</td><td>example</td><td>Usage</td><td>Default</td>
+  </tr>
+  <tr>
+    <td>slides</td><td>"[["src","alt","href"],[]..]"</td><td>Input information for images</td><td>Must Define it</td>
+  </tr>
+  <tr>
+    <td>timmer</td><td>"5000" (5 second)</td><td>auto change main display image </td><td>null</td>
+  </tr>
+  <tr>
+    <td>width</td><td>"150px"</td><td>width of the component</td><td>"100%"</td>
+  </tr>
+  <tr>
+    <td>className</td><td>"a-name"</td><td>styling by classname</td><td>null</td>
+  </tr>
+</table>
+
 [Simple Example](http://www.thousanday.com/react#imagebox)
 
 ###<b>6.1 use Imagebox</b><p>
