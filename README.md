@@ -92,10 +92,16 @@ Notice:<p>
     <td>font</td><td>"13px"</td><td>size of the content</td><td>"11px"</td>
   </tr>
   <tr>
-    <td>width</td><td>"5%"</td><td>width of the component</td><td>"3%"</td>
+    <td>width</td><td>"5%"</td><td>width of the component</td><td>"auto"</td>
   </tr>
   <tr>
     <td>border</td><td>"1px solid black"</td><td>border of the component</td><td>"0"</td>
+  </tr>
+  <tr>
+    <td>upVote</td><td>{this.upVote.bind(this)}</td><td>know if user click upvote</td><td></td>
+  </tr>
+   <tr>
+    <td>className</td><td>"a-className"</td><td>stlying by className</td><td>""</td>
   </tr>
 </table>
 [Simple Example](http://baozier.ca/react-upvote)
