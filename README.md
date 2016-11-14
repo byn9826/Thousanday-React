@@ -16,25 +16,28 @@ npm install thousanday-react --save
     <td>Params</td><td>example</td><td>Usage</td><td>Default</td>
   </tr>
   <tr>
-    <td>rate</td><td>4</td><td>define the default stars</td><td>Must Define it</td>
+    <td>rate</td><td>"4"</td><td>define the default stars</td><td>Must define it</td>
   </tr>
   <tr>
-    <td>length</td><td>5</td><td>define the maximum stars</td><td>Must Define it</td>
+    <td>length</td><td>"5"</td><td>define the maximum stars</td><td>"5"</td>
   </tr>
   <tr>
-    <td>font</td><td>14px</td><td>adjust the size</td><td>18px</td>
+    <td>font</td><td>"14px"</td><td>adjust the size</td><td>"18px"</td>
   </tr>
   <tr>
-    <td>color</td><td>black</td><td>define the color</td><td>orange</td>
+    <td>color</td><td>"black"</td><td>define the color</td><td>"orange"</td>
   </tr>
   <tr>
-    <td>change</td><td>yes</td><td>make it interactive</td><td>no</td>
+    <td>change</td><td>"yes"</td><td>make it interactive</td><td>"no"</td>
+  </tr>
+  <tr>
+    <td>className</td><td>"a-name"</td><td>styling by classname</td><td>""</td>
   </tr>
   <tr>
     <td>rateChange</td><td>{this.rateChange.bind(this)}</td><td>Receive a rate from users</td><td></td>
   </tr>
 </table>
-[Simple Example](http://baozier.ca/react-rate)
+[Simple Example](http://www.thousanday.com/reactui#rate)
 ###<b>3.1 use it as display only</b>
 ```
 import {Rate} from 'thousanday-react';
