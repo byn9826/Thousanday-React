@@ -104,7 +104,7 @@ Notice:<p>
     <td>className</td><td>"a-className"</td><td>stlying by className</td><td>""</td>
   </tr>
 </table>
-[Simple Example](http://baozier.ca/react-upvote)
+[Simple Example](http://www.thousanday.com/react#upvote)
 ###<b>4.1 use upvote</b><p>
 The most simple way
 ```
@@ -167,7 +167,7 @@ render(){
     <td>name</td><td>"comment"</td><td>the name for input or textarea tag</td><td>""</td>
   </tr>
 </table>
-[Simple Example](http://baozier.ca/react-inputbox)
+[Simple Example](http://www.thousanday.com/react#inputbox)
 ###<b>5.1 use inputbox character count</b><p>
 ```
 import {Inputbox} from 'thousanday-react';
