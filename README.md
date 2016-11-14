@@ -203,6 +203,30 @@ import {Inputarea} from 'thousanday-react';
 ...
 <Inputarea content="This is a textarea" total="500" height="150px"/>
 ```
+##<a name="imagebox">6. Imagebox</a>
+![Imagebox](https://raw.githubusercontent.com/byn9826/ReactUI-Thousanday/master/~pic/4.JPG)
+| Params    | example                       | Usage                              | Default        |
+|-----------|-------------------------------|------------------------------------|----------------|
+| slides    | "[["src","alt","href"],[]..]" | Input information for images       | Must Define it |
+| timmer    | "5000" (5 second)             | auto change main display image     | null           |
+| width     | "150px"                       | width of the component             | "100%"         |
+| className | "a-name"                      | styling by classname               | null           |
+[Simple Example](http://www.thousanday.com/react#imagebox)
+
+###<b>6.1 use Imagebox</b><p>
+```
+import Imagebox from '../ui/imagebox/Imagebox';
+...
+let img = [
+  ["/img/react/1.jpg","alt1","http://www.href1.com"],
+  ["/img/react/2.jpg","alt2"],
+  ["/img/react/3.jpg","alt3"]
+];
+...
+<Imagebox slides={img} width="100%" timer="5000"/>
+```
+Must define give each img different alt. The maximum number of images is 5.
+
 
 ##License
 MIT
