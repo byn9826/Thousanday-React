@@ -1,5 +1,5 @@
-# ReactUI-Thousanday
-React UI components used in Thousanday Project, will update step by step.
+# React-Thousanday
+This is a npm package of React UI components used in Thousanday Project, will update step by step.
 ##1. Install
 ```
 npm install thousanday-react --save
@@ -9,6 +9,7 @@ npm install thousanday-react --save
 [Upvote it](#upvote)<p>
 [Inputbox character count](#inputbox)<p>
 [Imagebox](#imagebox)<p>
+[Random](#random)<p>
 
 ##<a name="rate">3. Rating Stars</a>
 ![Rating](https://raw.githubusercontent.com/byn9826/ReactUI-Thousanday/master/~pic/1.PNG)<p>
@@ -239,7 +240,33 @@ let img = [
 <Imagebox slides={img} width="100%" timer="5000"/>
 ```
 Must define give each img different alt. The maximum number of images is 5.
-
+##<a name="random">7. Random</a>
+Output random content<br/>
+![Random](https://raw.githubusercontent.com/byn9826/ReactUI-Thousanday/master/~pic/5.JPG)
+<table>
+  <tr>
+    <td>Params</td><td>example</td><td>Usage</td><td>Default</td>
+  </tr>
+  <tr>
+    <td>random</td><td>["123","234","345"]</td><td>Content you want to show</td><td>Must Define it</td>
+  </tr>
+  <tr>
+    <td>font</td><td>"h3"</td><td>Define the h tag you want to use </td><td>Must define it</td>
+  </tr>
+  <tr>
+    <td>id</td><td>"header-random"</td><td>defint a id and styling it</td><td>null</td>
+  </tr>
+</table>
+[Simple Example](http://www.thousanday.com/react#random)
+###<b>7.1 use Random</b><p>
+```
+import {Random} from 'thousanday-react';
+...
+let randomContent = ["Slogan 1","Slogan 2"];
+...
+<Random random={randomContent} font="h3" id="header-slogan"/>
+```
+Must define random and font, define id to styling when it is necessary.
 
 ##License
 MIT
