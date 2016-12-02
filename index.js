@@ -20,6 +20,10 @@ var _Imagebox = require('./lib/imagebox/Imagebox.js');
 
 var _Imagebox2 = _interopRequireDefault(_Imagebox);
 
+var _Random = require('./lib/random/Random.js');
+
+var _Random2 = _interopRequireDefault(_Random);
+
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 module.exports = {
@@ -27,5 +31,6 @@ module.exports = {
 	Upvote: _Upvote2.default,
 	Inputbox: _Inputbox2.default,
 	Inputarea: _Inputarea2.default,
-	Imagebox: _Imagebox2.default
+	Imagebox: _Imagebox2.default,
+	Random: _Random2.default
 };
