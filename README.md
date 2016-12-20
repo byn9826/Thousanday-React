@@ -168,6 +168,9 @@ render(){
   <tr>
     <td>name</td><td>"comment"</td><td>the name for input or textarea tag</td><td>""</td>
   </tr>
+  <tr>
+    <td>hint</td><td>"Input name here"</td><td>placeholder attr for input tag</td><td>null</td>
+  </tr>
 </table>
 [Simple Example](http://www.thousanday.com/react#inputbox)
 ###<b>5.1 use inputbox character count</b><p>
