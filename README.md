@@ -142,7 +142,7 @@ render(){
     <td>Params</td><td>example</td><td>Usage</td><td>Default</td>
   </tr>
   <tr>
-    <td>content</td><td>"This is the old content"</td><td>Initial content in the input</td><td>""</td>
+    <td>content</td><td>""</td><td>Initial content in the input</td><td>Must Define it</td>
   </tr>
   <tr>
     <td>total</td><td>"50"</td><td>Maximum characters you allows in the input</td><td>Must Define it</td>
@@ -174,6 +174,7 @@ render(){
 ```
 import {Inputbox} from 'thousanday-react';
 ...
+<Inputbox content="" total="10" /> //must define the content like this
 <Inputbox content="a simple one" total="50" />
 <Inputbox content="allow input after reach maximum" total="50" restrict="off" width="150px" />
 <Inputbox border="1px dashed orange" content="change style" total="50" width="200px"/>
@@ -195,8 +196,8 @@ submitInput(){
     //update your db with variable changedInput
 	}
 ...
+<Inputbox content="" total="50" /> //must define the content like this
 <Inputbox ref="editInput" content={this.state.content} total="50" />
-
 ```
 ###<b>5.2 use inputarea character count</b><p>
 If you need textarea instead of input, it would be very similar
