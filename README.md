@@ -10,6 +10,7 @@ npm install thousanday-react --save
 [Inputbox character count](#inputbox)<p>
 [Imagebox](#imagebox)<p>
 [Random](#random)<p>
+[Droplist](#droplist)<p>
 
 ##<a name="rate">3. Rating Stars</a>
 ![Rating](https://raw.githubusercontent.com/byn9826/ReactUI-Thousanday/master/~pic/1.PNG)<p>
@@ -271,6 +272,39 @@ let randomContent = ["Slogan 1","Slogan 2"];
 <Random random={randomContent} font="h3" id="header-slogan"/>
 ```
 Must define random and font, define id to styling when it is necessary.
+##<a name="droplist">8. Droplist</a>
+Show list of options to choose in select tag<br/>
+![Droplist](https://raw.githubusercontent.com/byn9826/ReactUI-Thousanday/master/~pic/7.png)
+<table>
+  <tr>
+    <td>Params</td><td>example</td><td>Usage</td><td>Default</td>
+  </tr>
+  <tr>
+    <td>title</td><td>"please choose one"</td><td>Provide a hint to users</td><td>null</td>
+  </tr>
+  <tr>
+    <td>option</td><td>["option1","option2"]</td><td>Provide options</td><td>Must define it</td>
+  </tr>
+  <tr>
+    <td>id</td><td>"selectBox"</td><td>defint a id and styling it</td><td>null</td>
+  </tr>
+  <tr>
+    <td>width</td><td>"300px"</td><td>defint width of this component</td><td>"100%"</td>
+  </tr>
+  <tr>
+    <td>border</td><td>"1px dashed black"</td><td>define border style of select</td><td>"1px solid orange"</td>
+  </tr>
+</table>
+[Simple Example](http://www.thousanday.com/react#droplist)
+###<b>8.1 use Droplist</b><p>
+```
+import {Droplist} from 'thousanday-react';
+...
+let option = ["option1","option2","option3"];
+...
+<Droplist  ref="droplistValue" title="- Choose an option -" option={option} />
+```
+value of each options would be 1,2,3,4,5 (start from 1) ... based on their orders. You can get the value chosed by this.refs.dropValue.state.select. If nothing has been selected, it would return 0
 
 ##License
 MIT
