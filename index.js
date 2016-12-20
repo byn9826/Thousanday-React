@@ -24,6 +24,10 @@ var _Random = require('./lib/random/Random.js');
 
 var _Random2 = _interopRequireDefault(_Random);
 
+var _Droplist = require('./lib/droplist/Droplist.js');
+
+var _Droplist2 = _interopRequireDefault(_Droplist);
+
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 module.exports = {
@@ -32,5 +36,6 @@ module.exports = {
 	Inputbox: _Inputbox2.default,
 	Inputarea: _Inputarea2.default,
 	Imagebox: _Imagebox2.default,
-	Random: _Random2.default
+	Random: _Random2.default,
+	Droplist: _Droplist2.default
 };
