@@ -7,7 +7,7 @@ class Inputarea extends Component{
       border:this.props.border||"1px solid orange",
       height:this.props.height||"auto",
       fontSize:this.props.fontSize||"13px",
-      content:this.props.content||"",
+      content:this.props.content,
       count:parseInt(this.props.total)-this.props.content.length,
       length:parseInt(this.props.total),
       name:this.props.name||"",
@@ -37,7 +37,9 @@ class Inputarea extends Component{
       border:this.state.border,
       height:this.state.height,
       fontFamily:"Arial",
-      fontSize:this.state.fontSize
+      fontSize:this.state.fontSize,
+      paddingLeft:"1%",
+      outline:"none"
     };
     let countStyle={
       float:"left",
@@ -47,7 +49,7 @@ class Inputarea extends Component{
     }
 		return(
 			<span style={spanStyle}>
-				<textarea name={this.state.name} style={inputStyle} value={this.state.content} onChange={this.editInput.bind(this)} />
+				<textarea name={this.state.name} style={inputStyle} placeholder={this.props.hint} value={this.state.content} placeholder={this.props.hint} onChange={this.editInput.bind(this)} />
         <span style={countStyle}>{this.state.count}/{this.state.length}</span>
 			</span>
 		)
