@@ -11,6 +11,7 @@ npm install thousanday-react --save
 [Imagebox](#imagebox)<p>
 [Random](#random)<p>
 [Droplist](#droplist)<p>
+[Upsertlist](#upsertlist)<p>
 
 ##<a name="rate">3. Rating Stars</a>
 ![Rating](https://raw.githubusercontent.com/byn9826/ReactUI-Thousanday/master/~pic/1.PNG)<p>
@@ -305,6 +306,43 @@ let option = ["option1","option2","option3"];
 <Droplist  ref="droplistValue" title="- Choose an option -" option={option} />
 ```
 value of each options would be 1,2,3,4,5 (start from 1) ... based on their orders. You can get the value chosed by this.refs.dropValue.state.select. If nothing has been selected, it would return 0
+##<a name="upsertlist">9. Upsertlist</a>
+Let user add something to lists of options<br/>
+![Upsertlist](https://raw.githubusercontent.com/byn9826/ReactUI-Thousanday/master/~pic/8.JPG)
+<table>
+  <tr>
+    <td>Params</td><td>example</td><td>Usage</td><td>Default</td>
+  </tr>
+  <tr>
+    <td>title</td><td>"please plans"</td><td>A title indicate what users doing here</td><td>Must define it</td>
+  </tr>
+  <tr>
+    <td>option</td><td>["planA","PlanB"]</td><td>List of already existing plans</td><td>Must define it</td>
+  </tr>
+  <tr>
+    <td>max</td><td>"12"</td><td>Maximun characters users could input if they create new one</td><td>Must define it</td>
+  </tr>
+  <tr>
+    <td>width</td><td>"300px"</td><td>defint width of this component</td><td>"100%"</td>
+  </tr>
+</table>
+[Simple Example](http://www.thousanday.com/react#upsertlist)
+###<b>9.1 use Upsertlist</b><p>
+```
+import {Upsertlist} from 'thousanday-react';
+...
+//if user click submit plan
+submitPlan(){
+  console.log(this.refs.choosePlan.state.select);//this would return list like [null,0,1,1], 1 means option chosed. In this example, it means users has choosen the 3rd and 4th option
+  console.log(this.refs.choosePlan.state.content);//If user create a new option, this would return the content they input
+}
+...
+let option = ["plan A","plan B","plan C"];
+...
+<Upsertlist  ref="choosePlan" title="Choose Plans:" option={option} max="12" />
+```
+Users could choose multiply options and create new option at the same time.
+
 
 ##License
 MIT
