@@ -1,7 +1,7 @@
 import React, {Component} from 'react';
 import ReactDOM from 'react-dom';
 import Header from '../general/Header';
-import {Rate, Upvote, Inputbox, Inputarea, Imagebox, Random, Droplist} from 'thousanday-react';
+import {Rate, Upvote, Inputbox, Inputarea, Imagebox, Random, Droplist, Upsertlist} from 'thousanday-react';
 import Footer from '../general/Footer';
 class Reactui extends Component{
 	constructor(){
@@ -9,7 +9,7 @@ class Reactui extends Component{
 		this.state={
 			defaultRate:"0",//this is for rating star
 			defaultVote:"100",//this is for upvote it
-	    differ:"true"//this is for upvote it
+	    	differ:"true"//this is for upvote it
 		};
 	}
 	//this is for rating star
@@ -26,14 +26,16 @@ class Reactui extends Component{
 	render(){
 		{/*this is for image box*/}
 		let img = [
-			["/img/react/1.jpg","alt1"],
-			["/img/react/2.jpg","alt2"],
-			["/img/react/3.jpg","alt3"]
+			["img/react/1.jpg","alt1"],
+			["img/react/2.jpg","alt2"],
+			["img/react/3.jpg","alt3"]
 		];
 		//content for random
 		let randomContent = ["This is the first random","This is the 2nd random","This is the 3rd random","This is the 4th random"];
 		//options for droplist
 		let dropOption = ["option1","option2","option3","option4","option5"];
+		//options for upsertlist
+		let planslist = ["plan A","plan B", "plan C", "plan D"];
 		return(
 			<div id="container">
 				<Header />
@@ -65,12 +67,17 @@ class Reactui extends Component{
 								<a href="#imagebox"><h4>Imagebox</h4></a>
 							</div>
 						</div>
+					</div>
+					<div id="main-components">
 						<div>
 							<div className="main-components div-container">
 								<a href="#random"><h4>Random</h4></a>
 							</div>
 							<div className="main-components div-container">
 								<a href="#droplist"><h4>Droplist</h4></a>
+							</div>
+							<div className="main-components div-container">
+								<a href="#upsertlist"><h4>Upsertlist</h4></a>
 							</div>
 						</div>
 					</div>
@@ -165,6 +172,18 @@ class Reactui extends Component{
 					</h3>
 					<div className="components-display">
 						<Droplist  title="- Choose an option -" option={dropOption} />
+					</div>
+				</section>
+				<section id="upsertlist" className="components">
+					<div className="components-title">
+						<h2>Upsertlist</h2>
+					</div>
+					<h3>
+						Component used to let user choose options or create new one<br/>
+					<a href="https://github.com/byn9826/Thousanday-React#upsertlist">How to use it</a>
+					</h3>
+					<div className="components-display">
+						<Upsertlist ref="choosePlan" title="Choose plans:" max="15" option={planslist} />
 					</div>
 				</section>
 				<Footer />
