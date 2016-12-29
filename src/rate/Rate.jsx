@@ -19,14 +19,14 @@ class Rate extends Component{
 				color: this.props.color||"orange",
 				fontSize:this.props.font||"18px",
 				cursor :"pointer",
-				fontFamily:"Arial"
+				fontFamily:"Times New Roman"
 			};
 		}
 		else{
 			spanStyle={
 				color: this.props.color||"orange",
 				fontSize:this.props.font||"18px",
-				fontFamily:"Arial"
+				fontFamily:"Times New Roman"
 			};
 		}
 		let stars=[];

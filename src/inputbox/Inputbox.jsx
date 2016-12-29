@@ -3,15 +3,15 @@ class Inputbox extends Component{
   constructor(props){
 		super(props);
 		this.state = {
-		  width:this.props.width||"100%",
-		  border:this.props.border||"1px solid orange",
-		  height:this.props.height||"20px",
-		  fontSize:this.props.fontSize||"13px",
-		  content:this.props.content,
-		  count:parseInt(this.props.total)-this.props.content.length,
-		  length:parseInt(this.props.total),
-		  name:this.props.name||"",
-		  restrict:this.props.restrict||"on"
+      width:this.props.width||"100%",
+      border:this.props.border||"1px solid orange",
+      height:this.props.height||"20px",
+      fontSize:this.props.fontSize||"13px",
+      content:this.props.content,
+      count:parseInt(this.props.total)-this.props.content.length,
+      length:parseInt(this.props.total),
+      name:this.props.name||"",
+      restrict:this.props.restrict||"on"
 		};
 	}
   editInput(event){

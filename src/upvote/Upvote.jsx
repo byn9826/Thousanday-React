@@ -7,12 +7,15 @@ class Upvote extends Component{
 			fontSize:this.props.font||"11px",
 			width:this.props.width||"auto",
 			border:this.props.border||"0",
-			fontFamily: "Arial",
+			fontFamily: "Times New Roman",
 			textAlign:"center",
 			display:"inline-block"
 		};
 		let upvoteArrow={
-			cursor :"pointer"
+			cursor :"pointer",
+			display:"inline-block",
+			marginTop:"1px",
+			marginBottom:"1px"
 		};
 		let peopleVote;
 		if(this.props.differ=="true"){

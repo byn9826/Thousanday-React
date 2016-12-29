@@ -36,20 +36,20 @@ class Inputarea extends Component{
       width:"100%",
       border:this.state.border,
       height:this.state.height,
-      fontFamily:"Arial",
+      fontFamily:"Times New Roman",
       fontSize:this.state.fontSize,
       paddingLeft:"1%",
       outline:"none"
     };
     let countStyle={
       float:"left",
-      fontFamily:"Arial",
+      fontFamily:"Times New Roman",
       fontSize:"11px",
       width:"100%"
     }
 		return(
 			<span style={spanStyle}>
-				<textarea name={this.state.name} style={inputStyle} placeholder={this.props.hint} value={this.state.content} placeholder={this.props.hint} onChange={this.editInput.bind(this)} />
+				<textarea name={this.state.name} style={inputStyle} placeholder={this.props.hint} value={this.state.content} onChange={this.editInput.bind(this)} />
         <span style={countStyle}>{this.state.count}/{this.state.length}</span>
 			</span>
 		)
