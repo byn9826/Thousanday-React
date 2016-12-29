@@ -1,9 +1,9 @@
 {
   "name": "thousanday-react",
-  "version": "0.4.3",
+  "version": "0.5.2",
   "author": "Baozier",
   "email": "byn9826@gmail.com",
-  "description": "React components Package created for Thousanday Project",
+  "description": "React UI components Package created for Thousanday Project",
   "url": "https://github.com/byn9826/Thousanday-React",
   "repository": {
     "type": "git",
