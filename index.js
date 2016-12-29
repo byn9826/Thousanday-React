@@ -28,6 +28,10 @@ var _Droplist = require('./lib/droplist/Droplist.js');
 
 var _Droplist2 = _interopRequireDefault(_Droplist);
 
+var _Upsertlist = require('./lib/upsertlist/Upsertlist.js');
+
+var _Upsertlist2 = _interopRequireDefault(_Upsertlist);
+
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 module.exports = {
@@ -37,5 +41,6 @@ module.exports = {
 	Inputarea: _Inputarea2.default,
 	Imagebox: _Imagebox2.default,
 	Random: _Random2.default,
-	Droplist: _Droplist2.default
+	Droplist: _Droplist2.default,
+	Upsertlist: _Upsertlist2.default,
 };
