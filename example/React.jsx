@@ -1,7 +1,7 @@
 import React, {Component} from 'react';
 import ReactDOM from 'react-dom';
 import Header from '../general/Header';
-import {Rate, Upvote, Inputbox, Inputarea, Imagebox, Random, Droplist, Upsertlist} from 'thousanday-react';
+import {Rate, Upvote, Inputbox, Inputarea, Imagebox, Random, Droplist, Upsertlist, Progress} from 'thousanday-react';
 import Footer from '../general/Footer';
 class Reactui extends Component{
 	constructor(){
@@ -9,7 +9,8 @@ class Reactui extends Component{
 		this.state={
 			defaultRate:"0",//this is for rating star
 			defaultVote:"100",//this is for upvote it
-	    	differ:"true"//this is for upvote it
+	    	differ:"true",//this is for upvote it
+			progress:"0.3"//this is for progress
 		};
 	}
 	//this is for rating star
@@ -22,6 +23,11 @@ class Reactui extends Component{
 	  let prevState=this.state.defaultVote;
 	  this.setState({defaultVote:this.state.defaultVote*1+1});
 	  this.setState({differ:"false"});
+	}
+	//this is for progress
+	changeProgress(){
+		let current = this.state.progress;
+		this.setState({progress:parseFloat(current)+0.2});
 	}
 	render(){
 		{/*this is for image box*/}
@@ -78,6 +84,9 @@ class Reactui extends Component{
 							</div>
 							<div className="main-components div-container">
 								<a href="#upsertlist"><h4>Upsertlist</h4></a>
+							</div>
+							<div className="main-components div-container">
+								<a href="#progress"><h4>Progress</h4></a>
 							</div>
 						</div>
 					</div>
@@ -153,13 +162,17 @@ class Reactui extends Component{
 					</div>
 					<h3>
 						Component used to show random contents<br/>
-					<a href="https://github.com/byn9826/Thousanday-React#random">How to use it</a>
+						<a href="https://github.com/byn9826/Thousanday-React#random">How to use it</a>
 					</h3>
-					<div className="components-display">
-						Random once:<br/>
-						<Random random={randomContent} font="h3" id="header-slogan"/>
-						Random again:<br/>
-						<Random random={randomContent} font="h3" id="header-slogan"/>
+					<div id="random-content" className="components-display">
+						<div>
+							Random once:<br/>
+							<Random random={randomContent} font="h3" id="header-slogan"/>
+						</div>
+						<div>
+							Random again:<br/>
+							<Random random={randomContent} font="h3" id="header-slogan"/>
+						</div>
 					</div>
 				</section>
 				<section id="droplist" className="components">
@@ -184,6 +197,19 @@ class Reactui extends Component{
 					</h3>
 					<div className="components-display">
 						<Upsertlist ref="choosePlan" title="Choose plans:" max="15" option={planslist} />
+					</div>
+				</section>
+				<section id="progress" className="components">
+					<div className="components-title">
+						<h2>Progress</h2>
+					</div>
+					<h3>
+						Component used to create a progress bar<br/>
+					<a href="https://github.com/byn9826/Thousanday-React#progress">How to use it</a>
+					</h3>
+					<div id="progress-content" className="components-display">
+						<Progress width="30%" notice="Complete: " complete={this.state.progress} />
+						<input type="button" width="50%" onClick={this.changeProgress.bind(this)} value="Complete 20%" />
 					</div>
 				</section>
 				<Footer />
