@@ -32,6 +32,10 @@ var _Upsertlist = require('./lib/upsertlist/Upsertlist.js');
 
 var _Upsertlist2 = _interopRequireDefault(_Upsertlist);
 
+var _Progress = require('./lib/progress/Progress.js');
+
+var _Progress2 = _interopRequireDefault(_Progress);
+
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 module.exports = {
@@ -43,4 +47,5 @@ module.exports = {
 	Random: _Random2.default,
 	Droplist: _Droplist2.default,
 	Upsertlist: _Upsertlist2.default,
+	Progress: _Progress2.default
 };
