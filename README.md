@@ -343,7 +343,7 @@ let option = ["plan A","plan B","plan C"];
 <Upsertlist  ref="choosePlan" title="Choose Plans:" option={option} max="12" />
 ```
 Users could choose multiply options and create new option at the same time.
-##<a name="upsertlist">10. Progress Bar</a>
+##<a name="progress">10. Progress Bar</a>
 Create a progress bar<br/>
 ![Progress](https://raw.githubusercontent.com/byn9826/ReactUI-Thousanday/master/~pic/9.JPG)
 <table>
@@ -366,7 +366,7 @@ Create a progress bar<br/>
     <td>id</td><td>"a-id"</td><td>defint a id</td><td>null</td>
   </tr>
 </table>
-[Simple Example](http://www.thousanday.com/react#upsertlist)
+[Simple Example](http://www.thousanday.com/react#progress)
 ###<b>10.1 use Progress</b><p>
 ```
 import {Progress} from 'thousanday-react';
