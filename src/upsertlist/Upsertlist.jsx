@@ -41,7 +41,7 @@ class Upsertlist extends Component{
     let titleStyle={
       width:"94%",
       marginLeft:"3%",
-      marginBottom:"10px",
+      marginBottom:"20px",
       textAlign:"left",
       fontFamily:"Times New Roman",
       fontSize:"13px",
@@ -60,7 +60,8 @@ class Upsertlist extends Component{
       marginBottom:"5px",
       fontFamily:"Times New Roman",
       fontSize:"11px",
-      fontWeight:"normal"
+      fontWeight:"normal",
+      cursor:"pointer"
     };
     let chooseStyle={
       width:"94%",
