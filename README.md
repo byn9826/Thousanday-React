@@ -342,6 +342,53 @@ let option = ["plan A","plan B","plan C"];
 <Upsertlist  ref="choosePlan" title="Choose Plans:" option={option} max="12" />
 ```
 Users could choose multiply options and create new option at the same time.
+##<a name="upsertlist">10. Progress Bar</a>
+Create a progress bar<br/>
+![Progress](https://raw.githubusercontent.com/byn9826/ReactUI-Thousanday/master/~pic/9.JPG)
+<table>
+  <tr>
+    <td>Params</td><td>example</td><td>Usage</td><td>Default</td>
+  </tr>
+  <tr>
+    <td>complete</td><td>"0.3"</td><td>Indicate how much has been completed</td><td>Must define it, 0.XX decial format</td>
+  </tr>
+  <tr>
+    <td>height</td><td>"30px"</td><td>Height of this component</td><td>"20" Must above 20</td>
+  </tr>
+  <tr>
+    <td>width</td><td>"30%"</td><td>Width of this component</td><td>"100"</td>
+  </tr>
+   <tr>
+    <td>Notice</td><td>"Complete: "</td><td>show some words inside progress bar</td><td>null</td>
+  </tr>
+  <tr>
+    <td>id</td><td>"a-id"</td><td>defint a id</td><td>null</td>
+  </tr>
+</table>
+[Simple Example](http://www.thousanday.com/react#upsertlist)
+###<b>10.1 use Progress</b><p>
+```
+import {Progress} from 'thousanday-react';
+...
+//if you want to change progress accordingly
+constructor(props){
+	super(props);
+	this.state={
+		progress:"0.2"
+	};
+}
+...
+//if you want to change progress accordingly
+changeProgress(){
+	let current = this.state.progress;
+	this.setState({progress:parseFloat(current)+0.1});
+	console.log(this.state.progress);
+}
+...
+<Progress width="30%" notice="Complete: " complete="0.7" />
+<Progress width="50%" notice="Responsive Progress: " complete={this.state.progress} />//this one would change after button onclick
+<button onClick={this.changeProgress.bind(this)} />
+```
 
 
 ##License
