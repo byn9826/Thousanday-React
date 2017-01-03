@@ -12,6 +12,7 @@ npm install thousanday-react --save
 [Random](#random)<p>
 [Droplist](#droplist)<p>
 [Upsertlist](#upsertlist)<p>
+[Progress](#progress)<p>
 
 ##<a name="rate">3. Rating Stars</a>
 ![Rating](https://raw.githubusercontent.com/byn9826/ReactUI-Thousanday/master/~pic/1.PNG)<p>
