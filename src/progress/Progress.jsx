@@ -5,7 +5,8 @@ class Progress extends Component{
 		this.state = {
             complete:this.props.complete*100 + "%",
             height:this.props.height||"20px",
-            width:this.props.width||"100%"
+            width:this.props.width||"100%",
+            notice:this.props.notice||""
 		};
 	}
     componentWillReceiveProps(nextProps){
@@ -31,7 +32,8 @@ class Progress extends Component{
             fontSize:"9px",
             verticleAlign:"middle",
             lineHeight:this.state.height,
-            textAlign:"center"
+            textAlign:"center",
+            overflow:"hidden"
         };
         let backStyle = {
             position:"relative",
@@ -44,7 +46,7 @@ class Progress extends Component{
         };
 		return(
             <div id={this.props.id} style={containerStyle}>
-                {this.props.notice + this.state.complete}
+                {this.state.notice + this.state.complete}
                 <div style={backStyle}></div>
             </div>
 		)
