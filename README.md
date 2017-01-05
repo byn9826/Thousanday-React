@@ -13,6 +13,7 @@ npm install thousanday-react --save
 [Droplist](#droplist)<p>
 [Upsertlist](#upsertlist)<p>
 [Progress](#progress)<p>
+[Editit](#editit)<br />
 
 ##<a name="rate">3. Rating Stars</a>
 ![Rating](https://raw.githubusercontent.com/byn9826/ReactUI-Thousanday/master/~pic/1.PNG)<p>
@@ -390,7 +391,70 @@ changeProgress(){
 <Progress width="50%" notice="Responsive Progress: " complete={this.state.progress} />//this one would change after button onclick
 <button onClick={this.changeProgress.bind(this)} />
 ```
-
+##<a name="editit">11. Edit it</a>
+React component to show content and let users to edit it.<br/>
+![Editit](https://raw.githubusercontent.com/byn9826/ReactUI-Thousanday/master/~pic/10.JPG)<br/>
+[Simple Example](http://www.thousanday.com/react#editit)<br/>
+```
+import {Editit} from 'thousanday-react';
+```
+```
+<Editit content="It is a good component" id="0"  front="Note: " max="30" />
+```
+<table>
+	<tr>
+		<td>Params</td>
+		<td>Usage</td>
+		<td>Default</td>
+		<td>Example</td>
+	</tr>
+	<tr>
+		<td>content</td>
+		<td>Mandatory. Show the initial content</td>
+		<td>null</td>
+		<td>content="The existing content"</td>
+	</tr>
+	<tr>
+		<td>id</td>
+		<td>Optional. When you used multi "Editit", define the id could help you know which one has been edited.</td>
+		<td>null</td><td>id="0"</td>
+	</tr>
+	<tr>
+		<td>front</td>
+		<td>Optinal. Show a word in front of the content as a notice</td>
+		<td>null</td>
+		<td>front="Comment: "</td>
+	</tr>
+	<tr>
+		<td>max</td>
+		<td>Optinal. Restrict the length of the content as the maximum of characters.</td>
+		<td>null</td>
+		<td>max="30"</td>
+	</tr>
+</table>
+###<b>11.1 Get the new content after edit</b>
+If you want to get the new content, you have to add a "edit" params to this component:
+```
+<Editit content={item.comment} front="Note: " max="50" edit={this.editContent.bind(this)} />
+```
+Then you get the new content by create a editContent() function:
+```
+editContent(newContent){
+	console.log(newContent);//this will return the new content
+}
+```
+###<b>11.2 Get the new content from multi-Editit</b>
+If you used more than one Editit in same page, you have to define the id params:
+```
+<Editit content={item.comment} id="0" front="Note: " max="50" edit={this.editContent.bind(this)} />
+```
+Then you need to modify the editContent function:
+```
+editContent(newContent,thisid){
+	console.log(newContent);//this will return the new content
+        console.log(thisid);//this will return the id, it is 0 in this case
+}
+```
 
 ##License
 MIT
