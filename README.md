@@ -392,7 +392,7 @@ changeProgress(){
 <button onClick={this.changeProgress.bind(this)} />
 ```
 ##<a name="editit">11. Edit it</a>
-React component to show content and let users to edit it.<br/>
+React component used to show content and let users to edit it.<br/>
 ![Editit](https://raw.githubusercontent.com/byn9826/ReactUI-Thousanday/master/~pic/10.JPG)<br/>
 [Simple Example](http://www.thousanday.com/react#editit)<br/>
 ```
@@ -440,7 +440,7 @@ If you want to get the new content, you have to add a "edit" params to this comp
 Then you get the new content by create a editContent() function:
 ```
 editContent(newContent){
-	console.log(newContent);//this will return the new content
+    console.log(newContent);//this will return the new content
 }
 ```
 ###<b>11.2 Get the new content from multi-Editit</b>
@@ -451,8 +451,8 @@ If you used more than one Editit in same page, you have to define the id params:
 Then you need to modify the editContent function:
 ```
 editContent(newContent,thisid){
-	console.log(newContent);//this will return the new content
-        console.log(thisid);//this will return the id, it is 0 in this case
+    console.log(newContent);//this will return the new content
+    console.log(thisid);//this will return the id, it is 0 in this case
 }
 ```
 
