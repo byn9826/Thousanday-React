@@ -157,7 +157,7 @@ import {Upvote} from 'thousanday-react';
 	<tr>
 		<td>upVote</td>
 		<td>Optional. Bind with a function to deal with new users upvote</td>
-		<td>null</td>
+		<td></td>
 		<td>upVote={this.upVote.bind(this)}</td>
 	</tr>
 </table>
@@ -594,7 +594,7 @@ import {Editit} from 'thousanday-react';
 	<tr>
 		<td>edit</td>
 		<td>Optinal. Bind with a function to get content after users click save.</td>
-		<td>null</td>
+		<td></td>
 		<td>edit={this.editContent.bind(this)}</td>
 	</tr>
 </table>
