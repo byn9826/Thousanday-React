@@ -5,14 +5,14 @@ This is a npm package of React UI components used in Thousanday Project, will up
 npm install thousanday-react --save
 ```
 ##2. Components List
-[Rating Stars](#rate)<p>
-[Upvote it](#upvote)<p>
-[Inputbox character count](#inputbox)<p>
-[Imagebox](#imagebox)<p>
-[Random](#random)<p>
-[Droplist](#droplist)<p>
-[Upsertlist](#upsertlist)<p>
-[Progress](#progress)<p>
+[Rating Stars](#rate)<br />
+[Upvote it](#upvote)<br />
+[Inputbox character count](#inputbox)<br />
+[Imagebox](#imagebox)<br />
+[Random](#random)<br />
+[Droplist](#droplist)<br />
+[Upsertlist](#upsertlist)<br />
+[Progress](#progress)<br />
 [Editit](#editit)<br />
 
 ##<a name="rate">3. Rating Stars</a>
@@ -308,93 +308,136 @@ let option = ["option1","option2","option3"];
 <Droplist  ref="droplistValue" title="- Choose an option -" option={option} />
 ```
 value of each options would be 1,2,3,4,5 (start from 1) ... based on their orders. You can get the value chosed by this.refs.dropValue.state.select. If nothing has been selected, it would return 0
+
+
 ##<a name="upsertlist">9. Upsertlist</a>
-Let user add something to lists of options<br/>
-![Upsertlist](https://raw.githubusercontent.com/byn9826/ReactUI-Thousanday/master/~pic/8.JPG)
-<table>
-  <tr>
-    <td>Params</td><td>example</td><td>Usage</td><td>Default</td>
-  </tr>
-  <tr>
-    <td>title</td><td>"please plans"</td><td>A title indicate what users doing here</td><td>Must define it</td>
-  </tr>
-  <tr>
-    <td>option</td><td>["planA","PlanB"]</td><td>List of already existing plans</td><td>Must define it</td>
-  </tr>
-  <tr>
-    <td>max</td><td>"12"</td><td>Maximun characters users could input if they create new one</td><td>Must define it</td>
-  </tr>
-  <tr>
-    <td>width</td><td>"300px"</td><td>defint width of this component</td><td>"100%"</td>
-  </tr>
-</table>
-[Simple Example](http://www.thousanday.com/react#upsertlist)
-###<b>9.1 use Upsertlist</b><p>
+React component create a list of options for users to choose, users could also create a new option<br/>
+![Upsertlist](https://raw.githubusercontent.com/byn9826/ReactUI-Thousanday/master/~pic/8.JPG)<br/>
+[Example](http://www.thousanday.com/react#upsertlist)<br/>
 ```
 import {Upsertlist} from 'thousanday-react';
-...
-//if user click submit plan
-submitPlan(){
-  console.log(this.refs.choosePlan.state.select);//this would return list like [null,0,1,1], 1 means option chosed. In this example, it means users has choosen the 3rd and 4th option
-  console.log(this.refs.choosePlan.state.content);//If user create a new option, this would return the content they input
-}
-...
+```
+```
 let option = ["plan A","plan B","plan C"];
-...
+<Upsertlist title="Choose Plans:" option={option} max="12" width="200px" />
+```
+<table>
+	<tr>
+		<td>Params</td>
+		<td>Usage</td>
+		<td>Default</td>
+		<td>Example</td>
+	</tr>
+	<tr>
+		<td>title</td>
+		<td>Mandatory. Show a title indicate what the users are doing here</td>
+		<td>null</td>
+		<td>"Add to following lists:"</td>
+	</tr>
+	<tr>
+		<td>option</td>
+		<td>Mandatory. Show list of options for users to choose["planA","PlanB"]</td>
+		<td>null</td>
+		<td>["option A","option B","option C"]</td>
+	</tr>
+	<tr>
+		<td>max</td>
+		<td>Optinal. Restrict the maximun length of characters users could input if they creating a new option</td>
+		<td>null</td>
+		<td>"15"</td>
+	</tr>
+	<tr>
+		<td>width</td>
+		<td>Optinal. Defint width of this component</td>
+		<td>"100%"</td>
+		<td>"300px"</td>
+	</tr>
+</table>
+###<b>9.1 Get users choices and new option created</b>
+You need to define ref parmas of Upsertlist first.
+```
 <Upsertlist  ref="choosePlan" title="Choose Plans:" option={option} max="12" />
 ```
-Users could choose multiply options and create new option at the same time.
+Then you could know users choices or if they create a new option by using this.ref
+```
+submitChoice(){
+    //this would return users choices in format like [null,0,1,1,0,1], 1 means option chosed, 0 or null means options not chosed. 
+    //In this example: [null,0,1,1,0,1]. it means users has chosen the 3rd, 4th and 6th options
+    console.log(this.refs.choosePlan.state.select);
+    //If users created a new option, this would return the content of the new option
+    console.log(this.refs.choosePlan.state.content);
+}
+```
+
+
 ##<a name="progress">10. Progress Bar</a>
-Create a progress bar<br/>
-![Progress](https://raw.githubusercontent.com/byn9826/ReactUI-Thousanday/master/~pic/9.JPG)
-<table>
-  <tr>
-    <td>Params</td><td>example</td><td>Usage</td><td>Default</td>
-  </tr>
-  <tr>
-    <td>complete</td><td>"0.3"</td><td>Indicate how much has been completed</td><td>Must define it, 0.XX decial format</td>
-  </tr>
-  <tr>
-    <td>height</td><td>"30px"</td><td>Height of this component</td><td>"20" Must above 20</td>
-  </tr>
-  <tr>
-    <td>width</td><td>"30%"</td><td>Width of this component</td><td>"100"</td>
-  </tr>
-   <tr>
-    <td>Notice</td><td>"Complete: "</td><td>show some words inside progress bar</td><td>null</td>
-  </tr>
-  <tr>
-    <td>id</td><td>"a-id"</td><td>defint a id</td><td>null</td>
-  </tr>
-</table>
-[Simple Example](http://www.thousanday.com/react#progress)
-###<b>10.1 use Progress</b><p>
+React component used to display a progress bar<br/>
+![Progress](https://raw.githubusercontent.com/byn9826/ReactUI-Thousanday/master/~pic/9.JPG)<br/>
+[Example](http://www.thousanday.com/react#progress)<br/>
 ```
 import {Progress} from 'thousanday-react';
-...
-//if you want to change progress accordingly
-constructor(props){
-	super(props);
-	this.state={
-		progress:"0.2"
-	};
-}
-...
-//if you want to change progress accordingly
+```
+```
+<Progress complete="0.7" id="show-progress" notice="Complete: " width="30%" height="30px"   />
+```
+<table>
+	<tr>
+		<td>Params</td>
+		<td>Usage</td>
+		<td>Default</td>
+		<td>Example</td>
+	</tr>
+	<tr>
+		<td>complete</td>
+		<td>Mandatory. Indicate how much has been completed. 0 indicate 0%, 1 indicate 100%. Must be 0.XX decial format</td>
+		<td>null</td>
+		<td>"0.5"</td>
+	</tr>
+	<tr>
+		<td>id</td>
+		<td>Optinal. You can stlye the container div in CSS by this id</td>
+		<td>null</td>
+		<td>"task-progress"</td>
+	</tr>
+	<tr>
+		<td>Notice</td>
+		<td>Optinal. Show a word inside the progress bar as a hint</td>
+		<td>null</td>
+		<td>"Progress: "</td>
+	</tr>
+	<tr>
+		<td>width</td>
+		<td>Optinal. Width of this component</td>
+		<td>"100%"</td>
+		<td>"30px"</td>
+	</tr>
+	<tr>
+		<td>height</td>
+		<td>Optional. Height of this component. Must higher than "20px"</td>
+		<td>"20px"</td>
+		<td>"40px"</td>
+	</tr>
+</table>
+###<b>10.1 Make Progress dynamic</b>
+If you want to change the progress bar when conditions changed, you could define the complete params by this.state
+```
+<Progress complete={this.state.progress} notice="Dynamic Progress: "  />
+```
+Then you create a function to update this.state.progress first everytime, the Progress Bar would also change accordingly.
+```
 changeProgress(){
-	let current = this.state.progress;
-	this.setState({progress:parseFloat(current)+0.1});
-	console.log(this.state.progress);
+    let current = this.state.progress;
+    this.setState({progress:parseFloat(current)+0.1});
+    console.log(this.state.progress);
 }
-...
-<Progress width="30%" notice="Complete: " complete="0.7" />
-<Progress width="50%" notice="Responsive Progress: " complete={this.state.progress} />//this one would change after button onclick
 <button onClick={this.changeProgress.bind(this)} />
 ```
+
+
 ##<a name="editit">11. Edit it</a>
 React component used to show content and let users to edit it.<br/>
 ![Editit](https://raw.githubusercontent.com/byn9826/ReactUI-Thousanday/master/~pic/10.JPG)<br/>
-[Simple Example](http://www.thousanday.com/react#editit)<br/>
+[Example](http://www.thousanday.com/react#editit)<br/>
 ```
 import {Editit} from 'thousanday-react';
 ```
@@ -455,6 +498,7 @@ editContent(newContent,thisid){
     console.log(thisid);//this will return the id, it is 0 in this case
 }
 ```
+
 
 ##License
 MIT
