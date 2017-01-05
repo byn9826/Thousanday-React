@@ -16,65 +16,77 @@ npm install thousanday-react --save
 [Editit](#editit)<br />
 
 ##<a name="rate">3. Rating Stars</a>
-![Rating](https://raw.githubusercontent.com/byn9826/ReactUI-Thousanday/master/~pic/1.PNG)<p>
+React Component used to create rating stars for users to click.<br/>
+![Rating](https://raw.githubusercontent.com/byn9826/ReactUI-Thousanday/master/~pic/1.PNG)<br/>
+[Example](http://www.thousanday.com/react#rate)<br/>
+```
+import {Rate} from 'thousanday-react';
+```
+```
+<Rate rate="3" length="5" change="yes" rateChange={this.rateChange.bind(this)} />
+```
 <table>
-  <tr>
-    <td>Params</td><td>example</td><td>Usage</td><td>Default</td>
-  </tr>
-  <tr>
-    <td>rate</td><td>"4"</td><td>define the default stars</td><td>Must define it</td>
-  </tr>
-  <tr>
-    <td>length</td><td>"5"</td><td>define the maximum stars</td><td>"5"</td>
-  </tr>
-  <tr>
-    <td>font</td><td>"14px"</td><td>adjust the size</td><td>"18px"</td>
-  </tr>
-  <tr>
-    <td>color</td><td>"black"</td><td>define the color</td><td>"orange"</td>
-  </tr>
-  <tr>
-    <td>change</td><td>"yes"</td><td>make it interactive</td><td>"no"</td>
-  </tr>
-  <tr>
-    <td>className</td><td>"a-name"</td><td>styling by classname</td><td>""</td>
-  </tr>
-  <tr>
-    <td>rateChange</td><td>{this.rateChange.bind(this)}</td><td>Receive a rate from users</td><td></td>
-  </tr>
+	<tr>
+		<td>Params</td>
+		<td>Usage</td>
+		<td>Default</td>
+		<td>Example</td>
+	</tr>
+	<tr>
+		<td>rate</td>
+		<td>Mandatory. Define the default rates.</td>
+		<td>null</td>
+		<td>"4"</td>
+	</tr>
+	<tr>
+		<td>length</td>
+		<td>Mandatory. Define the maximum number of stars</td>
+		<td>"5"</td>
+		<td>"6"</td>
+	</tr>
+	<tr>
+		<td>change</td>
+		<td>Optinal. If current user could change the defaut rates</td>
+		<td>"no"</td>
+		<td>"yes"</td>
+	</tr>
+	<tr>
+		<td>font</td>
+		<td>Optional. Adjust size of this component</td>
+		<td>"18px"</td>
+		<td>"14px"</td>
+	</tr>
+	<tr>
+		<td>color</td>
+		<td>Optional. Define color of this component</td>
+		<td>"orange"</td>
+		<td>"black"</td>
+	</tr>
+	<tr>
+		<td>className</td>
+		<td>Optinal. Use this className to style this components in CSS</td>
+		<td>null</td>
+		<td>"rates"</td>
+	</tr>
+	<tr>
+		<td>rateChange</td>
+		<td>Optinal. Bind with a function to receive new rate from users</td>
+		<td></td>
+		<td>{this.rateChange.bind(this)}</td>
+	</tr>
 </table>
-[Simple Example](http://www.thousanday.com/react#rate)
-###<b>3.1 use it as display only</b>
+###<b>3.1 Get new rate from users</b>
+You should bind ratechange params with a function, and define change params as "yes" first:
 ```
-import {Rate} from 'thousanday-react';
-<Rate rate="4" length="5"/>
-<Rate rate="3" length="5" font="14px" color="black" />
+<Rate rate={this.state.currentRate} length="5" change="yes" rateChange={this.rateChange.bind(this)}/>
 ```
-Notice: You must define rate and length for every Rate component
-###<b>3.2 use it to receive a rating from users</b>
+Then you should create a rateChange function to deal with new rate:
 ```
-import {Rate} from 'thousanday-react';
-...
-constructor(){
-  super();
-  this.state={
-    defaultRate:"0"
-  };
-}
-...
 rateChange(rateNum){
-  let prevState=this.state.defaultRate;
-  this.setState({defaultRate:rateNum});
-  //write code to update your database here
-  //rateNum is the rating value from the users
+    //rateNum is the new rate from current user
+    this.setState({currentRate:rateNum});
 }
-...
-<Rate rate={this.state.defaultRate} length="5" change="yes" rateChange={this.rateChange.bind(this)}/>
 ```
-Notice:<p>
- ・You must use change="yes" to make this component interactive<p>
- ・You must define this.state.defaultRate as the default rate<p>
- ・rateChange(rateNum) will automaticlly get the rating value(which will be a number) from the users for you<p>
 
 
 ##<a name="upvote">4. Upvote it</a>
@@ -85,7 +97,7 @@ React component let users to upvote something.
 import {Upvote} from 'thousanday-react';
 ```
 ```
-<Upvote total="100" differ="false" color="black" bg="green" font="15px" width="50px" border="1px dashed black" className="upvote1" />
+<Upvote total="100" differ="true" />
 ```
 <table>
 	<tr>
@@ -142,6 +154,12 @@ import {Upvote} from 'thousanday-react';
 		<td>null</td>
 		<td>"upvote1"</td>
 	</tr>
+	<tr>
+		<td>upVote</td>
+		<td>Optional. Bind with a function to deal with new users upvote</td>
+		<td>null</td>
+		<td>upVote={this.upVote.bind(this)}</td>
+	</tr>
 </table>
 ###<b>4.1 Get new total upvote numbers after user click upvote</b>
 You should consider if user has the right to upvote or not first:
@@ -175,7 +193,7 @@ import {Inputbox, Inputarea} from 'thousanday-react';
 ```
 ```
 //this will create an input
-<Inputbox content="" total="10" hint="name here" restrict="on" fontSize="14px" width="200px" height="80px" border="1px solid black" />
+<Inputbox content="" total="10" hint="name here" restrict="on" />
 //this will create a textarea
 <Inputarea content="Inital content here" total="300" height="150px"/>
 ```
@@ -265,7 +283,7 @@ let imgs = [
   ["/img/react/3.jpg","alt3"]
 ];
 ...
-<Imagebox slides={imgs} timer="5000" width="100%" id="imageBox1" />
+<Imagebox slides={imgs} timer="5000" />
 ```
 <table>
 	<tr>
@@ -312,7 +330,7 @@ import {Random} from 'thousanday-react';
 ```
 let randomContent = ["Slogan 1","Slogan 2","Slogan 3"];
 ...
-<Random random={randomContent} font="h3" id="header-slogan"/>
+<Random random={randomContent} font="h3" id="header-slogan" />
 ```
 <table>
 	<tr>
@@ -352,7 +370,7 @@ import {Droplist} from 'thousanday-react';
 ```
 let option = ["option1","option2","option3"];
 ...
-<Droplist option={option} title="- Choose an option -" id="option1" width="300px" border="2px dashed black" />
+<Droplist option={option} title="- Choose an option -" />
 ```
 <table>
 	<tr>
@@ -417,7 +435,7 @@ import {Upsertlist} from 'thousanday-react';
 ```
 let option = ["plan A","plan B","plan C"];
 ...
-<Upsertlist title="Choose Plans:" option={option} max="12" width="200px" />
+<Upsertlist title="Choose Plans:" option={option} max="12" />
 ```
 <table>
 	<tr>
@@ -476,7 +494,7 @@ React component used to display a progress bar<br/>
 import {Progress} from 'thousanday-react';
 ```
 ```
-<Progress complete="0.7" id="show-progress" notice="Complete: " width="30%" height="30px"   />
+<Progress complete="0.7" notice="Complete: " />
 ```
 <table>
 	<tr>
@@ -492,16 +510,16 @@ import {Progress} from 'thousanday-react';
 		<td>"0.5"</td>
 	</tr>
 	<tr>
-		<td>id</td>
-		<td>Optinal. Use this id to style container of this component in CSS</td>
-		<td>null</td>
-		<td>"task-progress"</td>
-	</tr>
-	<tr>
 		<td>Notice</td>
 		<td>Optinal. Show a word inside the progress bar as a hint</td>
 		<td>null</td>
 		<td>"Progress: "</td>
+	</tr>
+	<tr>
+		<td>id</td>
+		<td>Optinal. Use this id to style container of this component in CSS</td>
+		<td>null</td>
+		<td>"task-progress"</td>
 	</tr>
 	<tr>
 		<td>width</td>
@@ -541,7 +559,7 @@ React component used to show content and let users to edit it.<br/>
 import {Editit} from 'thousanday-react';
 ```
 ```
-<Editit content="It is a good component" id="0"  front="Note: " max="30" />
+<Editit content="It is a good component" front="Note: " max="30" edit={this.editContent.bind(this)} />
 ```
 <table>
 	<tr>
@@ -572,6 +590,12 @@ import {Editit} from 'thousanday-react';
 		<td>Optinal. Restrict the length of the content as the maximum of characters.</td>
 		<td>null</td>
 		<td>max="30"</td>
+	</tr>
+	<tr>
+		<td>edit</td>
+		<td>Optinal. Bind with a function to get content after users click save.</td>
+		<td>null</td>
+		<td>edit={this.editContent.bind(this)}</td>
 	</tr>
 </table>
 ###<b>11.1 Get the new content after edit</b>
