@@ -213,105 +213,166 @@ import {Inputarea} from 'thousanday-react';
 ...
 <Inputarea content="This is a textarea" total="500" height="150px"/>
 ```
+
+
 ##<a name="imagebox">6. Imagebox</a>
-![Imagebox](https://raw.githubusercontent.com/byn9826/ReactUI-Thousanday/master/~pic/4.JPG)
-<table>
-  <tr>
-    <td>Params</td><td>example</td><td>Usage</td><td>Default</td>
-  </tr>
-  <tr>
-    <td>slides</td><td>"[["src","alt","href"],[]..]"</td><td>Input information for images</td><td>Must Define it</td>
-  </tr>
-  <tr>
-    <td>timmer</td><td>"5000" (5 second)</td><td>auto change main display image </td><td>null</td>
-  </tr>
-  <tr>
-    <td>width</td><td>"150px"</td><td>width of the component</td><td>"100%"</td>
-  </tr>
-  <tr>
-    <td>className</td><td>"a-name"</td><td>styling by classname</td><td>null</td>
-  </tr>
-</table>
-
-[Simple Example](http://www.thousanday.com/react#imagebox)
-
-###<b>6.1 use Imagebox</b><p>
+React component used to create a box show rotating images.<br />
+![Imagebox](https://raw.githubusercontent.com/byn9826/ReactUI-Thousanday/master/~pic/4.JPG)<br />
+[Simple Example](http://www.thousanday.com/react#imagebox)<br />
 ```
-import Imagebox from '../ui/imagebox/Imagebox';
-...
-let img = [
+import {Imagebox} from 'thousanday-react';
+```
+```
+let imgs = [
   ["/img/react/1.jpg","alt1","http://www.href1.com"],
   ["/img/react/2.jpg","alt2"],
   ["/img/react/3.jpg","alt3"]
 ];
 ...
-<Imagebox slides={img} width="100%" timer="5000"/>
+<Imagebox slides={imgs} timer="5000" width="100%" id="imageBox1" />
 ```
-Must define give each img different alt. The maximum number of images is 5.
-##<a name="random">7. Random</a>
-Output random content<br/>
-![Random](https://raw.githubusercontent.com/byn9826/ReactUI-Thousanday/master/~pic/5.JPG)
 <table>
-  <tr>
-    <td>Params</td><td>example</td><td>Usage</td><td>Default</td>
-  </tr>
-  <tr>
-    <td>random</td><td>["123","234","345"]</td><td>Content you want to show</td><td>Must Define it</td>
-  </tr>
-  <tr>
-    <td>font</td><td>"h3"</td><td>Define the h tag you want to use </td><td>Must define it</td>
-  </tr>
-  <tr>
-    <td>id</td><td>"header-random"</td><td>defint a id and styling it</td><td>null</td>
-  </tr>
+	<tr>
+		<td>Params</td>
+		<td>Usage</td>
+		<td>Default</td>
+		<td>Example</td>
+	</tr>
+	<tr>
+		<td>slides</td>
+		<td>Mandatory. Indicate src, alt and href for lists of images you want to show</td>
+		<td>null</td>
+		<td>"[["src","alt","href"],["src1","alt1","href1"],["src2","alt2","href2"]]"</td>
+	</tr>
+	<tr>
+		<td>timmer</td>
+		<td>Optional. Automatically rotate images based on timer</td>
+		<td>null</td>
+		<td>"5000" (5 second)</td>
+	</tr>
+	<tr>
+		<td>width</td>
+		<td>Optional. Define the width of this component</td>
+		<td>"100%"</td>
+		<td>"150px"</td>
+	</tr>
+	<tr>
+		<td>id</td>
+		<td>Optinal. Use this id to styling container of this component by CSS</td>
+		<td>null</td>
+		<td>"imagebox1"</td>
+	</tr>
 </table>
-[Simple Example](http://www.thousanday.com/react#random)
-###<b>7.1 use Random</b><p>
+Notice:Must define give each img different alt. The maximum number of images is 5.
+
+
+##<a name="random">7. Random</a>
+React component used to output a random content<br/>
+![Random](https://raw.githubusercontent.com/byn9826/ReactUI-Thousanday/master/~pic/5.JPG)<br/>
+[Example](http://www.thousanday.com/react#random)<br/>
 ```
 import {Random} from 'thousanday-react';
-...
-let randomContent = ["Slogan 1","Slogan 2"];
+```
+```
+let randomContent = ["Slogan 1","Slogan 2","Slogan 3"];
 ...
 <Random random={randomContent} font="h3" id="header-slogan"/>
 ```
-Must define random and font, define id to styling when it is necessary.
-##<a name="droplist">8. Droplist</a>
-Show list of options to choose in select tag<br/>
-![Droplist](https://raw.githubusercontent.com/byn9826/ReactUI-Thousanday/master/~pic/7.png)
 <table>
-  <tr>
-    <td>Params</td><td>example</td><td>Usage</td><td>Default</td>
-  </tr>
-  <tr>
-    <td>title</td><td>"please choose one"</td><td>Provide a hint to users</td><td>null</td>
-  </tr>
-  <tr>
-    <td>option</td><td>["option1","option2"]</td><td>Provide options</td><td>Must define it</td>
-  </tr>
-  <tr>
-    <td>id</td><td>"selectBox"</td><td>defint a id and styling it</td><td>null</td>
-  </tr>
-  <tr>
-    <td>width</td><td>"300px"</td><td>defint width of this component</td><td>"100%"</td>
-  </tr>
-  <tr>
-    <td>border</td><td>"1px dashed black"</td><td>define border style of select</td><td>"1px solid orange"</td>
-  </tr>
+	<tr>
+		<td>Params</td>
+		<td>Usage</td>
+		<td>Default</td>
+		<td>Example</td>
+	</tr>
+	<tr>
+		<td>random</td>
+		<td>Mandatory. Provie list of content you want to show randomly.</td>
+		<td>null</td>
+		<td>["123","234","345"]</td>
+	</tr>
+	<tr>
+		<td>font</td>
+		<td>Mandatory. Provide a h tag name you want the random content to be</td>
+		<td>null</td>
+		<td>"h3"</td>
+	</tr>
+	<tr>
+		<td>id</td>
+		<td>Optional. Use this id to style container of this component by CSS</td>
+		<td>null</td>
+		<td>"header-random"</td>
+	</tr>
 </table>
-[Simple Example](http://www.thousanday.com/react#droplist)
-###<b>8.1 use Droplist</b><p>
+
+
+##<a name="droplist">8. Droplist</a>
+React Component used to show list of options to choose in form of html select tag. (Single Choice)<br/>
+![Droplist](https://raw.githubusercontent.com/byn9826/ReactUI-Thousanday/master/~pic/7.png)<br />
+[Example](http://www.thousanday.com/react#droplist)<br />
 ```
 import {Droplist} from 'thousanday-react';
-...
+```
+```
 let option = ["option1","option2","option3"];
 ...
+<Droplist option={option} title="- Choose an option -" id="option1" width="300px" border="2px dashed black" />
+```
+<table>
+	<tr>
+		<td>Params</td>
+		<td>Usage</td>
+		<td>Default</td>
+		<td>Example</td>
+	</tr>
+	<tr>
+		<td>option</td>
+		<td>Mandatory. Provide options for users to choose</td>
+		<td>null</td>
+		<td>["option1","option2"]</td>
+	</tr>
+	<tr>
+		<td>title</td>
+		<td>Optional. Show a title to indicate what users are choosing here</td>
+		<td>null</td>
+		<td>"please choose one"</td>
+	</tr>
+	<tr>
+		<td>id</td>
+		<td>Optional. Use this id to styling container of this component in CSS</td>
+		<td>null</td>
+		<td>"select-0"</td>
+	</tr>
+	<tr>
+		<td>width</td>
+		<td>Optional. Define width of this component</td>
+		<td>"100%"</td>
+		<td>"300px"</td>
+	</tr>
+	<tr>
+		<td>border</td>
+		<td>Optional. Change the border style of this select component</td>
+		<td>"1px solid orange"</td>
+		<td>"1px dashed black"</td>
+	</tr>
+</table>
+###<b>8.1 Get users choice</b>
+If you want to know which one is users choice. Define the ref params of Droplist first:
+```
 <Droplist  ref="droplistValue" title="- Choose an option -" option={option} />
 ```
-value of each options would be 1,2,3,4,5 (start from 1) ... based on their orders. You can get the value chosed by this.refs.dropValue.state.select. If nothing has been selected, it would return 0
+Then you can get which one option is users choice by this.refs:
+```
+showChoice(){
+    console.log(this.refs.droplistValue.state.select);
+    //If nothing has been selected, it would return 0
+    //If users has choose one option, The returned value would be 1,2,3,4,5 (start from 1) ... based on their orders.
+}
+```
 
 
 ##<a name="upsertlist">9. Upsertlist</a>
-React component create a list of options for users to choose, users could also create a new option<br/>
+React component create a list of options for users to choose, users could also create a new option. (Multi Choices)<br/>
 ![Upsertlist](https://raw.githubusercontent.com/byn9826/ReactUI-Thousanday/master/~pic/8.JPG)<br/>
 [Example](http://www.thousanday.com/react#upsertlist)<br/>
 ```
@@ -319,6 +380,7 @@ import {Upsertlist} from 'thousanday-react';
 ```
 ```
 let option = ["plan A","plan B","plan C"];
+...
 <Upsertlist title="Choose Plans:" option={option} max="12" width="200px" />
 ```
 <table>
@@ -358,7 +420,7 @@ You need to define ref parmas of Upsertlist first.
 ```
 <Upsertlist  ref="choosePlan" title="Choose Plans:" option={option} max="12" />
 ```
-Then you could know users choices or if they create a new option by using this.ref
+Then you could know users choices or if they create a new option by using this.refs.
 ```
 submitChoice(){
     //this would return users choices in format like [null,0,1,1,0,1], 1 means option chosed, 0 or null means options not chosed. 
@@ -395,7 +457,7 @@ import {Progress} from 'thousanday-react';
 	</tr>
 	<tr>
 		<td>id</td>
-		<td>Optinal. You can stlye the container div in CSS by this id</td>
+		<td>Optinal. Use this id to style container of this component in CSS</td>
 		<td>null</td>
 		<td>"task-progress"</td>
 	</tr>
@@ -430,6 +492,7 @@ changeProgress(){
     this.setState({progress:parseFloat(current)+0.1});
     console.log(this.state.progress);
 }
+...
 <button onClick={this.changeProgress.bind(this)} />
 ```
 
@@ -458,9 +521,9 @@ import {Editit} from 'thousanday-react';
 		<td>content="The existing content"</td>
 	</tr>
 	<tr>
-		<td>id</td>
-		<td>Optional. When you used multi "Editit", define the id could help you know which one has been edited.</td>
-		<td>null</td><td>id="0"</td>
+		<td>name</td>
+		<td>Optional. When you used multi "Editit", define the name could help you know which one has been edited.</td>
+		<td>null</td><td>name="0"</td>
 	</tr>
 	<tr>
 		<td>front</td>
@@ -487,9 +550,9 @@ editContent(newContent){
 }
 ```
 ###<b>11.2 Get the new content from multi-Editit</b>
-If you used more than one Editit in same page, you have to define the id params:
+If you used more than one Editit in same page, you have to define the name params:
 ```
-<Editit content={item.comment} id="0" front="Note: " max="50" edit={this.editContent.bind(this)} />
+<Editit content={item.comment} name="0" front="Note: " max="50" edit={this.editContent.bind(this)} />
 ```
 Then you need to modify the editContent function:
 ```
