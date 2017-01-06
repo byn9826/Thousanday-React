@@ -36,6 +36,10 @@ var _Progress = require('./lib/progress/Progress.js');
 
 var _Progress2 = _interopRequireDefault(_Progress);
 
+var _Editit = require('./lib/editit/Editit.js');
+
+var _Editit2 = _interopRequireDefault(_Editit);
+
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 module.exports = {
@@ -47,5 +51,6 @@ module.exports = {
 	Random: _Random2.default,
 	Droplist: _Droplist2.default,
 	Upsertlist: _Upsertlist2.default,
-	Progress: _Progress2.default
+	Progress: _Progress2.default,
+	Editit: _Editit2.default
 };
