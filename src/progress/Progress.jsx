@@ -10,12 +10,13 @@ class Progress extends Component{
 		};
 	}
     componentWillReceiveProps(nextProps){
-        let next = nextProps.complete;
-        next = next.toFixed(2);
         if(nextProps.complete>=1){
             this.setState({complete:"100%"});
         }
-        else{
+        else if(nextProps.complete>=0&&nextProps.complete<1)
+        {
+            let next = nextProps.complete;
+            next = parseFloat(next).toFixed(2);
             this.setState({complete:next*100+"%"});//get current users new rate
         }
         

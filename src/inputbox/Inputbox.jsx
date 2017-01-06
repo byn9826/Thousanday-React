@@ -10,7 +10,6 @@ class Inputbox extends Component{
       content:this.props.content,
       count:parseInt(this.props.total)-this.props.content.length,
       length:parseInt(this.props.total),
-      name:this.props.name||"",
       restrict:this.props.restrict||"on"
 		};
 	}
@@ -49,7 +48,7 @@ class Inputbox extends Component{
     }
 		return(
 			<span style={spanStyle}>
-				<input name={this.state.name} style={inputStyle} value={this.state.content} placeholder={this.props.hint} onChange={this.editInput.bind(this)} />
+				<input style={inputStyle} value={this.state.content} placeholder={this.props.hint} onChange={this.editInput.bind(this)} />
         <span style={countStyle}>{this.state.count}/{this.state.length}</span>
 			</span>
 		)

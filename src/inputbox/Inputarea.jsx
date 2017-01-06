@@ -10,7 +10,6 @@ class Inputarea extends Component{
       content:this.props.content,
       count:parseInt(this.props.total)-this.props.content.length,
       length:parseInt(this.props.total),
-      name:this.props.name||"",
       restrict:this.props.restrict||"on"
 		};
 	}
@@ -49,7 +48,7 @@ class Inputarea extends Component{
     }
 		return(
 			<span style={spanStyle}>
-				<textarea name={this.state.name} style={inputStyle} placeholder={this.props.hint} value={this.state.content} onChange={this.editInput.bind(this)} />
+				<textarea style={inputStyle} placeholder={this.props.hint} value={this.state.content} onChange={this.editInput.bind(this)} />
         <span style={countStyle}>{this.state.count}/{this.state.length}</span>
 			</span>
 		)

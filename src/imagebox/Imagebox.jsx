@@ -36,7 +36,7 @@ class Imagebox extends Component{
       margin:"10px auto",
       borderBottom:"5px solid orange"
     };
-    let className = this.props.className;
+    let idname = this.props.id;
     let imageStyle = {
       display:"block",
       width: "100%"
@@ -80,7 +80,7 @@ class Imagebox extends Component{
       }
     }
 		return(
-			<span className={className} style={spanStyle}>
+			<span id={idname} style={spanStyle}>
         {mainImage}
         <div style={containerStyle}>
           {icons}
