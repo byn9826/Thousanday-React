@@ -40,7 +40,7 @@ let randomContent = ["Slogan 1", "Slogan 2", "Slogan 3"];
 		<td>Example</td>
 	</tr>
 	<tr>
-		<td>random</td>
+		<td>content</td>
 		<td>Mandatory. Provie list of content you want to show randomly.</td>
 		<td>null</td>
 		<td>["123", "234", "345"]</td>
