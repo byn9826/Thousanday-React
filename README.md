@@ -1,19 +1,64 @@
 # React-Thousanday
 This is a npm package of React UI components used in Thousanday Project, will update step by step.
+
+
 ##1. Install
 ```
 npm install thousanday-react --save
 ```
+
+
 ##2. Components List
+[Random](#random)<br />
 [Rating Stars](#rate)<br />
 [Upvote it](#upvote)<br />
 [Inputbox character count](#inputbox)<br />
 [Imagebox](#imagebox)<br />
-[Random](#random)<br />
 [Droplist](#droplist)<br />
 [Upsertlist](#upsertlist)<br />
 [Progress](#progress)<br />
 [Editit](#editit)<br />
+
+
+##<a name="random">Random</a>
+Output one random contents from a list of content you provided inside a designated html tag.<br/>
+![Random](https://raw.githubusercontent.com/byn9826/ReactUI-Thousanday/master/~pic/5.JPG)<br/>
+[Example](http://www.thousanday.com/react#random)<br/>
+```
+import {Random} from 'thousanday-react';
+```
+```
+let randomContent = ["Slogan 1", "Slogan 2", "Slogan 3"];
+...
+<Random random={randomContent} font="h3" />
+```
+<table>
+	<tr>
+		<td>Params</td>
+		<td>Usage</td>
+		<td>Default</td>
+		<td>Example</td>
+	</tr>
+	<tr>
+		<td>random</td>
+		<td>Mandatory. Provie list of content you want to show randomly.</td>
+		<td>null</td>
+		<td>["123", "234", "345"]</td>
+	</tr>
+	<tr>
+		<td>font</td>
+		<td>Mandatory. Provide a tag name to hold the output.</td>
+		<td>null</td>
+		<td>"h3"</td>
+	</tr>
+	<tr>
+		<td>style</td>
+		<td>Optional. Define a style name could be used to styling this component.</td>
+		<td>null</td>
+		<td>"randomStyle"</td>
+	</tr>
+</table>
+
 
 ##<a name="rate">3. Rating Stars</a>
 React Component used to create rating stars for users to click.<br/>
@@ -320,44 +365,7 @@ let imgs = [
 Notice:Must define give each img different alt. The maximum number of images is 5.
 
 
-##<a name="random">7. Random</a>
-React component used to output a random content<br/>
-![Random](https://raw.githubusercontent.com/byn9826/ReactUI-Thousanday/master/~pic/5.JPG)<br/>
-[Example](http://www.thousanday.com/react#random)<br/>
-```
-import {Random} from 'thousanday-react';
-```
-```
-let randomContent = ["Slogan 1","Slogan 2","Slogan 3"];
-...
-<Random random={randomContent} font="h3" id="header-slogan" />
-```
-<table>
-	<tr>
-		<td>Params</td>
-		<td>Usage</td>
-		<td>Default</td>
-		<td>Example</td>
-	</tr>
-	<tr>
-		<td>random</td>
-		<td>Mandatory. Provie list of content you want to show randomly.</td>
-		<td>null</td>
-		<td>["123","234","345"]</td>
-	</tr>
-	<tr>
-		<td>font</td>
-		<td>Mandatory. Provide a h tag name you want the random content to be</td>
-		<td>null</td>
-		<td>"h3"</td>
-	</tr>
-	<tr>
-		<td>id</td>
-		<td>Optional. Use this id to style container of this component by CSS</td>
-		<td>null</td>
-		<td>"header-random"</td>
-	</tr>
-</table>
+
 
 
 ##<a name="droplist">8. Droplist</a>
