@@ -10,7 +10,7 @@ npm install thousanday-react --save
 
 ##2. Components List
 [Random](#random)<br />
-[Rating Stars](#rate)<br />
+[Rate](#rate)<br />
 [Upvote it](#upvote)<br />
 [Inputbox character count](#inputbox)<br />
 [Imagebox](#imagebox)<br />
@@ -60,15 +60,15 @@ let randomContent = ["Slogan 1", "Slogan 2", "Slogan 3"];
 </table>
 
 
-##<a name="rate">3. Rating Stars</a>
-React Component used to create rating stars for users to click.<br/>
+##<a name="rate">Rate</a>
+Display or Receive rate from users<br/>
 ![Rating](https://raw.githubusercontent.com/byn9826/ReactUI-Thousanday/master/~pic/1.PNG)<br/>
 [Example](http://www.thousanday.com/react#rate)<br/>
 ```
 import {Rate} from 'thousanday-react';
 ```
 ```
-<Rate rate="3" length="5" change="yes" rateChange={this.rateChange.bind(this)} />
+<Rate rate="3" max="5" interact="true" rateChange={this.rateChange.bind(this)} />
 ```
 <table>
 	<tr>
@@ -91,9 +91,9 @@ import {Rate} from 'thousanday-react';
 	</tr>
 	<tr>
 		<td>change</td>
-		<td>Optinal. If current user could change the defaut rates</td>
-		<td>"no"</td>
-		<td>"yes"</td>
+		<td>Optinal. If current user are allowed to change the defaut rate</td>
+		<td>false</td>
+		<td>"true"</td>
 	</tr>
 	<tr>
 		<td>font</td>
@@ -108,22 +108,16 @@ import {Rate} from 'thousanday-react';
 		<td>"black"</td>
 	</tr>
 	<tr>
-		<td>className</td>
-		<td>Optinal. Use this className to style this components in CSS</td>
-		<td>null</td>
-		<td>"rates"</td>
-	</tr>
-	<tr>
 		<td>rateChange</td>
 		<td>Optinal. Bind with a function to receive new rate from users</td>
 		<td></td>
 		<td>{this.rateChange.bind(this)}</td>
 	</tr>
 </table>
-###<b>3.1 Get new rate from users</b>
-You should bind ratechange params with a function, and define change params as "yes" first:
+###<b>3.1 Get new rate from user</b>
+You should bind ratechange params with a function, and define interact params as "true" first:
 ```
-<Rate rate={this.state.currentRate} length="5" change="yes" rateChange={this.rateChange.bind(this)}/>
+<Rate rate={this.state.currentRate} max="5" interact="true" rateChange={this.rateChange.bind(this)}/>
 ```
 Then you should create a rateChange function to deal with new rate:
 ```
