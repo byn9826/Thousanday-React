@@ -84,13 +84,13 @@ import {Rate} from 'thousanday-react';
 		<td>"4"</td>
 	</tr>
 	<tr>
-		<td>length</td>
+		<td>max</td>
 		<td>Mandatory. Define the maximum number of stars</td>
 		<td>"5"</td>
 		<td>"6"</td>
 	</tr>
 	<tr>
-		<td>change</td>
+		<td>interact</td>
 		<td>Optinal. If current user are allowed to change the defaut rate</td>
 		<td>false</td>
 		<td>"true"</td>
