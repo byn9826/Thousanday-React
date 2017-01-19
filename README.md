@@ -131,7 +131,7 @@ rateChange(rateNum){
 
 ##<a name="inputarea">Inputarea</a>
 Create textarea with characters counter<br />
-![Inputbox](https://raw.githubusercontent.com/byn9826/ReactUI-Thousanday/master/~pic/3.JPG)<br />
+![Inputbox](https://raw.githubusercontent.com/byn9826/ReactUI-Thousanday/master/~pic/11.JPG)<br />
 [Simple Example](http://www.thousanday.com/react#inputarea)<br />
 ```
 import {Inputarea} from 'thousanday-react';
