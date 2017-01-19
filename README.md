@@ -79,7 +79,7 @@ import {Rate} from 'thousanday-react';
 	</tr>
 	<tr>
 		<td>rate</td>
-		<td>Mandatory. Define the default rates.</td>
+		<td>Mandatory. Define the default rates. Define it as 0 for no initial rate.</td>
 		<td>null</td>
 		<td>"4"</td>
 	</tr>
@@ -114,7 +114,7 @@ import {Rate} from 'thousanday-react';
 		<td>{this.rateChange.bind(this)}</td>
 	</tr>
 </table>
-###<b>3.1 Get new rate from user</b>
+###<b>Get new rate from user</b>
 You should bind ratechange params with a function, and define interact params as "true" first:
 ```
 <Rate rate={this.state.currentRate} max="5" interact="true" rateChange={this.rateChange.bind(this)}/>
