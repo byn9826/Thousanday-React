@@ -137,7 +137,7 @@ Create textarea with characters counter<br />
 import {Inputarea} from 'thousanday-react';
 ```
 ```
-<Inputarea content="Inital content here" total="300" height="150px"/>
+<Inputarea content="Inital content here" max="300" />
 ```
 <table>
 	<tr>
@@ -173,7 +173,7 @@ import {Inputarea} from 'thousanday-react';
 	<tr>
 		<td>height</td>
 		<td>Optional. Define the height of this component</td>
-		<td>"20px", auto for inputarea</td>
+		<td>"50px"</td>
 		<td>"30px"</td>
 	</tr>
 	<tr>
