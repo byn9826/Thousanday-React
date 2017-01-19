@@ -11,6 +11,7 @@ npm install thousanday-react --save
 ##2. Components List
 [Random](#random)<br />
 [Rate](#rate)<br />
+[Inputbox](#inputbox)<br />
 [Inputarea](#inputarea)<br />
 
 
