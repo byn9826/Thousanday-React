@@ -312,7 +312,7 @@ import {Vote} from 'thousanday-react';
 	</tr>
 	<tr>
 		<td>Choice</td>
-		<td>Mandatory for collecting vote. Initial user's choice. 0 for no, 1 for yes, 2 for no choice before</td>
+		<td>Mandatory for collecting vote. Initial user's choice. 0 for no, 1 for yes, 2 for no choice before.</td>
 		<td>"1"</td>
 		<td>"2"</td>
 	</tr>
