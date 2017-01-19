@@ -128,6 +128,75 @@ rateChange(rateNum){
 ```
 
 
+##<a name="inputarea">Inputarea</a>
+Create textarea with characters counter<br />
+![Inputbox](https://raw.githubusercontent.com/byn9826/ReactUI-Thousanday/master/~pic/3.JPG)<br />
+[Simple Example](http://www.thousanday.com/react#inputarea)<br />
+```
+import {Inputarea} from 'thousanday-react';
+```
+```
+<Inputarea content="Inital content here" total="300" height="150px"/>
+```
+<table>
+	<tr>
+		<td>Params</td>
+		<td>Usage</td>
+		<td>Default</td>
+		<td>Example</td>
+	</tr>
+	<tr>
+		<td>content</td>
+		<td>Mandatory. Define the content show in the input. Inital Empty one by ""</td>
+		<td>null</td>
+		<td>"Initial content"</td>
+	</tr>
+	<tr>
+		<td>max</td>
+		<td>Mandatory. Define the maximun number of characters users could input</td>
+		<td>Must Define it</td>
+		<td>"50"</td>
+	</tr>
+	<tr>
+		<td>font</td>
+		<td>Optional. Define the font size of the input</td>
+		<td>"13px"</td>
+		<td>"15px"</td>
+	</tr>
+	<tr>
+		<td>width</td>
+		<td>Optional. Define the width of this component</td>
+		<td>"100%"</td>
+		<td>"150px"</td>
+	</tr>
+	<tr>
+		<td>height</td>
+		<td>Optional. Define the height of this component</td>
+		<td>"20px", auto for inputarea</td>
+		<td>"30px"</td>
+	</tr>
+	<tr>
+		<td>border</td>
+		<td>Optional. Define the border style</td>
+		<td>"1px solid #1d4077"</td>
+		<td>"1px dashed black"</td>
+	</tr>
+</table>
+###<b>Get new input from users</b>
+If you want to get the new input from users, you show define the ref params for this component first:
+```
+<Inputarea ref="newInput" content="" max="150" />
+```
+Then you could get the new input by use this.refs.newInput.state.content inside functions:
+```
+submitInput(){
+    console.log(this.refs.newInput.state.content);//this is users new input
+}
+...
+<button onClick={this.submitInput.bind(this)} />
+```
+
+
 ##<a name="upvote">4. Upvote it</a>
 React component let users to upvote something.
 ![Upvote](https://raw.githubusercontent.com/byn9826/ReactUI-Thousanday/master/~pic/2.PNG)<br />
