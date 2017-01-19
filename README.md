@@ -13,6 +13,7 @@ npm install thousanday-react --save
 [Rate](#rate)<br />
 [Inputbox](#inputbox)<br />
 [Inputarea](#inputarea)<br />
+[Vote](#vote)<br />
 
 
 ##<a name="random">Random</a>
@@ -258,6 +259,88 @@ submitInput(){
 }
 ...
 <button onClick={this.submitInput.bind(this)} />
+```
+
+
+##<a name="vote">Vote</a>
+Display or Receive vote from users<br/>
+![Vote](https://raw.githubusercontent.com/byn9826/ReactUI-Thousanday/master/~pic/13.PNG)<br/>
+[Example](http://www.thousanday.com/react#vote)<br/>
+```
+import {Vote} from 'thousanday-react';
+```
+```
+<Vote left = "Agree" right = "Disagree" agree = "100" disagree = "60" />
+<Vote left = "Good" right = "Bad" interact = "true" choice = {this.state.choice} newChoice = {this.newChoice.bind(this)} />
+```
+<table>
+	<tr>
+		<td>Params</td>
+		<td>Usage</td>
+		<td>Default</td>
+		<td>Example</td>
+	</tr>
+	<tr>
+		<td>Left</td>
+		<td>Mandatory. Words stand for your yes answer, show on left side.</td>
+		<td>"Agree"</td>
+		<td>"Good"</td>
+	</tr>
+	<tr>
+		<td>Right</td>
+		<td>Mandatory. Words stand for your no answer, show on right side.</td>
+		<td>"Disagree"</td>
+		<td>"Bad"</td>
+	</tr>
+	<tr>
+		<td>agree</td>
+		<td>Optinal. Define the number show on left for vote display</td>
+		<td>0</td>
+		<td>"100"</td>
+	</tr>
+	<tr>
+		<td>disagree</td>
+		<td>Optional. Define the number show on the right for vote display</td>
+		<td>0</td>
+		<td>"60"</td>
+	</tr>
+	<tr>
+		<td>Interact</td>
+		<td>Mandatory for collecting vote. No use for display vote</td>
+		<td>"true"</td>
+		<td>"false"</td>
+	</tr>
+	<tr>
+		<td>Choice</td>
+		<td>Mandatory for collecting vote. Initial user's choice. 0 for no, 1 for yes, 2 for no choice before</td>
+		<td>"1"</td>
+		<td>"2"</td>
+	</tr>
+	<tr>
+		<td>newChoice</td>
+		<td>Optinal. Bind with a function to show new choice from users</td>
+		<td></td>
+		<td>{this.newChoice.bind(this)}</td>
+	</tr>
+</table>
+###<b>Show new vote</b>
+If you just want to display a vote, just define left, right, agree, disagree
+```
+<Vote left = "Agree" right = "Disagree" agree = "100" disagree = "60" />
+```
+###<b>Receive vote from users</b>
+You should define interact, choice, newChoice for receive vote
+```
+this.state = {choice: "2"};
+...
+<Vote left = "Good" right = "Bad" interact = "true" choice = {this.state.choice} newChoice = {this.newChoice.bind(this)} />
+```
+Then you can get user's choice by a newChoice function
+```
+newChoice(newNum) {
+    this.setState({userVote: newNum});
+}
+//this.state.choice would be 0 if user choose no, 1 for yes, 2 for no choice
 ```
 
 
