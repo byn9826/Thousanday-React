@@ -264,7 +264,7 @@ submitInput(){
 
 ##<a name="vote">Vote</a>
 Display or Receive vote from users<br/>
-![Vote](https://raw.githubusercontent.com/byn9826/ReactUI-Thousanday/master/~pic/13.PNG)<br/>
+![Vote](https://raw.githubusercontent.com/byn9826/ReactUI-Thousanday/master/~pic/13.JPG)<br/>
 [Example](http://www.thousanday.com/react#vote)<br/>
 ```
 import {Vote} from 'thousanday-react';
