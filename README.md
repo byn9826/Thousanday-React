@@ -356,7 +356,7 @@ import {AddtoList} from 'thousanday-react';
 let options = ["list 1", "list 2", "list 3"];
 let choice = [0, 1, 0];
 ...
-<AddtoList ref="usersChoice" title="Add to your lists:" content={options} choice={choice} />
+<AddtoList content={options} choice={choice} />
 ```
 <table>
 	<tr>
@@ -370,6 +370,12 @@ let choice = [0, 1, 0];
 		<td>Mandatory. Provie a list of options.</td>
 		<td>null</td>
 		<td>["option 1", "option 2", "option 3"]</td>
+	</tr>
+	<tr>
+		<td>title</td>
+		<td>Optional. Provie a title for all the options.</td>
+		<td>null</td>
+		<td>"Please choose some options:</td>
 	</tr>
 	<tr>
 		<td>choice</td>
@@ -393,6 +399,6 @@ submitPlan() {
 <AddtoList ref="planChoice" title="Add to your plans:" content={this.state.plan} />
 <button onClick={this.submitPlan.bind(this)}>submit</button>
 ```
-
+You will get an array like [0,1,1,0] or similar to [null,null,1,0], null and 0 means options in the same order has not been selected. 1 means options in the same order has been selected.
 ##License
 MIT
