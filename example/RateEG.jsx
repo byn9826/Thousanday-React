@@ -12,7 +12,7 @@ class RateEG extends Component {
     }
     render() {
         return (
-            <section className = "example">
+            <section id = "rate" className = "example">
                 <header className = "example-header">
                     <h2>Rate</h2>
                     <h3>Component used to display and receive rate from users</h3>
@@ -27,7 +27,7 @@ class RateEG extends Component {
                     <a href="https://github.com/byn9826/Thousanday-React#rate" target="__blank">Check docs</a>
                 </h4>
             </section>
-        )
+        );
     }
-}
+};
 export default RateEG;

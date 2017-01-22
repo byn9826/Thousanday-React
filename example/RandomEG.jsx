@@ -9,7 +9,7 @@ class RandomEG extends Component {
             "Random output 4th in list"
         ];
         return (
-            <section className = "example">
+            <section id = "random" className = "example">
                 <header className = "example-header">
                     <h2>Random</h2>
                     <h3>Component used to show random contents</h3>
@@ -22,7 +22,7 @@ class RandomEG extends Component {
                     <a href = "https://github.com/byn9826/Thousanday-React#random" target = "__blank">Check docs</a>
                 </h4>
             </section>
-        )
+        );
     }
-}
+};
 export default RandomEG;
