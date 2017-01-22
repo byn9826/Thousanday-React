@@ -1,6 +1,5 @@
 # React-Thousanday
-This is a npm package of React UI components used in Thousanday Project, will update step by step.
-
+React UI components used in Thousanday Project, will update weekly.
 
 ##1. Install
 ```
