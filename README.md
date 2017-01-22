@@ -14,6 +14,7 @@ npm install thousanday-react --save
 [Inputbox](#inputbox)<br />
 [Inputarea](#inputarea)<br />
 [Vote](#vote)<br />
+[AddtoList](#addtolist)<br />
 
 
 ##<a name="random">Random</a>
@@ -343,6 +344,55 @@ newChoice(newNum) {
 //this.state.choice would be 0 if user choose no, 1 for yes, 2 for no choice
 ```
 
+
+##<a name="addtolist">AddtoList</a>
+Show a list of options for users to select(multi).<br/>
+![AddtoList](https://raw.githubusercontent.com/byn9826/ReactUI-Thousanday/master/~pic/14.JPG)<br/>
+[Example](http://www.thousanday.com/react#addtolist)<br/>
+```
+import {AddtoList} from 'thousanday-react';
+```
+```
+let options = ["list 1", "list 2", "list 3"];
+let choice = [0, 1, 0];
+...
+<AddtoList ref="usersChoice" title="Add to your lists:" content={options} choice={choice} />
+```
+<table>
+	<tr>
+		<td>Params</td>
+		<td>Usage</td>
+		<td>Default</td>
+		<td>Example</td>
+	</tr>
+	<tr>
+		<td>content</td>
+		<td>Mandatory. Provie a list of options.</td>
+		<td>null</td>
+		<td>["option 1", "option 2", "option 3"]</td>
+	</tr>
+	<tr>
+		<td>choice</td>
+		<td>Optional. Use a list to stand for inital choice status. 0,null for not selected. 1 for selected</td>
+		<td>all not selected</td>
+		<td>[0,1,1,0]</td>
+	</tr>
+	<tr>
+		<td>width</td>
+		<td>Optional. Define the width of the component.</td>
+		<td>"100%"</td>
+		<td>"200px"</td>
+	</tr>
+</table>
+### Receive users choices
+If users have selected several options, you could know the result by refs inside function
+```
+submitPlan() {
+  console.log(this.refs.planChoice.state.choice);
+}
+<AddtoList ref="planChoice" title="Add to your plans:" content={this.state.plan} />
+<button onClick={this.submitPlan.bind(this)}>submit</button>
+```
 
 ##License
 MIT
