@@ -14,6 +14,7 @@ npm install thousanday-react --save
 [Inputarea](#inputarea)<br />
 [Vote](#vote)<br />
 [AddtoList](#addtolist)<br />
+[Like](#like)<br />
 
 
 ##<a name="random">Random</a>
@@ -399,5 +400,44 @@ submitPlan() {
 <button onClick={this.submitPlan.bind(this)}>submit</button>
 ```
 You will get an array like [0,1,1,0] or similar to [null,null,1,0], null and 0 means options in the same order has not been selected. 1 means options in the same order has been selected.
+
+
+##<a name="like">Like</a>
+Show and receive likes from users.<br/>
+![Like](https://raw.githubusercontent.com/byn9826/ReactUI-Thousanday/master/~pic/15.JPG)<br/>
+[Example](http://www.thousanday.com/react#like)<br/>
+```
+import {Like} from 'thousanday-react';
+```
+```
+updateLike(change) {
+  let like = this.state.like;
+  this.setState({like: like + change});
+}
+...
+<Like agree={this.state.like} newTotal={this.updateLike.bind(this)}/>
+```
+<table>
+	<tr>
+		<td>Params</td>
+		<td>Usage</td>
+		<td>Default</td>
+		<td>Example</td>
+	</tr>
+	<tr>
+		<td>agree</td>
+		<td>Mandatory. Initial total likes.</td>
+		<td>null</td>
+		<td>"0"</td>
+	</tr>
+	<tr>
+		<td>newTotal</td>
+		<td>Mandatory. Update new total after users clicked the like button</td>
+		<td></td>
+		<td>{this.updateLike.bind(this)}</td>
+	</tr>
+</table>
+
+
 ##License
 MIT
