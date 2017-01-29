@@ -1,5 +1,5 @@
 # React-Thousanday
-React UI components used in Thousanday Project, will update weekly.
+A list of React UI components, will update step by step.
 
 ##1. Install
 ```
@@ -19,7 +19,7 @@ npm install thousanday-react --save
 
 ##<a name="random">Random</a>
 Output one random contents from a list of content you provided inside a designated html tag.<br/>
-![Random](https://raw.githubusercontent.com/byn9826/ReactUI-Thousanday/master/~pic/5.JPG)<br/>
+![Random](https://raw.githubusercontent.com/byn9826/ReactUI-Thousanday/master/~markdown/random.JPG)<br/>
 [Example](http://www.thousanday.com/react#random)<br/>
 ```
 import {Random} from 'thousanday-react';
@@ -59,7 +59,7 @@ let randomContent = ["Slogan 1", "Slogan 2", "Slogan 3"];
 
 ##<a name="rate">Rate</a>
 Display or Receive rate from users<br/>
-![Rating](https://raw.githubusercontent.com/byn9826/ReactUI-Thousanday/master/~pic/1.PNG)<br/>
+![Rating](https://raw.githubusercontent.com/byn9826/ReactUI-Thousanday/master/~markdown/rate.PNG)<br/>
 [Example](http://www.thousanday.com/react#rate)<br/>
 ```
 import {Rate} from 'thousanday-react';
@@ -127,7 +127,7 @@ rateChange(rateNum){
 
 ##<a name="inputbox">Inputbox</a>
 Create text input with characters counter<br />
-![Inputbox](https://raw.githubusercontent.com/byn9826/ReactUI-Thousanday/master/~pic/12.JPG)<br />
+![Inputbox](https://raw.githubusercontent.com/byn9826/ReactUI-Thousanday/master/~markdown/input.JPG)<br />
 [Simple Example](http://www.thousanday.com/react#inputbox)<br />
 ```
 import {Inputbox} from 'thousanday-react';
@@ -196,7 +196,7 @@ submitInput(){
 
 ##<a name="inputarea">Inputarea</a>
 Create textarea with characters counter<br />
-![Inputbox](https://raw.githubusercontent.com/byn9826/ReactUI-Thousanday/master/~pic/11.JPG)<br />
+![Inputbox](https://raw.githubusercontent.com/byn9826/ReactUI-Thousanday/master/~markdown/inputarea.JPG)<br />
 [Simple Example](http://www.thousanday.com/react#inputarea)<br />
 ```
 import {Inputarea} from 'thousanday-react';
@@ -265,7 +265,7 @@ submitInput(){
 
 ##<a name="vote">Vote</a>
 Display or Receive vote from users<br/>
-![Vote](https://raw.githubusercontent.com/byn9826/ReactUI-Thousanday/master/~pic/13.JPG)<br/>
+![Vote](https://raw.githubusercontent.com/byn9826/ReactUI-Thousanday/master/~markdown/vote.JPG)<br/>
 [Example](http://www.thousanday.com/react#vote)<br/>
 ```
 import {Vote} from 'thousanday-react';
@@ -347,7 +347,7 @@ newChoice(newNum) {
 
 ##<a name="addtolist">AddtoList</a>
 Show a list of options for users to select(multi).<br/>
-![AddtoList](https://raw.githubusercontent.com/byn9826/ReactUI-Thousanday/master/~pic/14.JPG)<br/>
+![AddtoList](https://raw.githubusercontent.com/byn9826/ReactUI-Thousanday/master/~markdown/addtolist.JPG)<br/>
 [Example](http://www.thousanday.com/react#addtolist)<br/>
 ```
 import {AddtoList} from 'thousanday-react';
@@ -404,7 +404,7 @@ You will get an array like [0,1,1,0] or similar to [null,null,1,0], null and 0 m
 
 ##<a name="like">Like</a>
 Show and receive likes from users.<br/>
-![Like](https://raw.githubusercontent.com/byn9826/ReactUI-Thousanday/master/~pic/15.JPG)<br/>
+![Like](https://raw.githubusercontent.com/byn9826/ReactUI-Thousanday/master/~markdown/like.JPG)<br/>
 [Example](http://www.thousanday.com/react#like)<br/>
 ```
 import {Like} from 'thousanday-react';
