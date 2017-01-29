@@ -127,7 +127,7 @@ rateChange(rateNum){
 
 ##<a name="inputbox">Inputbox</a>
 Create text input with characters counter<br />
-![Inputbox](https://raw.githubusercontent.com/byn9826/ReactUI-Thousanday/master/~markdown/input.JPG)<br />
+![Inputbox](https://raw.githubusercontent.com/byn9826/ReactUI-Thousanday/master/~markdown/inputbox.JPG)<br />
 [Simple Example](http://www.thousanday.com/react#inputbox)<br />
 ```
 import {Inputbox} from 'thousanday-react';
