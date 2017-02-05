@@ -24,6 +24,15 @@ var _AddtoList = require('./lib/list/AddtoList.js');
 
 var _AddtoList2 = _interopRequireDefault(_AddtoList);
 
+var _Like = require('./lib/attitude/Like.js');
+
+var _Like2 = _interopRequireDefault(_Like);
+
+var _Progress = require('./lib/display/Progress.js');
+
+var _Progress2 = _interopRequireDefault(_Progress);
+
+
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 module.exports = {
@@ -32,5 +41,7 @@ module.exports = {
 	Inputarea: _Inputarea2.default,
 	Inputbox: _Inputbox2.default,
 	Vote: _Vote2.default,
-	AddtoList: _AddtoList2.default
+	AddtoList: _AddtoList2.default,
+	Like: _Like2.default,
+	Progress: _Progress2.default
 };

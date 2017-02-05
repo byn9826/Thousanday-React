@@ -15,6 +15,7 @@ npm install thousanday-react --save
 [Vote](#vote)<br />
 [AddtoList](#addtolist)<br />
 [Like](#like)<br />
+[Progress](#progress)<br />
 
 
 ##<a name="random">Random</a>
@@ -435,6 +436,57 @@ updateLike(change) {
 		<td>Mandatory. Update new total after users clicked the like button</td>
 		<td></td>
 		<td>{this.updateLike.bind(this)}</td>
+	</tr>
+</table>
+
+
+##<a name="progress">Progress</a>
+Show a bar to display users' progress.<br/>
+![Progress](https://raw.githubusercontent.com/byn9826/ReactUI-Thousanday/master/~markdown/progress.JPG)<br/>
+[Example](http://www.thousanday.com/react#progress)<br/>
+```
+import {Progress} from 'thousanday-react';
+```
+```
+<Progress progress={this.state.progress} max="100" />
+<Progress progress={this.state.progress} max="100" percentage="false" />
+```
+<table>
+	<tr>
+		<td>Params</td>
+		<td>Usage</td>
+		<td>Default</td>
+		<td>Example</td>
+	</tr>
+	<tr>
+		<td>progress</td>
+		<td>Mandatory. Provie a number to stand for the default progress.</td>
+		<td>null</td>
+		<td>"20"</td>
+	</tr>
+	<tr>
+		<td>max</td>
+		<td>Mandatory. Provide a number to stand for the maximum progress.</td>
+		<td>null</td>
+		<td>"100"</td>
+	</tr>
+	<tr>
+		<td>percentage/td>
+		<td>Optional. Show the progress as percentage format or not.</td>
+		<td>true</td>
+		<td>"false"</td>
+	</tr>
+	<tr>
+		<td>height/td>
+		<td>Optional. Define the height of this component.</td>
+		<td>"18px"</td>
+		<td>"false"</td>
+	</tr>
+	<tr>
+		<td>width/td>
+		<td>Optional. Define the width of the component.</td>
+		<td>"100%"</td>
+		<td>"200px"</td>
 	</tr>
 </table>
 

@@ -3,7 +3,7 @@ class Like extends Component {
     constructor(props) {
         super(props);
 		this.state = {
-            liked: this.props.liked || false,
+            liked: this.props.liked || "false",
             hover: false
 		};
 	}
@@ -25,10 +25,19 @@ class Like extends Component {
         this.setState({hover: "flase"});
     }
     render() {
-        let heartStyle = {
+        let lightHeart = {
+            backgroundColor: "#f2aa98",
+            borderRadius: "3px",
+            padding: "1px 4px",
+            color: "white",
+            cursor: "pointer",
+            fontSize: "14px",
+            fontFamily: "Times New Roman"
+        };
+        let darkHeart = {
             backgroundColor: "#e51010",
             borderRadius: "3px",
-            padding: "1px 2%",
+            padding: "1px 4px",
             color: "white",
             cursor: "pointer",
             fontSize: "14px",
@@ -37,19 +46,21 @@ class Like extends Component {
         let numStyle = {
             fontFamily: "Times New Roman",
             fontSize: "16px",
-            marginLeft: "3%"
+            marginLeft: "5px"
         };
-        let heart, total;
-        if (this.state.liked == "true" && this.state.hover == "true" ) {
+        let heart;
+        if (this.state.liked == "true" || (this.state.liked == "false" && this.state.hover == "true")) {
             heart = (
-                <span style={heartStyle} onClick={this.clickLike.bind(this)} onMouseLeave={this.leaveHeart.bind(this)}>Liked</span>
+                <span style={darkHeart} onClick={this.clickLike.bind(this)} onMouseLeave={this.leaveHeart.bind(this)}>❤</span>
             );
         } else {
             heart = (
-                <span style={heartStyle} onClick={this.clickLike.bind(this)} onMouseEnter={this.enterHeart.bind(this)}>❤</span>
+                <span style={lightHeart} onClick={this.clickLike.bind(this)} onMouseEnter={this.enterHeart.bind(this)}>❤</span>
             );
-            total = (<span style={numStyle}>{this.props.agree}</span>);
+           
         }
+        let total;
+        total = (<span style={numStyle}>{this.props.agree}</span>);
 		return (
             <span>
                 {heart}
