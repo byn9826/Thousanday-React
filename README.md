@@ -471,19 +471,19 @@ import {Progress} from 'thousanday-react';
 		<td>"100"</td>
 	</tr>
 	<tr>
-		<td>percentage/td>
+		<td>percentage</td>
 		<td>Optional. Show the progress as percentage format or not.</td>
 		<td>true</td>
 		<td>"false"</td>
 	</tr>
 	<tr>
-		<td>height/td>
+		<td>height</td>
 		<td>Optional. Define the height of this component.</td>
 		<td>"18px"</td>
 		<td>"false"</td>
 	</tr>
 	<tr>
-		<td>width/td>
+		<td>width</td>
 		<td>Optional. Define the width of the component.</td>
 		<td>"100%"</td>
 		<td>"200px"</td>
