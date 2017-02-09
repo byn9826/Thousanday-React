@@ -4,7 +4,7 @@ class Like extends Component {
         super(props);
 		this.state = {
             liked: this.props.liked || "false",
-            hover: false
+            hover: "false"
 		};
 	}
     clickLike() {
@@ -57,7 +57,6 @@ class Like extends Component {
             heart = (
                 <span style={lightHeart} onClick={this.clickLike.bind(this)} onMouseEnter={this.enterHeart.bind(this)}>❤</span>
             );
-           
         }
         let total;
         total = (<span style={numStyle}>{this.props.agree}</span>);

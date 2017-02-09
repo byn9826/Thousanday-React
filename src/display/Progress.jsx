@@ -15,7 +15,7 @@ class Progress extends Component {
             lineHeight: this.state.height,
             padding: "0",
             textAlign: "center",
-            verticleAlign: "middle",
+            verticalAlign: "middle",
             fontFamily: "Times New Roman",
             fontSize: "9px",
             backgroundColor: "#f7f8f9",
