@@ -1,6 +1,6 @@
 {
   "name": "thousanday-react",
-  "version": "0.6.9",
+  "version": "0.7.0",
   "author": "Baozier",
   "email": "byn9826@gmail.com",
   "description": "A list of React UI Components",
@@ -23,6 +23,10 @@
     "babel-cli": "^6.18.0",
     "babel-preset-es2015": "^6.16.0",
     "babel-preset-react": "^6.16.0"
-  }
+  },
+  "bugs": {
+    "url": "https://github.com/byn9826/Thousanday-React/issues"
+  },
+  "homepage": "https://github.com/byn9826/Thousanday-React#readme"
 }
   

@@ -32,6 +32,9 @@ var _Progress = require('./lib/display/Progress.js');
 
 var _Progress2 = _interopRequireDefault(_Progress);
 
+var _Waterfall = require('./lib/display/Waterfall.js');
+
+var _Waterfall2 = _interopRequireDefault(_Waterfall);
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
@@ -43,5 +46,6 @@ module.exports = {
 	Vote: _Vote2.default,
 	AddtoList: _AddtoList2.default,
 	Like: _Like2.default,
-	Progress: _Progress2.default
+	Progress: _Progress2.default,
+	Waterfall: _Waterfall2.default
 };

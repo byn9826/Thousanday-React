@@ -10,6 +10,7 @@ npm install thousanday-react --save
 ##2. Components List
 [Random](#random)<br />
 [Rate](#rate)<br />
+[Waterfall](#waterfall)<br/>
 [Inputbox](#inputbox)<br />
 [Inputarea](#inputarea)<br />
 [Vote](#vote)<br />
@@ -124,6 +125,71 @@ rateChange(rateNum){
     this.setState({currentRate:rateNum});
 }
 ```
+
+##<a name="waterfall">Waterfall</a>
+Responsive and Interactive Pinterest Like Image Gallery by React.<br/>
+![Waterfall](https://raw.githubusercontent.com/byn9826/ReactUI-Thousanday/master/~markdown/waterfall.JPG)<br/>
+[Example](http://www.thousanday.com/react#waterfall)<br/>
+```
+import {Waterfall} from 'thousanday-react';
+```
+```
+let images = [
+    ["url/0.jpg", "message0"],
+    ["url/1.jpg", "message1"],
+    ["url/2.jpg", "message2"],
+    ["url/3.jpg", "message3"],
+    ["url/4.jpg", "message4"],
+    ["url/5.jpg", "message5"],
+    ...
+];
+...
+clickNumber(index) {
+    console.log(index);//index is the index number (in images array) of the image which has been clicked by user
+}
+...
+<Waterfall column="3" image={images} />// if you don't need a return when users click on images
+<Waterfall column="5" image={images} clickNumber={this.clickNumber.bind(this)} />
+```
+
+<table>
+	<tr>
+		<td>Params</td>
+		<td>Usage</td>
+		<td>Default</td>
+		<td>Example</td>
+	</tr>
+	<tr>
+		<td>image</td>
+		<td>Mandatory. Provie an array contains url and message of all the images you want to show.</td>
+		<td>null</td>
+		<td>[
+				["url/0.jpg", "message0"],
+				["url/1.jpg", "message1"],
+				["url/2.jpg", "message2"],
+				...
+			]
+		</td>
+	</tr>
+	<tr>
+		<td>column</td>
+		<td>Mandatory. Decide how many columns you want to images to display.</td>
+		<td>null</td>
+		<td>"3"</td>
+	</tr>
+	<tr>
+		<td>clickNumber</td>
+		<td>Optional. Create a function to get the index of the image has been clicked by users.</td>
+		<td>null</td>
+		<td>clickNumber={this.clickNumber.bind(this)}</td>
+	</tr>
+</table>
+###<b>All the features of this component</b>
+1. Passing all the image urls and messages you want to show above the image by an array, will automatically layout all the images by the number of columns you defined.
+2. Show messages above images when mouse over.
+3. All the images is responsive according to screen width and the messages above images is responsive too.
+4. Automatically balance the height of each column. Make all the columns balanced.
+5. Return the index number of the image in the image array if users click on it.
 
 
 ##<a name="inputbox">Inputbox</a>
