@@ -8,15 +8,15 @@ npm install thousanday-react --save
 
 
 ##2. Components List
-[Random](#random)<br />
-[Rate](#rate)<br />
-[Waterfall](#waterfall)<br/>
-[Inputbox](#inputbox)<br />
-[Inputarea](#inputarea)<br />
-[Vote](#vote)<br />
-[AddtoList](#addtolist)<br />
-[Like](#like)<br />
-[Progress](#progress)<br />
+[Random](#random): show random content from an array<br />
+[Rate](#rate): collect rating form users by stars<br />
+[Waterfall](#waterfall): responsive Pinterest Image Gallery<br/>
+[Inputbox](#inputbox): text input with characters couting<br />
+[Inputarea](#inputarea): textarea with characters couting<br />
+[Vote](#vote): display/collect agree or disagree<br />
+[AddtoList](#addtolist): choose an option from a list<br />
+[Like](#like): show/collect like from users<br />
+[Progress](#progress): show/update the progress of something<br />
 
 
 ##<a name="random">Random</a>
