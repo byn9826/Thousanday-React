@@ -25,6 +25,10 @@ class Like extends Component {
         this.setState({hover: "flase"});
     }
     render() {
+        let containerStyle = {
+            display: "inline-block",
+            verticalAlign: "middle"
+        };
         let lightHeart = {
             backgroundColor: "#f2aa98",
             borderRadius: "3px",
@@ -32,7 +36,9 @@ class Like extends Component {
             color: "white",
             cursor: "pointer",
             fontSize: "14px",
-            fontFamily: "Times New Roman"
+            fontFamily: "Times New Roman",
+            display: "inline-block",
+            verticalAlign: "midde"
         };
         let darkHeart = {
             backgroundColor: "#e51010",
@@ -41,12 +47,16 @@ class Like extends Component {
             color: "white",
             cursor: "pointer",
             fontSize: "14px",
-            fontFamily: "Times New Roman"
+            fontFamily: "Times New Roman",
+            display: "inline-block",
+            verticalAlign: "midde"
         };
         let numStyle = {
             fontFamily: "Times New Roman",
             fontSize: "16px",
-            marginLeft: "5px"
+            marginLeft: "5px",
+            display: "inline-block",
+            verticalAlign: "middle"
         };
         let heart;
         if (this.state.liked == "true" || (this.state.liked == "false" && this.state.hover == "true")) {
@@ -61,7 +71,7 @@ class Like extends Component {
         let total;
         total = (<span style={numStyle}>{this.props.agree}</span>);
 		return (
-            <span>
+            <span style={containerStyle}>
                 {heart}
                 {total}
             </span>

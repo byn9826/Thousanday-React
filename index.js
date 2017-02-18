@@ -36,6 +36,10 @@ var _Waterfall = require('./lib/display/Waterfall.js');
 
 var _Waterfall2 = _interopRequireDefault(_Waterfall);
 
+var _Ovaledit = require('./lib/button/Ovaledit.js');
+
+var _Ovaledit2 = _interopRequireDefault(_Ovaledit);
+
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 module.exports = {
@@ -47,5 +51,6 @@ module.exports = {
 	AddtoList: _AddtoList2.default,
 	Like: _Like2.default,
 	Progress: _Progress2.default,
-	Waterfall: _Waterfall2.default
+	Waterfall: _Waterfall2.default,
+	Ovaledit: _Ovaledit2.default
 };

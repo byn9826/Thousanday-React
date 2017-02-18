@@ -12,6 +12,9 @@ class ProgressEG extends Component {
         this.setState({progress: current});
     }
     render() {
+        let buttonStyle = {
+            marginTop: "10px"
+        };
         return (
             <section id = "progress" className = "example">
                 <header className = "example-header">
@@ -22,7 +25,7 @@ class ProgressEG extends Component {
                 <Progress progress="50" max="100" percentage="false" width="50%" />
                 <h4>Show progress by percentage:</h4>
                 <Progress progress={this.state.progress} max="100" width="50%" /> <br/>
-                <input type="button" value="Complete 20%" onClick={this.changeProgress.bind(this)} />
+                <input style={buttonStyle} type="button" value="Complete 20%" onClick={this.changeProgress.bind(this)} />
                 <h4>
                     <a href = "https://github.com/byn9826/Thousanday-React#progress" target = "__blank">Check docs</a>
                 </h4>

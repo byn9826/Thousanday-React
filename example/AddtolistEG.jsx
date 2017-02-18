@@ -18,7 +18,7 @@ class AddtolistEG extends Component {
                 <h4>Choose from a list of options:</h4>
                 <AddtoList ref="yourChoice" title="Add to your lists:" content={options} choice={choice} />
                 <h4>
-                    <a href="https://github.com/byn9826/Thousanday-React#random" target="__blank">Check docs</a>
+                    <a href="https://github.com/byn9826/Thousanday-React#addtolist" target="__blank">Check docs</a>
                 </h4>
             </section>
         );

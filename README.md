@@ -17,6 +17,7 @@ npm install thousanday-react --save
 [AddtoList](#addtolist): choose an option from a list<br />
 [Like](#like): show/collect like from users<br />
 [Progress](#progress): show/update the progress of something<br />
+[Ovaledit](#ovaledit): React edit on hover<br />
 
 
 ##<a name="random">Random</a>
@@ -553,6 +554,40 @@ import {Progress} from 'thousanday-react';
 		<td>Optional. Define the width of the component.</td>
 		<td>"100%"</td>
 		<td>"200px"</td>
+	</tr>
+</table>
+
+
+##<a name="ovaledit">Ovaledit</a>
+Show an edit button react on hover and click<br/>
+![Ovaledit](https://raw.githubusercontent.com/byn9826/ReactUI-Thousanday/master/~markdown/ovaledit.JPG)<br/>
+[Example](http://www.thousanday.com/react#ovaledit)<br/>
+```
+import {Ovaledit} from 'thousanday-react';
+```
+```
+clickEdit(event) {}
+...
+<Ovaledit value="Edit" clickEdit={this.clickEdit.bind(this)} color="black" />
+```
+<table>
+	<tr>
+		<td>Params</td>
+		<td>Usage</td>
+		<td>Default</td>
+		<td>Example</td>
+	</tr>
+	<tr>
+		<td>value</td>
+		<td>Mandatory. Provie content to display.</td>
+		<td>null</td>
+		<td>"Edit"</td>
+	</tr>
+	<tr>
+		<td>color</td>
+		<td>Optional.Define the color and borderbottom.</td>
+		<td>"#ef8513"</td>
+		<td>"red"</td>
 	</tr>
 </table>
 

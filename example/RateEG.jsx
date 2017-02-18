@@ -29,5 +29,5 @@ class RateEG extends Component {
             </section>
         );
     }
-};
+}
 export default RateEG;
