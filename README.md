@@ -90,7 +90,7 @@ clickNumber(index) {
 
 ##<a name="updateprofile">Updateprofile</a>
 Update users profile as png format. #This component is depend on [react-avatar-editor](https://github.com/mosch/react-avatar-editor)<br/>
-![updateprofile](https://raw.githubusercontent.com/byn9826/ReactUI-Thousanday/master/~markdown/updateprofile.PNG)<br/>
+![updateprofile](https://raw.githubusercontent.com/byn9826/ReactUI-Thousanday/master/~markdown/updateprofile.JPG)<br/>
 [Example](http://www.thousanday.com/react#updateprofile)<br/>
 ```
 import {Updateprofile} from 'thousanday-react';
