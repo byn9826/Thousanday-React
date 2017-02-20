@@ -15,8 +15,11 @@ class RateEG extends Component {
             <section id = "rate" className = "example">
                 <header className = "example-header">
                     <h2>Rate</h2>
-                    <h3>Component used to display and receive rate from users</h3>
+                    <h3>Display and receive rate from users</h3>
                 </header>
+                <span className="example-span">
+                    {"<Rate rate='3' max='5' />"}
+                </span>
                 <h4>Rate for display only:</h4>
                 <Rate rate = "3" max = "5" />
                 <h4>User could change the rate:</h4>

@@ -15,8 +15,11 @@ class VoteEG extends Component {
             <section id = "vote" className = "example">
                 <header className = "example-header">
                     <h2>Vote</h2>
-                    <h3>Component used to show or collect users' vote</h3>
+                    <h3>Show or collect users' vote</h3>
                 </header>
+                <span className="example-span">
+                    {"<Vote left='Agree' right ='Disagree' agree='100' disagree='60' />"}
+                </span>
                 <h4>Vote for display only:</h4>
                 <Vote left = "Agree" right = "Disagree" agree = "100" disagree = "60" />
                 <h4>Try to vote here:</h4>

@@ -13,8 +13,11 @@ class AddtolistEG extends Component {
             <section id="addtolist" className="example">
                 <header className="example-header">
                     <h2>AddtoList</h2>
-                    <h3>Component used to show a list of options</h3>
+                    <h3>Show a list of options</h3>
                 </header>
+                <span className="example-span">
+                    {"<AddtoList title='Choose one:' content={options} choice={choice} />"}
+                </span>
                 <h4>Choose from a list of options:</h4>
                 <AddtoList ref="yourChoice" title="Add to your lists:" content={options} choice={choice} />
                 <h4>

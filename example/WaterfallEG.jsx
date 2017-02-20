@@ -18,22 +18,23 @@ class WaterfallEG extends Component {
             ["/img/pet/0/moment/3.jpg", "I'm sunflower"],
             ["/img/pet/0/moment/4.jpg", "Love the bed"],
             ["/img/pet/0/moment/5.jpg", "Just leave me alone"],
-            ["/img/pet/0/moment/0.jpg", "I'm a beauty guy with long legs"],
-            ["/img/pet/0/moment/1.jpg", "Boring, sleep"]
         ];
         return (
             <section id = "waterfall" className = "example">
                 <header className = "example-header">
                     <h2>Waterfall</h2>
-                    <h3>Responsive and interactive Pinterest Image Gallery</h3>
+                    <h3>Responsive Pinterest Style Image Gallery</h3>
                 </header>
                 <h4>
                     1. Automatically layout images based on columns you defined.<br />
                     2. Show messages about each image on mouse over<br />
                     3. Images and messages are all responsive based on screen width<br />
-                    4. Even the length of each columns automatically <br />
+                    4. Balance the height of each columns automatically <br />
                     5. Return the index of the images when users click on it
                 </h4>
+                <span className="example-span">
+                    {"<Waterfall column='3' image={images} />"}
+                </span>
                 <h4>Show Images by 3 columns. You clicked on the image with index of {this.state.click}</h4>
                 <Waterfall column="3" image={images} clickNumber={this.clickNumber.bind(this)} />
                 <h4>

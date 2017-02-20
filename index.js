@@ -40,6 +40,10 @@ var _Ovaledit = require('./lib/button/Ovaledit.js');
 
 var _Ovaledit2 = _interopRequireDefault(_Ovaledit);
 
+var _Updateprofile = require('./lib/button/Updateprofile.js');
+
+var _Updateprofile2 = _interopRequireDefault(_Updateprofile);
+
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 module.exports = {
@@ -52,5 +56,6 @@ module.exports = {
 	Like: _Like2.default,
 	Progress: _Progress2.default,
 	Waterfall: _Waterfall2.default,
-	Ovaledit: _Ovaledit2.default
+	Ovaledit: _Ovaledit2.default,
+	Updateprofile: _Updateprofile2.default
 };

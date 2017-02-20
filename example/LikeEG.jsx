@@ -16,8 +16,11 @@ class LikeEG extends Component {
             <section id = "like" className = "example">
                 <header className = "example-header">
                     <h2>Like</h2>
-                    <h3>Component used to collect likes from users</h3>
+                    <h3>Display and Collect likes from users</h3>
                 </header>
+                <span className="example-span">
+                    {"<Like agree='100' /> "}
+                </span>
                 <h4>If you like this components:</h4>
                 <Like agree={this.state.like} newTotal={this.updateLike.bind(this)}/>
                 <h4>

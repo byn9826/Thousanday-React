@@ -6,8 +6,11 @@ class InputareaEG extends Component {
             <section  id = "inputarea" className = "example">
                 <header className = "example-header">
                     <h2>Inputarea</h2>
-                    <h3>Component used to receive input and show character limits</h3>
+                    <h3>Show textarea and show character limits</h3>
                 </header>
+                <span className="example-span">
+                    {"<Inputarea content='' max='150' />"}
+                </span>
                 <h4>Show an Inputarea:</h4>
                 <Inputarea content = "Let's count the content" max = "150" />
                 <h4>

@@ -1,6 +1,6 @@
 {
   "name": "thousanday-react",
-  "version": "0.7.2",
+  "version": "0.7.3",
   "author": "Baozier",
   "email": "byn9826@gmail.com",
   "description": "A list of React UI Components",
@@ -17,6 +17,7 @@
   },
   "dependencies": {
     "react": "^15.3.2",
+    "react-avatar-editor": "^8.0.0",
     "react-dom": "^15.3.2"
   },
   "devDependencies": {
@@ -29,4 +30,3 @@
   },
   "homepage": "https://github.com/byn9826/Thousanday-React#readme"
 }
-  
