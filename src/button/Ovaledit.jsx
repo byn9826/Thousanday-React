@@ -46,11 +46,19 @@ class Ovaledit extends Component {
 	            padding: "0"
             };
         }
-		return (
-            <div style={containerStyle} onMouseEnter={this.mouseinEdit.bind(this)} onMouseLeave={this.mouseoutEdit.bind(this)} onClick={this.props.clickEdit.bind(null, 1)}>
-                {this.props.value}
-            </div>
-		);
+        let ovalButton;
+        if (this.props.href) {
+            ovalButton = 
+                <div style={containerStyle} onMouseEnter={this.mouseinEdit.bind(this)} onMouseLeave={this.mouseoutEdit.bind(this)} >
+                    <a href={this.props.href}>{this.props.value}</a>
+                </div>
+        } else {
+            ovalButton = 
+                <div style={containerStyle} onMouseEnter={this.mouseinEdit.bind(this)} onMouseLeave={this.mouseoutEdit.bind(this)} onClick={this.props.clickEdit.bind(null, 1)}>
+                    {this.props.value}
+                </div>
+        }
+		return ovalButton;
 	}
 }
 export default Ovaledit;

@@ -655,8 +655,20 @@ clickEdit(event) {}
 		<td>"#ef8513"</td>
 		<td>"red"</td>
 	</tr>
+	<tr>
+		<td>href</td>
+		<td>Optional.Go to other page when click.</td>
+		<td>"#ef8513"</td>
+		<td>"red"</td>
+	</tr>
+	<tr>
+		<td>clickEdit</td>
+		<td>Optional. Create a function to catach click events.</td>
+		<td></td>
+		<td></td>
+	</tr>
 </table>
-
+Can't use both href and clickEdit attri at the same time.
 
 ##License
 MIT
