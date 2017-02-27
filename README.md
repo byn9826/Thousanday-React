@@ -187,13 +187,13 @@ saveLocation(coordinate) {
 		<td>"1" (global level)</td>
 	</tr>
 	<tr>
-		<td>set</td>
+		<td>setZoom</td>
 		<td>Optional. The zoom level when user click save location</td>
 		<td>15</td>
 		<td>"10"</td>
 	</tr>
 	<tr>
-		<td>max</td>
+		<td>maxZoom</td>
 		<td>Optional. The maximum zoom level when user click + button</td>
 		<td>15</td>
 		<td>"17"</td>
