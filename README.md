@@ -11,6 +11,7 @@ npm install thousanday-react --save
 ##2. Components List
 [Waterfall](#waterfall): responsive Pinterest Image Gallery<br/>
 [Updateprofile](#updateprofile): Update profile img<br/>
+[Getlocation](#getlocation): Display/catch geolocation<br/>
 [Rate](#rate): collect rating form users by stars<br />
 [Inputbox](#inputbox): text input with characters couting<br />
 [Inputarea](#inputarea): textarea with characters couting<br />
@@ -89,7 +90,7 @@ clickNumber(index) {
 
 
 ##<a name="updateprofile">Updateprofile</a>
-Update users profile as png format. #This component is depend on [react-avatar-editor](https://github.com/mosch/react-avatar-editor)<br/>
+Update users profile as png format. #This component is depend on [react-avatar-editor](https://github.com/mosch/react-avatar-editor) under MIT<br/>
 ![updateprofile](https://raw.githubusercontent.com/byn9826/ReactUI-Thousanday/master/~markdown/updateprofile.JPG)<br/>
 [Example](http://www.thousanday.com/react#updateprofile)<br/>
 ```
@@ -148,6 +149,86 @@ saveProfile(finalUrl) {
 		processData: false
 	});
 }
+```
+
+
+##<a name="getlocation">Getlocation</a>
+Show/catch geolocation by map. #This component is depend on [openlayers](https://openlayers.org/) under BSD<br/>
+![getlocation](https://raw.githubusercontent.com/byn9826/ReactUI-Thousanday/master/~markdown/getlocation.JPG)<br/>
+[Example](http://www.thousanday.com/react#getlocation)<br/>
+```
+import {Getlocation} from 'thousanday-react';
+```
+```
+saveLocation(coordinate) {
+	console.log(coordinate);
+}
+...
+<Getlocation center={[-79, 43]} saveLocation={this.saveLocation.bind(this)} />
+<Getlocation zoom="1" display="true" /> //This one only for display, didn't return coordinate
+```
+<table>
+	<tr>
+		<td>Params</td>
+		<td>Usage</td>
+		<td>Default</td>
+		<td>Example</td>
+	</tr>
+	<tr>
+		<td>center</td>
+		<td>Optional. The original center location of the map.</td>
+		<td>[-147, -31] (somewhere in Pacific)</td>
+		<td>[100, 30] (must be array)</td>
+	</tr>
+	<tr>
+		<td>zoom</td>
+		<td>Optional. The original zoom level of the map</td>
+		<td>15 (district level)</td>
+		<td>"1" (global level)</td>
+	</tr>
+	<tr>
+		<td>set</td>
+		<td>Optional. The zoom level when user click save location</td>
+		<td>15</td>
+		<td>"10"</td>
+	</tr>
+	<tr>
+		<td>max</td>
+		<td>Optional. The maximum zoom level when user click + button</td>
+		<td>15</td>
+		<td>"17"</td>
+	</tr>
+	<tr>
+		<td>display</td>
+		<td>Optional. Onlye for display mode. Hide buttons, only display location on the map</td>
+		<td>"false"</td>
+		<td>"true"</td>
+	</tr>
+	<tr>
+		<td>width</td>
+		<td>Optional. Width of the map</td>
+		<td>200</td>
+		<td>400</td>
+	</tr>
+	<tr>
+		<td>saveLocation</td>
+		<td>Optional. Mandatory for default mode. Get the coordinate the users set</td>
+		<td></td>
+		<td>{this.saveLocation.bind(this)}</td>
+	</tr>
+</table>
+###<b>Display a map with location</b>
+```
+<Getlocation center={[0,0]} zoom="1" display="true" />
+```
+###<b>Get location from users</b>
+```
+saveLocation(coordinate) {
+	console.log(coordinate);
+	//send to db
+}
+...
+<Getlocation center={this.state.location} saveLocation={this.saveLocation.bind(this)} />
 ```
 
 
@@ -257,8 +338,8 @@ import {Inputbox} from 'thousanday-react';
 	<tr>
 		<td>font</td>
 		<td>Optional. Define the font size of the input</td>
-		<td>"13px"</td>
 		<td>"15px"</td>
+		<td>"17px"</td>
 	</tr>
 	<tr>
 		<td>width</td>
@@ -269,7 +350,7 @@ import {Inputbox} from 'thousanday-react';
 	<tr>
 		<td>border</td>
 		<td>Optional. Define the border style</td>
-		<td>"1px solid #1d4077"</td>
+		<td>"2px solid #f7d7b4"</td>
 		<td>"1px dashed black"</td>
 	</tr>
 </table>

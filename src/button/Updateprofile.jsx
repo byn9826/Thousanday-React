@@ -92,7 +92,7 @@ class Updateprofile extends Component {
         let profile;
         if (!this.state.rawUrl) {
             profile = (
-                <div>
+                <div style={containerStyle}>
                     <img style={containerImgStyle} src={this.state.src} alt="profile" />
                     <input style={containerButtonStyle}  type="button" value="Upload New" />
                     <input style={containerFileStyle} type="file" onChange={this.clickUpload.bind(this)} />
@@ -100,7 +100,7 @@ class Updateprofile extends Component {
             );
         } else {
             profile = (
-                <div>
+                <div style={containerStyle}>
                     <AvatarEditor
                         ref={this.setEditorRef.bind(this)}
                         image={this.state.rawUrl}
@@ -118,11 +118,7 @@ class Updateprofile extends Component {
                 </div>
             );
         }
-		return (
-            <div style={containerStyle}>
-                {profile}
-            </div>
-		);
+		return profile;
 	}
 }
 export default Updateprofile;

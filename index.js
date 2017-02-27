@@ -44,6 +44,10 @@ var _Updateprofile = require('./lib/button/Updateprofile.js');
 
 var _Updateprofile2 = _interopRequireDefault(_Updateprofile);
 
+var _Getlocation = require('./lib/display/Getlocation.js');
+
+var _Getlocation2 = _interopRequireDefault(_Getlocation);
+
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 module.exports = {
@@ -57,5 +61,6 @@ module.exports = {
 	Progress: _Progress2.default,
 	Waterfall: _Waterfall2.default,
 	Ovaledit: _Ovaledit2.default,
-	Updateprofile: _Updateprofile2.default
+	Updateprofile: _Updateprofile2.default,
+	Getlocation: _Getlocation2.default
 };
