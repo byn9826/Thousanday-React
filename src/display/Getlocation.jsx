@@ -52,7 +52,6 @@ class Getlocation extends Component {
         let self = this;
         geolocation.on('change:position', function() {
             let p = geolocation.getPosition();
-            console.log(p);
             let newCenter = ol.proj.transform([parseFloat(p[0]), parseFloat(p[1])], 'EPSG:4326', 'EPSG:3857');
             self.state.view.setCenter(newCenter);
             self.state.view.setZoom(15);

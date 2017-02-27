@@ -13,9 +13,9 @@ class UpdateprofileEG extends Component {
                 </header>
                 <h4>#This component is depend on <a href="https://github.com/mosch/react-avatar-editor" target="__blank">react-avatar-editor</a></h4>
                 <span className="example-span">
-                    {"<Updateprofile src='/img/user/0.jpg' width='200' />"}
+                    {"<Updateprofile src='profile.png' width='200' />"}
                 </span>
-                <Updateprofile src="/img/user/0.jpg" width="200" saveProfile={this.saveProfile.bind(this)} />
+                <Updateprofile src="/img/user/1.jpg" width="200" saveProfile={this.saveProfile.bind(this)} />
                 <h4>
                     <a href="https://github.com/byn9826/Thousanday-React#updateprofile" target="__blank">Check docs</a>
                 </h4>

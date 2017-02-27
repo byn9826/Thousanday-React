@@ -9,8 +9,8 @@ class RandomEG extends Component {
             "Random output 4th in list"
         ];
         return (
-            <section id = "random" className = "example">
-                <header className = "example-header">
+            <section id="random" className="example">
+                <header className="example-header">
                     <h2>Random</h2>
                     <h3>Display random content from a list</h3>
                 </header>
@@ -18,11 +18,11 @@ class RandomEG extends Component {
                     {"<Random content='[content1,content2...]' font='h3' />"}
                 </span>
                 <h4>Show random outputs:</h4>
-                <Random content = {randomContent} font = "h3" />
-                <Random content = {randomContent} font = "h3" />
-                <Random content = {randomContent} font = "h3" />
+                <Random content={randomContent} font="h3" />
+                <Random content={randomContent} font="h3" />
+                <Random content={randomContent} font="h3" />
                 <h4>
-                    <a href = "https://github.com/byn9826/Thousanday-React#random" target = "__blank">Check docs</a>
+                    <a href="https://github.com/byn9826/Thousanday-React#random" target="__blank">Check docs</a>
                 </h4>
             </section>
         );
