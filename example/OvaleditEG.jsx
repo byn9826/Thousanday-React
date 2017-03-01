@@ -20,7 +20,7 @@ class OvaleditEG extends Component {
                 </span>
                 <h4>Hover on the edit button:</h4>
                 <span style={lineBreak}>
-                    <Ovaledit value="Edit" clickEdit={this.clickEdit.bind(this)} />
+                    <Ovaledit value="Edit" clickEdit={this.clickEdit.bind(this)} fontFamily="'Rubik', sans-serif" />
                 </span>
                 <h4>
                     <a href = "https://github.com/byn9826/Thousanday-React#ovaledit" target = "__blank">Check docs</a>

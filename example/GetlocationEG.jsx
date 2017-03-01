@@ -22,7 +22,7 @@ class GetlocationEG extends Component {
                     {"<Getlocation center={[-79, 43]} />"}
                 </span>
                 <h4>Update your location: {this.state.coordinator}</h4>
-                <Getlocation center={[-79.4293129, 43.8641194]} zoom="1" saveLocation={this.saveLocation.bind(this)} />
+                <Getlocation center={[-79.4293129, 43.8641194]} zoom="1" saveLocation={this.saveLocation.bind(this)} fontFamily="'Rubik', sans-serif" />
                 <h4>
                     <a href = "https://github.com/byn9826/Thousanday-React#getlocation" target = "__blank">Check docs</a>
                 </h4>

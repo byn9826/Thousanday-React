@@ -12,7 +12,7 @@ class InputboxEG extends Component {
                     {"<Inputbox content='' max='30' font='15px' hint='Show hint' />"}
                 </span>
                 <h4>Show an Inputbox:</h4>
-                <Inputbox content="" max="30" font="15px" hint="Try to use it" />
+                <Inputbox content="" max="30" font="15px" hint="Try to use it" fontFamily="'Rubik', sans-serif" />
                 <h4>
                     <a href="https://github.com/byn9826/Thousanday-React#inputbox" target="__blank">Check docs</a>
                 </h4>

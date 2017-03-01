@@ -36,7 +36,7 @@ class WaterfallEG extends Component {
                     {"<Waterfall column='3' image={images} />"}
                 </span>
                 <h4>Show Images by 3 columns. You clicked on the image with index of {this.state.click}</h4>
-                <Waterfall column="3" image={images} clickNumber={this.clickNumber.bind(this)} />
+                <Waterfall column="3" image={images} clickNumber={this.clickNumber.bind(this)} fontFamily="'Rubik', sans-serif" />
                 <h4>
                     <a href = "https://github.com/byn9826/Thousanday-React#waterfall" target = "__blank">Check docs</a>
                 </h4>
