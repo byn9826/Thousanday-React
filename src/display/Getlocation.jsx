@@ -12,7 +12,8 @@ class Getlocation extends Component {
             max: parseInt(this.props.maxZoom) || 15,
             set: parseInt(this.props.setZoom) || 15,
             center: this.props.center || [-147, -31],
-            displayMode: this.props.display || "false"
+            displayMode: this.props.display || "false",
+            fontFamily: this.props.fontFamily || "Times New Roman"
 		};
 	}
     componentDidMount() {
@@ -27,7 +28,7 @@ class Getlocation extends Component {
         let map;
         if (this.state.displayMode == "true") {
             map = new ol.Map({
-                target: 'map',
+                target: 'thousandaymaplocation',
                 interactions: ol.interaction.defaults({
                     shiftDragZoom: false
                 }),
@@ -37,7 +38,7 @@ class Getlocation extends Component {
             });
         } else {
             map = new ol.Map({
-                target: 'map',
+                target: 'thousandaymaplocation',
                 interactions: ol.interaction.defaults({
                     shiftDragZoom: false
                 }).extend([new ol.interaction.DragRotateAndZoom()]),
@@ -140,13 +141,14 @@ class Getlocation extends Component {
         };
         let containerSaveStyle = {
             position: "block",
-            marginTop: "5px",
+            marginTop: "10px",
             marginLeft: "2px",
             border: "1px solid #052456",
             color: "black",
             backgroundColor: "white",
             borderRadius: "3px",
-            outline: "none"
+            outline: "none",
+            fontFamily: this.state.fontFamily
         };
         let groupLoveStyle = {
             position: "absolute",
@@ -196,7 +198,7 @@ class Getlocation extends Component {
         }
 		return (
             <div style={containerStyle}>
-                <div id="map" style={containerMapStyle}></div>
+                <div id="thousandaymaplocation" style={containerMapStyle}></div>
                 {mode}
                 {save}
 			</div>

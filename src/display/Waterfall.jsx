@@ -4,6 +4,7 @@ class Waterfall extends Component {
         super(props);
 		this.state = {
             active: "",
+            fontFamily: this.props.fontFamily || "Times New Roman"
 		};
 	}
     componentDidMount() {
@@ -115,7 +116,7 @@ class Waterfall extends Component {
             backgroundColor: "rgba(0,0,0,0.7)",
             borderRadius: "3px",
             color: "white",
-            fontFamily: "Times New Roman",
+            fontFamily: this.state.fontFamily,
             fontSize: "14px",
             fontWeight: "normal"
         };

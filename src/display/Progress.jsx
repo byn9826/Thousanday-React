@@ -4,7 +4,10 @@ class Progress extends Component {
         super(props);
         this.state = {
             width: this.props.width || "100%",
-            height: this.props.height ||"18px"
+            height: this.props.height ||"18px",
+            fontFamily: this.props.fontFamily || "Times New Roman",
+            fontSize: this.props.fontSize || "9px",
+            fontColor: this.props.fontColor || "black"
         };
     }
     render() {
@@ -16,8 +19,9 @@ class Progress extends Component {
             padding: "0",
             textAlign: "center",
             verticalAlign: "middle",
-            fontFamily: "Times New Roman",
-            fontSize: "9px",
+            fontFamily: this.state.fontFamily,
+            fontSize: this.state.fontSize,
+            color: this.state.fontColor,
             backgroundColor: "#f7f8f9",
             border: "1px solid #dee2e8",
             borderRadius: "5px",

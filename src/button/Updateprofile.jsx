@@ -7,7 +7,8 @@ class Updateprofile extends Component {
 		this.state = {
             src: this.props.src,
             rawUrl: null,
-            scale: 1
+            scale: 1,
+            fontFamily: this.props.fontFamily || "Times New Roman"
 		};
 	}
     handleScale(event) {
@@ -57,7 +58,13 @@ class Updateprofile extends Component {
             width: this.props.width + "px",
             height: "20px",
             padding: "1px 0",
-            margin: "0 20px"
+            margin: "0 20px",
+            fontFamily: this.state.fontFamily,
+            border: "1px solid #052456",
+            color: "black",
+            backgroundColor: "white",
+            borderRadius: "3px",
+            outline: "none"
         };
         let containerFileStyle = {
             position: "relative",
@@ -83,7 +90,7 @@ class Updateprofile extends Component {
             display: "inline-block",
             verticalAlign: "middle",
             fontSize: "12px",
-            fontFamily: "Times New Roman",
+            fontFamily: this.state.fontFamily,
             margin: "0 5px",
             fontWeight: "bold",
             color: "black",

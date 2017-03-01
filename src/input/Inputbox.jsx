@@ -9,7 +9,8 @@ class Inputbox extends Component {
       		content: this.props.content,
       		count: parseInt(this.props.max) - this.props.content.length,
       		length: parseInt(this.props.max),
-			id: this.props.id || null
+			id: this.props.id || null,
+			fontFamily: this.props.fontFamily || "Times New Roman"
 		};
 	}
 	editInput(event) {
@@ -27,7 +28,7 @@ class Inputbox extends Component {
 			width: "96%",
 			border: this.state.border,
 			borderRadius: "5px",
-			fontFamily: "Times New Roman",
+			fontFamily: this.state.fontFamily,
 			fontSize: this.state.fontSize,
 			paddingLeft: "2%",
 			paddingTop: "3px",
@@ -37,7 +38,7 @@ class Inputbox extends Component {
 		let countStyle = {
 			display: "block",
 			marginTop: "3px",
-			fontFamily: "Times New Roman",
+			fontFamily: this.state.fontFamily,
 			fontSize: "11px",
 			width: "98%",
 			paddingLeft: "2%"

@@ -80,6 +80,12 @@ clickNumber(index) {
 		<td>null</td>
 		<td>clickNumber={this.clickNumber.bind(this)}</td>
 	</tr>
+	<tr>
+		<td>fontFamily</td>
+		<td>Optional. Define the fontFamily.</td>
+		<td>"Times New Roman"</td>
+		<td>"Arial"</td>
+	</tr>
 </table>
 ###<b>All the features of this component</b>
 1. Passing all the image urls and messages you want to show above the image by an array, will automatically layout all the images by the number of columns you defined.
@@ -129,6 +135,12 @@ saveProfile(finalUrl) {
 		<td>Mandatory. Bind with a function to send the new image</td>
 		<td></td>
 		<td>{this.saveProfile.bind(this)}</td>
+	</tr>
+	<tr>
+		<td>fontFamily</td>
+		<td>Optional. Define the fontFamily.</td>
+		<td>"Times New Roman"</td>
+		<td>"Arial"</td>
 	</tr>
 </table>
 ###<b>Send new profile png to server</b>
@@ -211,10 +223,22 @@ saveLocation(coordinate) {
 		<td>400</td>
 	</tr>
 	<tr>
+		<td>id</td>
+		<td>Optional. If you want to show more than one map in same page, must define each one with different id</td>
+		<td>"thousandaymaplocation"</td>
+		<td>"something"</td>
+	</tr>
+	<tr>
 		<td>saveLocation</td>
 		<td>Optional. Mandatory for default mode. Get the coordinate the users set</td>
 		<td></td>
 		<td>{this.saveLocation.bind(this)}</td>
+	</tr>
+	<tr>
+		<td>fontFamily</td>
+		<td>Optional. Define the fontFamily.</td>
+		<td>"Times New Roman"</td>
+		<td>"Arial"</td>
 	</tr>
 </table>
 ###<b>Display a map with location</b>
@@ -230,6 +254,7 @@ saveLocation(coordinate) {
 ...
 <Getlocation center={this.state.location} saveLocation={this.saveLocation.bind(this)} />
 ```
+Chrome and android might need https for this feature
 
 
 ##<a name="rate">Rate</a>
@@ -352,6 +377,12 @@ import {Inputbox} from 'thousanday-react';
 		<td>Optional. Define the border style</td>
 		<td>"2px solid #f7d7b4"</td>
 		<td>"1px dashed black"</td>
+	</tr>
+	<tr>
+		<td>fontFamily</td>
+		<td>Optional. Define the fontFamily.</td>
+		<td>"Times New Roman"</td>
+		<td>"Arial"</td>
 	</tr>
 </table>
 ###<b>Get new input from users</b>
@@ -522,6 +553,24 @@ import {Progress} from 'thousanday-react';
 		<td>Optional. Define the width of the component.</td>
 		<td>"100%"</td>
 		<td>"200px"</td>
+	</tr>
+	<tr>
+		<td>fontFamily</td>
+		<td>Optional. Define the fontFamily.</td>
+		<td>"Times New Roman"</td>
+		<td>"Arial"</td>
+	</tr>
+	<tr>
+		<td>fontSize</td>
+		<td>Optional. Define the fontSize.</td>
+		<td>"9px"</td>
+		<td>"7px"</td>
+	</tr>
+	<tr>
+		<td>fontColor</td>
+		<td>Optional. Define the color of the font.</td>
+		<td>"black"</td>
+		<td>"blue"</td>
 	</tr>
 </table>
 
@@ -741,6 +790,12 @@ clickEdit(event) {}
 		<td>Optional.Go to other page when click.</td>
 		<td>"#ef8513"</td>
 		<td>"red"</td>
+	</tr>
+	<tr>
+		<td>fontFamily</td>
+		<td>Optional.Change default fontFamily.</td>
+		<td>"Times New Roman"</td>
+		<td>"sans-serif"</td>
 	</tr>
 	<tr>
 		<td>clickEdit</td>

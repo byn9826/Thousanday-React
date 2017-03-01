@@ -4,7 +4,8 @@ class Ovaledit extends Component {
         super(props);
 		this.state = {
             hoverEdit: false,
-            color: this.props.color || "#ef8513"
+            color: this.props.color || "#ef8513",
+            font: this.props.fontFamily || "Times New Roman"
 		};
 	}
     mouseinEdit () {
@@ -25,7 +26,7 @@ class Ovaledit extends Component {
                 textAlign: "center",
                 borderRadius: "50%",
                 cursor: "pointer",
-                fontFamily: "Times New Roman",
+                fontFamily: this.state.font,
 	            fontSize: "12px",
 	            fontWeight: "normal",
 	            margin: "0",
@@ -39,7 +40,7 @@ class Ovaledit extends Component {
                 width: "36px",
                 height: "16px",
                 textAlign: "center",
-                fontFamily: "Times New Roman",
+                fontFamily: this.state.font,
 	            fontSize: "12px",
 	            fontWeight: "normal",
 	            margin: "0",
