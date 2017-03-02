@@ -8,6 +8,7 @@ class Getlocation extends Component {
             height: parseInt(this.props.height) || 200,
             width: parseInt(this.props.width) || 200,
             view: null,
+            id: this.props.id || "thousandaymaplocation",
             zoom: parseInt(this.props.zoom) || 15,
             max: parseInt(this.props.maxZoom) || 15,
             set: parseInt(this.props.setZoom) || 15,
@@ -28,7 +29,7 @@ class Getlocation extends Component {
         let map;
         if (this.state.displayMode == "true") {
             map = new ol.Map({
-                target: 'thousandaymaplocation',
+                target: this.state.id,
                 interactions: ol.interaction.defaults({
                     shiftDragZoom: false
                 }),
@@ -38,7 +39,7 @@ class Getlocation extends Component {
             });
         } else {
             map = new ol.Map({
-                target: 'thousandaymaplocation',
+                target: this.state.id,
                 interactions: ol.interaction.defaults({
                     shiftDragZoom: false
                 }).extend([new ol.interaction.DragRotateAndZoom()]),
@@ -198,7 +199,7 @@ class Getlocation extends Component {
         }
 		return (
             <div style={containerStyle}>
-                <div id="thousandaymaplocation" style={containerMapStyle}></div>
+                <div id={this.state.id} style={containerMapStyle}></div>
                 {mode}
                 {save}
 			</div>

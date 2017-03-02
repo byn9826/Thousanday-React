@@ -11,6 +11,11 @@ class GetlocationEG extends Component {
         this.setState({coordinator: "success"});
     }
     render() {
+        let locationDisplay = {
+            display: "inline-block",
+            verticalAlign: "top",
+            marginRight: "20px"
+        };
         return (
             <section id="getlocation" className="example">
                 <header className="example-header">
@@ -22,7 +27,12 @@ class GetlocationEG extends Component {
                     {"<Getlocation center={[-79, 43]} />"}
                 </span>
                 <h4>Update your location: {this.state.coordinator}</h4>
-                <Getlocation center={[-79.4293129, 43.8641194]} zoom="1" saveLocation={this.saveLocation.bind(this)} fontFamily="'Rubik', sans-serif" />
+                <div style={locationDisplay}>
+                    <Getlocation id="getlocationexample1" center={[-79.4293129, 43.8641194]} zoom="1" saveLocation={this.saveLocation.bind(this)} fontFamily="'Rubik', sans-serif" />
+                </div>
+                <div style={locationDisplay}>
+                    <Getlocation id="getlocationexample2" center={[-19.4293129, 23.8641194]} zoom="1" display="true" fontFamily="'Rubik', sans-serif" />
+                </div>
                 <h4>
                     <a href = "https://github.com/byn9826/Thousanday-React#getlocation" target = "__blank">Check docs</a>
                 </h4>
