@@ -48,6 +48,10 @@ var _Getlocation = require('./lib/display/Getlocation.js');
 
 var _Getlocation2 = _interopRequireDefault(_Getlocation);
 
+var _Delmember = require('./lib/button/Delmember.js');
+
+var _Delmember2 = _interopRequireDefault(_Delmember);
+
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 module.exports = {
@@ -62,5 +66,6 @@ module.exports = {
 	Waterfall: _Waterfall2.default,
 	Ovaledit: _Ovaledit2.default,
 	Updateprofile: _Updateprofile2.default,
-	Getlocation: _Getlocation2.default
+	Getlocation: _Getlocation2.default,
+	Delmember: _Delmember2.default
 };

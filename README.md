@@ -11,6 +11,7 @@ npm install thousanday-react --save
 ##2. Components List
 [Waterfall](#waterfall): responsive Pinterest Image Gallery<br/>
 [Updateprofile](#updateprofile): Update profile img<br/>
+[Delmember](#delmember): Disapear img with shake effect<br/>
 [Getlocation](#getlocation): Display/catch geolocation<br/>
 [Rate](#rate): collect rating form users by stars<br />
 [Inputbox](#inputbox): text input with characters couting<br />
@@ -160,6 +161,84 @@ saveProfile(finalUrl) {
 		contentType: false,
 		processData: false
 	});
+}
+```
+
+
+##<a name="rate">Delmember</a>
+Disapear img with shake effect by delete button<br/>
+![delmember](https://raw.githubusercontent.com/byn9826/ReactUI-Thousanday/master/~markdown/delmember.PNG)<br/>
+[Example](http://www.thousanday.com/react#delmember)<br/>
+```
+import {Delmember} from 'thousanday-react';
+```
+```
+clickDel(index) {
+	console.log(index);
+}
+...
+<Delmember profile={"0.jpg"} index={0} clickDel={this.clickDel.bind(this)} />
+```
+<table>
+	<tr>
+		<td>Params</td>
+		<td>Usage</td>
+		<td>Default</td>
+		<td>Example</td>
+	</tr>
+	<tr>
+		<td>src</td>
+		<td>Mandatory. Define the img src address.</td>
+		<td>null</td>
+		<td>"0.jpg"</td>
+	</tr>
+	<tr>
+		<td>index</td>
+		<td>Mandatory. Will return this index after click to indicate which img disapeared</td>
+		<td></td>
+		<td>0</td>
+	</tr>
+	<tr>
+		<td>clickDel</td>
+		<td>Mandatory. Bind with a function to receive the index of the image has been clicked and disapeared</td>
+		<td></td>
+		<td>{this.clickDel.bind(this)}</td>
+	</tr>
+	<tr>
+		<td>width</td>
+		<td>Optinal. Define the width of the image</td>
+		<td>100 (will turn to 100 px)</td>
+		<td>300 (will turn to 300 px)</td>
+	</tr>
+	<tr>
+		<td>height</td>
+		<td>Optinal. Define the height of the image</td>
+		<td>100 (will turn to 100 px)</td>
+		<td>300 (will turn to 300 px)</td>
+	</tr>
+	<tr>
+		<td>marginLR</td>
+		<td>Optional. Define the margin-left and margin-right</td>
+		<td>10 (will turn to 10 px)</td>
+		<td>30  (will turn to 30 px)</td>
+	</tr>
+	<tr>
+		<td>fontFamily</td>
+		<td>Optional. Define the font family of the - button</td>
+		<td>"Times New Roman"</td>
+		<td>"Arial"</td>
+	</tr>
+</table>
+###<b>Know which image has been clicked</b>
+This component is used to indicate remove some member by click the - button on their profile image:
+```
+<Delmember profile={"0.jpg"} index={0} clickDel={this.clickDel.bind(this)} />
+```
+Then you should create a clickDel function receive the index you passed in order to know which image has been clicked:
+```
+clickDel(index) {
+	console.log(index);
+	//del row in db according to index
 }
 ```
 
