@@ -187,7 +187,7 @@ clickDel(index) {
 		<td>Example</td>
 	</tr>
 	<tr>
-		<td>src</td>
+		<td>profile</td>
 		<td>Mandatory. Define the img src address.</td>
 		<td>null</td>
 		<td>"0.jpg"</td>
