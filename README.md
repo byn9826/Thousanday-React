@@ -167,7 +167,7 @@ saveProfile(finalUrl) {
 
 ##<a name="rate">Delmember</a>
 Disapear img with shake effect by delete button<br/>
-![delmember](https://raw.githubusercontent.com/byn9826/ReactUI-Thousanday/master/~markdown/delmember.PNG)<br/>
+![delmember](https://raw.githubusercontent.com/byn9826/ReactUI-Thousanday/master/~markdown/delmember.JPG)<br/>
 [Example](http://www.thousanday.com/react#delmember)<br/>
 ```
 import {Delmember} from 'thousanday-react';
