@@ -24,7 +24,7 @@ npm install thousanday-react --save
 [Ovaledit](#ovaledit): React edit on hover<br />
 
 ##Other
-[React UI Components](http://www.thousanday.com/animation)<br/>
+[React Inline Animation](http://www.thousanday.com/animation)<br/>
 
 ##<a name="waterfall">Waterfall</a>
 Responsive and Interactive Pinterest Like Image Gallery by React.<br/>
