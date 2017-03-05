@@ -2,13 +2,13 @@
 A list of React UI components, will update step by step.
 
 
-##1. Install
+##Install
 ```
 npm install thousanday-react --save
 ```
 
 
-##2. Components List
+##Components List
 [Waterfall](#waterfall): responsive Pinterest Image Gallery<br/>
 [Updateprofile](#updateprofile): Update profile img<br/>
 [Delmember](#delmember): Disapear img with shake effect<br/>
@@ -23,6 +23,8 @@ npm install thousanday-react --save
 [Vote](#vote): display/collect agree or disagree<br />
 [Ovaledit](#ovaledit): React edit on hover<br />
 
+##Other
+[React UI Components](http://www.thousanday.com/animation)<br/>
 
 ##<a name="waterfall">Waterfall</a>
 Responsive and Interactive Pinterest Like Image Gallery by React.<br/>
