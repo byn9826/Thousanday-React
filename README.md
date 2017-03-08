@@ -43,6 +43,17 @@ let images = [
     ["url/5.jpg", "message5"],
     ...
 ];
+//If you defined link="true"
+let images = [
+    ["url/0.jpg", "message0", "http://href0"],
+    ["url/1.jpg", "message1", "http://href1"],
+    ["url/2.jpg", "message2", "http://href2"],
+    ["url/3.jpg", "message3", "http://href3"],
+    ["url/4.jpg", "message4", "http://href4"],
+    ["url/5.jpg", "message5", "http://href5"],
+    ...
+];
+
 ...
 clickNumber(index) {
     console.log(index);//index is the index number (in images array) of the image which has been clicked by user
@@ -86,7 +97,7 @@ clickNumber(index) {
 	</tr>
 	<tr>
 		<td>link</td>
-		<td>Optional. If you want to add <a> for each img and link to other pages. Define this as "true" and change the image attr to [["img url", "message", "href link"],...]</td>
+		<td>Optional. If you want to add <a> for each img and link to other pages</td>
 		<td>"false"</td>
 		<td>"true"</td>
 	</tr>
