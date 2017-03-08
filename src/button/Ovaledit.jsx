@@ -30,7 +30,8 @@ class Ovaledit extends Component {
 	            fontSize: "12px",
 	            fontWeight: "normal",
 	            margin: "0",
-	            padding: "0"
+	            padding: "0",
+                verticalAlign: "top"
             };
         } else {
             containerStyle = {

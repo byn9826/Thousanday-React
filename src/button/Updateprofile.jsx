@@ -72,7 +72,8 @@ class Updateprofile extends Component {
             margin: "0 20px",
             height: "20px",
             top: "-20px",
-            opacity: "0"
+            opacity: "0",
+            cursor: "pointer"
         };
         let containerLineStyle = {
             display: "block",

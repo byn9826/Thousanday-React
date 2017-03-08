@@ -149,7 +149,8 @@ class Getlocation extends Component {
             backgroundColor: "white",
             borderRadius: "3px",
             outline: "none",
-            fontFamily: this.state.fontFamily
+            fontFamily: this.state.fontFamily,
+            cursor: "pointer"
         };
         let groupLoveStyle = {
             position: "absolute",
@@ -183,6 +184,8 @@ class Getlocation extends Component {
         if (this.state.displayMode == "true") {
             mode = (
                 <div style={containerGroupStyle}>
+                    <input type="button" value="+" style={groupInStyle} onClick={this.clickIn.bind(this)} />
+                    <input type="button" value="-" style={groupOutStyle} onClick={this.clickOut.bind(this)} />
                     <span style={groupYouStyle}>♥</span>
                 </div>
             )

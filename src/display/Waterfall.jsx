@@ -4,7 +4,8 @@ class Waterfall extends Component {
         super(props);
 		this.state = {
             active: "",
-            fontFamily: this.props.fontFamily || "Times New Roman"
+            fontFamily: this.props.fontFamily || "Times New Roman",
+            link: this.props.link || "false"
 		};
 	}
     componentDidMount() {
@@ -14,25 +15,6 @@ class Waterfall extends Component {
         let exchangeChild;
         let columnNumber = parseInt(this.props.column);
         let j;
-        for (j = 1; j < columnNumber ; j++) {
-        if (oneColumn[j].offsetHeight <= oneColumn[columnLow].offsetHeight) {
-                columnLow = j;
-            } else if (oneColumn[j].offsetHeight > oneColumn[columnHigh].offsetHeight) {
-                columnHigh = j;
-            }
-        }
-        while ((oneColumn[columnHigh].offsetHeight - oneColumn[columnLow].offsetHeight) > oneColumn[columnHigh].lastChild.offsetHeight ) {
-            exchangeChild = oneColumn[columnHigh].lastChild;
-            oneColumn[columnHigh].removeChild(oneColumn[columnHigh].lastChild);
-            oneColumn[columnLow].appendChild(exchangeChild);
-            for (j = 1; j < columnNumber; j++) {
-                if (oneColumn[j].offsetHeight <= oneColumn[columnLow].offsetHeight) {
-                    columnLow = j;
-                } else if (oneColumn[j].offsetHeight > oneColumn[columnHigh].offsetHeight) {
-                    columnHigh = j;
-                }
-            }
-        }
         let fire = false;
         window.addEventListener("scroll", () => {
             if (fire === false) {
@@ -137,13 +119,24 @@ class Waterfall extends Component {
                         </div>
                     </div>
                 );
-            } else if (this.state.active === i && !this.props.clickNumber) {
+            } else if (this.state.active === i && !this.props.clickNumber && this.state.link != "true") {
                 imageSingle = (
                     <div key={"reactwaterfallSingle" + i} style={columnSingleStyle}>
                         <img style={singleImgStyle} name={i} alt={this.props.image[i][1]} src={this.props.image[i][0]} onMouseLeave={this.hideContent.bind(this)} />
                         <div id="reactWaterfall" style={singleContentStyle} onMouseOver={this.showContent.bind(this)} >
                             {this.props.image[i][1]}
                         </div>
+                    </div>
+                );
+            } else if (this.state.active === i && !this.props.clickNumber && this.state.link == "true") {
+                imageSingle = (
+                    <div key={"reactwaterfallSingle" + i} style={columnSingleStyle}>
+                        <a href={this.props.image[i][2]}>
+                            <img style={singleImgStyle} name={i} alt={this.props.image[i][1]} src={this.props.image[i][0]} onMouseLeave={this.hideContent.bind(this)} />
+                            <div id="reactWaterfall" style={singleContentStyle} onMouseOver={this.showContent.bind(this)} >
+                                {this.props.image[i][1]}
+                            </div>
+                        </a>
                     </div>
                 );
             } else {

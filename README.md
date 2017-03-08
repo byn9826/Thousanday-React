@@ -48,6 +48,7 @@ clickNumber(index) {
 ...
 <Waterfall column="3" image={images} />// if you don't need a return when users click on images
 <Waterfall column="5" image={images} clickNumber={this.clickNumber.bind(this)} />
+<Waterfall column="5" image={images} link="true"/> //if you want link to other page after click
 ```
 
 <table>
@@ -80,6 +81,12 @@ clickNumber(index) {
 		<td>Optional. Create a function to get the index of the image has been clicked by users.</td>
 		<td>null</td>
 		<td>clickNumber={this.clickNumber.bind(this)}</td>
+	</tr>
+	<tr>
+		<td>link</td>
+		<td>Optional. If you want to add <a> for each img and link to other pages. Define this as "true" and change the image attr to [["img url", "message", "href link"],...]</td>
+		<td>"false"</td>
+		<td>"true"</td>
 	</tr>
 	<tr>
 		<td>fontFamily</td>
