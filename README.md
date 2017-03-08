@@ -2,13 +2,13 @@
 A list of React UI components, will update step by step.
 
 
-##1. Install
+##Install
 ```
 npm install thousanday-react --save
 ```
 
 
-##2. Components List
+##Components List
 [Waterfall](#waterfall): responsive Pinterest Image Gallery<br/>
 [Updateprofile](#updateprofile): Update profile img<br/>
 [Delmember](#delmember): Disapear img with shake effect<br/>
@@ -23,6 +23,8 @@ npm install thousanday-react --save
 [Vote](#vote): display/collect agree or disagree<br />
 [Ovaledit](#ovaledit): React edit on hover<br />
 
+##Other
+[React Inline Animation](http://www.thousanday.com/animation)<br/>
 
 ##<a name="waterfall">Waterfall</a>
 Responsive and Interactive Pinterest Like Image Gallery by React.<br/>
@@ -174,7 +176,7 @@ saveProfile(finalUrl) {
 
 ##<a name="rate">Delmember</a>
 Disapear img with shake effect by delete button<br/>
-![delmember](https://raw.githubusercontent.com/byn9826/ReactUI-Thousanday/master/~markdown/delmember.PNG)<br/>
+![delmember](https://raw.githubusercontent.com/byn9826/ReactUI-Thousanday/master/~markdown/delmember.JPG)<br/>
 [Example](http://www.thousanday.com/react#delmember)<br/>
 ```
 import {Delmember} from 'thousanday-react';
@@ -194,7 +196,7 @@ clickDel(index) {
 		<td>Example</td>
 	</tr>
 	<tr>
-		<td>src</td>
+		<td>profile</td>
 		<td>Mandatory. Define the img src address.</td>
 		<td>null</td>
 		<td>"0.jpg"</td>
