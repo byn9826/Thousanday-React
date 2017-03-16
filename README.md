@@ -67,7 +67,12 @@ clickNumber(index) {
 <Waterfall column="5" image={images} clickNumber={this.clickNumber.bind(this)} />
 <Waterfall column="5" image={images} link="true"/> //if you want link to other page after click
 ```
-
+<b>All the features of this component</b><br/>
+1. Passing all the image urls and messages you want to show above the image by an array, will automatically layout all the images by the number of columns you defined.<br/>
+2. Show messages above images when mouse over.<br/>
+3. All the images is responsive according to screen width and the messages above images is responsive too.<br/>
+4. Automatically balance the height of each column. Make all the columns balanced.<br/>
+5. Return the index number of the image in the image array if users click on it.<br/>
 <table>
 	<tr>
 		<td>Params</td>
@@ -112,12 +117,7 @@ clickNumber(index) {
 		<td>"Arial"</td>
 	</tr>
 </table>
-<b>All the features of this component</b><br/>
-1. Passing all the image urls and messages you want to show above the image by an array, will automatically layout all the images by the number of columns you defined.<br/>
-2. Show messages above images when mouse over.<br/>
-3. All the images is responsive according to screen width and the messages above images is responsive too.<br/>
-4. Automatically balance the height of each column. Make all the columns balanced.<br/>
-5. Return the index number of the image in the image array if users click on it.
+
 
 
 <a name="updateprofile">Updateprofile</a>
@@ -207,6 +207,18 @@ clickDel(index) {
 ...
 <Delmember profile={"0.jpg"} index={0} clickDel={this.clickDel.bind(this)} />
 ```
+<b>Know which image has been clicked</b><br/>
+This component is used to indicate remove some member by click the - button on their profile image:
+```
+<Delmember profile={"0.jpg"} index={0} clickDel={this.clickDel.bind(this)} />
+```
+Then you should create a clickDel function receive the index you passed in order to know which image has been clicked:
+```
+clickDel(index) {
+	console.log(index);
+	//del row in db according to index
+}
+```
 <table>
 	<tr>
 		<td>Params</td>
@@ -257,19 +269,7 @@ clickDel(index) {
 		<td>"Arial"</td>
 	</tr>
 </table>
-<b>Know which image has been clicked</b>
---
-This component is used to indicate remove some member by click the - button on their profile image:
-```
-<Delmember profile={"0.jpg"} index={0} clickDel={this.clickDel.bind(this)} />
-```
-Then you should create a clickDel function receive the index you passed in order to know which image has been clicked:
-```
-clickDel(index) {
-	console.log(index);
-	//del row in db according to index
-}
-```
+
 
 
 <a name="getlocation">Getlocation</a>
@@ -288,6 +288,22 @@ saveLocation(coordinate) {
 <Getlocation center={[-79, 43]} saveLocation={this.saveLocation.bind(this)} />
 <Getlocation zoom="1" display="true" /> //This one only for display, didn't return coordinate
 ```
+<b>Display a map with location</b><br/>
+
+```
+<Getlocation center={[0,0]} zoom="1" display="true" />
+```
+<b>Get location from users</b><br/>
+
+```
+saveLocation(coordinate) {
+	console.log(coordinate);
+	//send to db
+}
+...
+<Getlocation center={this.state.location} saveLocation={this.saveLocation.bind(this)} />
+```
+Chrome and android might need https for this feature<br/>
 <table>
 	<tr>
 		<td>Params</td>
@@ -350,22 +366,7 @@ saveLocation(coordinate) {
 		<td>"Arial"</td>
 	</tr>
 </table>
-<b>Display a map with location</b>
---
-```
-<Getlocation center={[0,0]} zoom="1" display="true" />
-```
-<b>Get location from users</b>
---
-```
-saveLocation(coordinate) {
-	console.log(coordinate);
-	//send to db
-}
-...
-<Getlocation center={this.state.location} saveLocation={this.saveLocation.bind(this)} />
-```
-Chrome and android might need https for this feature
+
 
 
 <a name="rate">Rate</a>
@@ -378,6 +379,19 @@ import {Rate} from 'thousanday-react';
 ```
 ```
 <Rate rate="3" max="5" interact="true" rateChange={this.rateChange.bind(this)} />
+```
+<b>Get new rate from user</b><br/>
+
+You should bind ratechange params with a function, and define interact params as "true" first:
+```
+<Rate rate={this.state.currentRate} max="5" interact="true" rateChange={this.rateChange.bind(this)}/>
+```
+Then you should create a rateChange function to deal with new rate:
+```
+rateChange(rateNum){
+    //rateNum is the new rate from current user
+    this.setState({currentRate:rateNum});
+}
 ```
 <table>
 	<tr>
@@ -423,23 +437,11 @@ import {Rate} from 'thousanday-react';
 		<td>{this.rateChange.bind(this)}</td>
 	</tr>
 </table>
-<b>Get new rate from user</b>
---
-You should bind ratechange params with a function, and define interact params as "true" first:
-```
-<Rate rate={this.state.currentRate} max="5" interact="true" rateChange={this.rateChange.bind(this)}/>
-```
-Then you should create a rateChange function to deal with new rate:
-```
-rateChange(rateNum){
-    //rateNum is the new rate from current user
-    this.setState({currentRate:rateNum});
-}
-```
 
 
-<a name="inputbox">Inputbox</a>
---
+
+<a name="inputbox">Inputbox</a><br/>
+
 Create text input with characters counter<br />
 ![Inputbox](https://raw.githubusercontent.com/byn9826/ReactUI-Thousanday/master/~markdown/inputbox.JPG)<br />
 [Simple Example](http://www.thousanday.com/react#inputbox)<br />
@@ -448,6 +450,20 @@ import {Inputbox} from 'thousanday-react';
 ```
 ```
 <Inputbox content="Inital content here" max="30" />
+```
+<b>Get new input from users</b>
+--
+If you want to get the new input from users, you show define the ref params for this component first:
+```
+<Inputbox ref="newInput" content="" max="150" />
+```
+Then you could get the new input by use this.refs.newInput.state.content inside functions:
+```
+submitInput(){
+    console.log(this.refs.newInput.state.content);//this is users new input
+}
+...
+<button onClick={this.submitInput.bind(this)} />
 ```
 <table>
 	<tr>
@@ -499,20 +515,7 @@ import {Inputbox} from 'thousanday-react';
 		<td>"Arial"</td>
 	</tr>
 </table>
-<b>Get new input from users</b>
---
-If you want to get the new input from users, you show define the ref params for this component first:
-```
-<Inputbox ref="newInput" content="" max="150" />
-```
-Then you could get the new input by use this.refs.newInput.state.content inside functions:
-```
-submitInput(){
-    console.log(this.refs.newInput.state.content);//this is users new input
-}
-...
-<button onClick={this.submitInput.bind(this)} />
-```
+
 
 
 <a name="inputarea">Inputarea</a>
@@ -525,6 +528,19 @@ import {Inputarea} from 'thousanday-react';
 ```
 ```
 <Inputarea content="Inital content here" max="300" />
+```
+<b>Get new input from users</b><br/>
+If you want to get the new input from users, you show define the ref params for this component first:
+```
+<Inputarea ref="newInput" content="" max="150" />
+```
+Then you could get the new input by use this.refs.newInput.state.content inside functions:
+```
+submitInput(){
+    console.log(this.refs.newInput.state.content);//this is users new input
+}
+...
+<button onClick={this.submitInput.bind(this)} />
 ```
 <table>
 	<tr>
@@ -570,20 +586,7 @@ import {Inputarea} from 'thousanday-react';
 		<td>"1px dashed black"</td>
 	</tr>
 </table>
-<b>Get new input from users</b>
---
-If you want to get the new input from users, you show define the ref params for this component first:
-```
-<Inputarea ref="newInput" content="" max="150" />
-```
-Then you could get the new input by use this.refs.newInput.state.content inside functions:
-```
-submitInput(){
-    console.log(this.refs.newInput.state.content);//this is users new input
-}
-...
-<button onClick={this.submitInput.bind(this)} />
-```
+
 
 
 <a name="like">Like</a>
@@ -749,6 +752,16 @@ let choice = [0, 1, 0];
 ...
 <AddtoList content={options} choice={choice} />
 ```
+<b>Receive users choices</b><br/>
+If users have selected several options, you could know the result by refs inside function
+```
+submitPlan() {
+  console.log(this.refs.planChoice.state.choice);
+}
+<AddtoList ref="planChoice" title="Add to your plans:" content={this.state.plan} />
+<button onClick={this.submitPlan.bind(this)}>submit</button>
+```
+You will get an array like [0,1,1,0] or similar to [null,null,1,0], null and 0 means options in the same order has not been selected. 1 means options in the same order has been selected.
 <table>
 	<tr>
 		<td>Params</td>
@@ -781,17 +794,7 @@ let choice = [0, 1, 0];
 		<td>"200px"</td>
 	</tr>
 </table>
-Receive users choices
---
-If users have selected several options, you could know the result by refs inside function
-```
-submitPlan() {
-  console.log(this.refs.planChoice.state.choice);
-}
-<AddtoList ref="planChoice" title="Add to your plans:" content={this.state.plan} />
-<button onClick={this.submitPlan.bind(this)}>submit</button>
-```
-You will get an array like [0,1,1,0] or similar to [null,null,1,0], null and 0 means options in the same order has not been selected. 1 means options in the same order has been selected.
+
 
 
 <a name="vote">Vote</a>
@@ -805,6 +808,26 @@ import {Vote} from 'thousanday-react';
 ```
 <Vote left = "Agree" right = "Disagree" agree = "100" disagree = "60" />
 <Vote left = "Good" right = "Bad" interact = "true" choice = {this.state.choice} newChoice = {this.newChoice.bind(this)} />
+```
+<b>Show new vote</b><br/>
+If you just want to display a vote, just define left, right, agree, disagree
+```
+<Vote left = "Agree" right = "Disagree" agree = "100" disagree = "60" />
+```
+<b>Receive vote from users</b><br/>
+
+You should define interact, choice, newChoice for receive vote
+```
+this.state = {choice: "2"};
+...
+<Vote left = "Good" right = "Bad" interact = "true" choice = {this.state.choice} newChoice = {this.newChoice.bind(this)} />
+```
+Then you can get user's choice by a newChoice function
+```
+newChoice(newNum) {
+    this.setState({userVote: newNum});
+}
+//this.state.choice would be 0 if user choose no, 1 for yes, 2 for no choice
 ```
 <table>
 	<tr>
@@ -856,27 +879,7 @@ import {Vote} from 'thousanday-react';
 		<td>{this.newChoice.bind(this)}</td>
 	</tr>
 </table>
-<b>Show new vote</b>
---
-If you just want to display a vote, just define left, right, agree, disagree
-```
-<Vote left = "Agree" right = "Disagree" agree = "100" disagree = "60" />
-```
-<b>Receive vote from users</b>
---
-You should define interact, choice, newChoice for receive vote
-```
-this.state = {choice: "2"};
-...
-<Vote left = "Good" right = "Bad" interact = "true" choice = {this.state.choice} newChoice = {this.newChoice.bind(this)} />
-```
-Then you can get user's choice by a newChoice function
-```
-newChoice(newNum) {
-    this.setState({userVote: newNum});
-}
-//this.state.choice would be 0 if user choose no, 1 for yes, 2 for no choice
-```
+
 
 
 <a name="ovaledit">Ovaledit</a>
