@@ -322,6 +322,12 @@ saveLocation(coordinate) {
 		<td>400</td>
 	</tr>
 	<tr>
+		<td>height</td>
+		<td>Optional. Height of the map</td>
+		<td>200</td>
+		<td>400</td>
+	</tr>
+	<tr>
 		<td>id</td>
 		<td>Optional. If you want to show more than one map in same page, must define each one with different id</td>
 		<td>"thousandaymaplocation"</td>
