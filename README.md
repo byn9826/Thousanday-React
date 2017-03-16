@@ -440,8 +440,8 @@ rateChange(rateNum){
 
 
 
-<a name="inputbox">Inputbox</a><br/>
-
+<a name="inputbox">Inputbox</a>
+--
 Create text input with characters counter<br />
 ![Inputbox](https://raw.githubusercontent.com/byn9826/ReactUI-Thousanday/master/~markdown/inputbox.JPG)<br />
 [Simple Example](http://www.thousanday.com/react#inputbox)<br />
@@ -451,8 +451,7 @@ import {Inputbox} from 'thousanday-react';
 ```
 <Inputbox content="Inital content here" max="30" />
 ```
-<b>Get new input from users</b>
---
+<b>Get new input from users</b><br/>
 If you want to get the new input from users, you show define the ref params for this component first:
 ```
 <Inputbox ref="newInput" content="" max="150" />
