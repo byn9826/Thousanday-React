@@ -169,7 +169,7 @@ saveProfile(finalUrl) {
 		<td>"Arial"</td>
 	</tr>
 </table>
-<b>Send new profile png to server</b>
+<a><b>Send new profile png to server</b></a>
 --
 You should bind saveProfile params with a function:
 ```
