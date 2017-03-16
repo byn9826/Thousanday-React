@@ -5,7 +5,8 @@ class Waterfall extends Component {
 		this.state = {
             active: "",
             fontFamily: this.props.fontFamily || "Times New Roman",
-            link: this.props.link || "false"
+            link: this.props.link || "false",
+            fire: false
 		};
 	}
     componentDidMount() {
@@ -15,9 +16,8 @@ class Waterfall extends Component {
         let exchangeChild;
         let columnNumber = parseInt(this.props.column);
         let j;
-        let fire = false;
         window.addEventListener("scroll", () => {
-            if (fire === false) {
+            if (this.state.fire === false && this.props.image.length > columnNumber) {
                 for (j = 1; j < columnNumber ; j++) {
                     if (oneColumn[j].offsetHeight <= oneColumn[columnLow].offsetHeight) {
                         columnLow = j;
@@ -37,6 +37,7 @@ class Waterfall extends Component {
                         }
                     }
                 }
+                this.setState({fire: true});
             }
         });
     }

@@ -19,11 +19,12 @@ class Delmember extends Component {
             setTimeout(() => { this.setState({rotate: 4}); }, 50);
         } else if (this.state.rotate ===4) {
             setTimeout(() => { this.setState({rotate: 5}); }, 50);
+        } else if (this.state.rotate ===5) {
+            this.props.clickDel(this.props.index);
         }
     }
     delIt() {
         this.setState({rotate: 1});
-        this.props.clickDel(this.props.index);
     }
     render() {
         let containerStyle = {
