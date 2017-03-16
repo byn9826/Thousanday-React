@@ -138,6 +138,26 @@ saveProfile(finalUrl) {
 ...
 <Updateprofile src="url/profile.png" width="200" saveProfile={this.saveProfile.bind(this)} />
 ```
+<b>Send new profile png to server</b><br/>
+--
+You should bind saveProfile params with a function:
+```
+<Updateprofile src="url/profile.png" width="200" saveProfile={this.saveProfile.bind(this)} />
+```
+Then you should create a saveProfile function to send new image by ajax:
+```
+saveProfile(finalUrl) {
+	let formData = new FormData();
+	formData.append('file', finalUrl, "profile_name.png");
+	reqwest({
+		url: "/upateProfile",
+		method: "POST",
+		data: formData,
+		contentType: false,
+		processData: false
+	});
+}
+```
 <table>
 	<tr>
 		<td>Params</td>
@@ -170,26 +190,7 @@ saveProfile(finalUrl) {
 		<td>"Arial"</td>
 	</tr>
 </table>
-<b>Send new profile png to server</b><br/>
---
-You should bind saveProfile params with a function:
-```
-<Updateprofile src="url/profile.png" width="200" saveProfile={this.saveProfile.bind(this)} />
-```
-Then you should create a saveProfile function to send new image by ajax:
-```
-saveProfile(finalUrl) {
-	let formData = new FormData();
-	formData.append('file', finalUrl, "profile_name.png");
-	reqwest({
-		url: "/upateProfile",
-		method: "POST",
-		data: formData,
-		contentType: false,
-		processData: false
-	});
-}
-```
+
 
 
 <a name="rate">Delmember</a>
