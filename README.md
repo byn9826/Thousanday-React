@@ -112,11 +112,11 @@ clickNumber(index) {
 		<td>"Arial"</td>
 	</tr>
 </table>
-<b>All the features of this component</b>
-1. Passing all the image urls and messages you want to show above the image by an array, will automatically layout all the images by the number of columns you defined.
-2. Show messages above images when mouse over.
-3. All the images is responsive according to screen width and the messages above images is responsive too.
-4. Automatically balance the height of each column. Make all the columns balanced.
+<b>All the features of this component</b><br/>
+1. Passing all the image urls and messages you want to show above the image by an array, will automatically layout all the images by the number of columns you defined.<br/>
+2. Show messages above images when mouse over.<br/>
+3. All the images is responsive according to screen width and the messages above images is responsive too.<br/>
+4. Automatically balance the height of each column. Make all the columns balanced.<br/>
 5. Return the index number of the image in the image array if users click on it.
 
 
@@ -170,7 +170,7 @@ saveProfile(finalUrl) {
 	</tr>
 </table>
 <b>Send new profile png to server</b>
----
+--
 You should bind saveProfile params with a function:
 ```
 <Updateprofile src="url/profile.png" width="200" saveProfile={this.saveProfile.bind(this)} />
@@ -257,7 +257,7 @@ clickDel(index) {
 	</tr>
 </table>
 <b>Know which image has been clicked</b>
----
+--
 This component is used to indicate remove some member by click the - button on their profile image:
 ```
 <Delmember profile={"0.jpg"} index={0} clickDel={this.clickDel.bind(this)} />
@@ -350,12 +350,12 @@ saveLocation(coordinate) {
 	</tr>
 </table>
 <b>Display a map with location</b>
----
+--
 ```
 <Getlocation center={[0,0]} zoom="1" display="true" />
 ```
 <b>Get location from users</b>
----
+--
 ```
 saveLocation(coordinate) {
 	console.log(coordinate);
@@ -423,7 +423,7 @@ import {Rate} from 'thousanday-react';
 	</tr>
 </table>
 <b>Get new rate from user</b>
----
+--
 You should bind ratechange params with a function, and define interact params as "true" first:
 ```
 <Rate rate={this.state.currentRate} max="5" interact="true" rateChange={this.rateChange.bind(this)}/>
@@ -499,7 +499,7 @@ import {Inputbox} from 'thousanday-react';
 	</tr>
 </table>
 <b>Get new input from users</b>
----
+--
 If you want to get the new input from users, you show define the ref params for this component first:
 ```
 <Inputbox ref="newInput" content="" max="150" />
@@ -570,7 +570,7 @@ import {Inputarea} from 'thousanday-react';
 	</tr>
 </table>
 <b>Get new input from users</b>
----
+--
 If you want to get the new input from users, you show define the ref params for this component first:
 ```
 <Inputarea ref="newInput" content="" max="150" />
@@ -781,7 +781,7 @@ let choice = [0, 1, 0];
 	</tr>
 </table>
 Receive users choices
----
+--
 If users have selected several options, you could know the result by refs inside function
 ```
 submitPlan() {
@@ -856,13 +856,13 @@ import {Vote} from 'thousanday-react';
 	</tr>
 </table>
 <b>Show new vote</b>
----
+--
 If you just want to display a vote, just define left, right, agree, disagree
 ```
 <Vote left = "Agree" right = "Disagree" agree = "100" disagree = "60" />
 ```
 <b>Receive vote from users</b>
----
+--
 You should define interact, choice, newChoice for receive vote
 ```
 this.state = {choice: "2"};
