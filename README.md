@@ -139,7 +139,6 @@ saveProfile(finalUrl) {
 <Updateprofile src="url/profile.png" width="200" saveProfile={this.saveProfile.bind(this)} />
 ```
 <b>Send new profile png to server</b><br/>
---
 You should bind saveProfile params with a function:
 ```
 <Updateprofile src="url/profile.png" width="200" saveProfile={this.saveProfile.bind(this)} />
