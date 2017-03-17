@@ -36,7 +36,6 @@ class Inputarea extends Component {
 			paddingLeft: "1%",
 			outline: "none",
 			borderRadius: "5px",
-			border: this.state.border,
 			resize: "none"
 		};
 		let countStyle = {

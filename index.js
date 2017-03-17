@@ -16,6 +16,10 @@ var _Inputbox = require('./lib/input/Inputbox.js');
 
 var _Inputbox2 = _interopRequireDefault(_Inputbox);
 
+var _Postimg = require('./lib/input/Postimg.js');
+
+var _Postimg2 = _interopRequireDefault(_Postimg);
+
 var _Vote = require('./lib/attitude/Vote.js');
 
 var _Vote2 = _interopRequireDefault(_Vote);
@@ -67,5 +71,6 @@ module.exports = {
 	Ovaledit: _Ovaledit2.default,
 	Updateprofile: _Updateprofile2.default,
 	Getlocation: _Getlocation2.default,
-	Delmember: _Delmember2.default
+	Delmember: _Delmember2.default,
+	Postimg: _Postimg2.default
 };

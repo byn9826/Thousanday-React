@@ -11,33 +11,35 @@ npm install thousanday-react --save
 
 Components List
 --
-[Waterfall](#waterfall): responsive Pinterest Image Gallery<br/>
-[Updateprofile](#updateprofile): Update profile img<br/>
-[Delmember](#delmember): Disapear img with shake effect<br/>
-[Getlocation](#getlocation): Display/catch geolocation<br/>
-[Rate](#rate): collect rating form users by stars<br />
-[Inputbox](#inputbox): text input with characters couting<br />
-[Inputarea](#inputarea): textarea with characters couting<br />
-[Like](#like): show/collect like from users<br />
-[Progress](#progress): show/update the progress of something<br />
-[Random](#random): show random content from an array<br />
-[AddtoList](#addtolist): choose an option from a list<br />
-[Vote](#vote): display/collect agree or disagree<br />
-[Ovaledit](#ovaledit): React edit on hover<br />
+[Waterfall](#waterfall): Responsive Pinterest-Stlye Image Gallery<br/><br/>
+[Postimg](#postimg): Post Panel to send message with image<br/><br/>
 
-Other
----
-[React Inline Animation](http://www.thousanday.com/animation)<br/>
+[Updateprofile](#updateprofile): Update profile img<br/><br/>
+[Delmember](#delmember): Disapear img with shake effect<br/><br/>
+[Getlocation](#getlocation): Display/catch geolocation<br/><br/>
+[Rate](#rate): collect rating form users by stars<br /><br/>
+[Inputbox](#inputbox): text input with characters couting<br /><br/>
+[Inputarea](#inputarea): textarea with characters couting<br /><br/>
+[Like](#like): show/collect like from users<br /><br/>
+[Progress](#progress): show/update the progress of something<br /><br/>
+[Random](#random): show random content from an array<br /><br/>
+[AddtoList](#addtolist): choose an option from a list<br /><br/>
+[Vote](#vote): display/collect agree or disagree<br /><br/>
+[Ovaledit](#ovaledit): React edit on hover<br /><br/>
+
+
 
 <a name="waterfall">Waterfall</a>
 --
-Responsive and Interactive Pinterest Like Image Gallery by React.<br/>
+Responsive Pinterest-Stlye Image Gallery<br/>
 ![Waterfall](https://raw.githubusercontent.com/byn9826/ReactUI-Thousanday/master/~markdown/waterfall.JPG)<br/>
+[Idea](https://medium.com/@byn9826/react-ui-responsive-pinterest-style-image-gallery-210c3869be6)<br/>
 [Example](http://www.thousanday.com/react#waterfall)<br/>
 ```
 import {Waterfall} from 'thousanday-react';
 ```
 ```
+//Define an array
 let images = [
     ["url/0.jpg", "message0"],
     ["url/1.jpg", "message1"],
@@ -47,7 +49,18 @@ let images = [
     ["url/5.jpg", "message5"],
     ...
 ];
-//If you defined link="true"
+
+//Init the component
+<Waterfall column="5" image={images} clickNumber={this.clickNumber.bind(this)} />
+
+//Get the index number (in the images array) when user click on one image.
+clickNumber(index) {
+    console.log(index);
+}
+
+```
+```
+//If you want each image redirect to somewhere
 let images = [
     ["url/0.jpg", "message0", "http://href0"],
     ["url/1.jpg", "message1", "http://href1"],
@@ -58,21 +71,16 @@ let images = [
     ...
 ];
 
-...
-clickNumber(index) {
-    console.log(index);//index is the index number (in images array) of the image which has been clicked by user
-}
-...
-<Waterfall column="3" image={images} />// if you don't need a return when users click on images
-<Waterfall column="5" image={images} clickNumber={this.clickNumber.bind(this)} />
-<Waterfall column="5" image={images} link="true"/> //if you want link to other page after click
+//Init the component, define link="true"
+<Waterfall column="3" image={images} link="true"/>
 ```
-<b>All the features of this component</b><br/>
-1. Passing all the image urls and messages you want to show above the image by an array, will automatically layout all the images by the number of columns you defined.<br/>
-2. Show messages above images when mouse over.<br/>
-3. All the images is responsive according to screen width and the messages above images is responsive too.<br/>
-4. Automatically balance the height of each column. Make all the columns balanced.<br/>
-5. Return the index number of the image in the image array if users click on it.<br/>
+<b>Features:</b><br/>
+1. Automatically layout all the images based on the “column” param<br/>
+2. Show related message above each image when mouse hover.<br/>
+3. Responsive images and message<br/>
+4. Balance the height of each column automatically<br/>
+5. Return the index of each image or redirect to somewhere after click<br/><br/>
+<b>Params:</b><br/>
 <table>
 	<tr>
 		<td>Params</td>
@@ -82,8 +90,8 @@ clickNumber(index) {
 	</tr>
 	<tr>
 		<td>image</td>
-		<td>Mandatory. Provie an array contains url and message of all the images you want to show.</td>
-		<td>null</td>
+		<td>Mandatory. Provie an array contains urls, messages, or hrefs of all the images you want to show.</td>
+		<td></td>
 		<td>[
 				["url/0.jpg", "message0"],
 				["url/1.jpg", "message1"],
@@ -94,19 +102,19 @@ clickNumber(index) {
 	</tr>
 	<tr>
 		<td>column</td>
-		<td>Mandatory. Decide how many columns you want to images to display.</td>
-		<td>null</td>
+		<td>Mandatory. Define how many columns you want.</td>
+		<td></td>
 		<td>"3"</td>
 	</tr>
 	<tr>
 		<td>clickNumber</td>
-		<td>Optional. Create a function to get the index of the image has been clicked by users.</td>
-		<td>null</td>
+		<td>Optional. Create a function to get the index of each image after click.</td>
+		<td></td>
 		<td>clickNumber={this.clickNumber.bind(this)}</td>
 	</tr>
 	<tr>
 		<td>link</td>
-		<td>Optional. If you want to add <a> for each img and link to other pages</td>
+		<td>Optional. Dedine as "true" to redirect to related href after click on any image</td>
 		<td>"false"</td>
 		<td>"true"</td>
 	</tr>
@@ -118,6 +126,94 @@ clickNumber(index) {
 	</tr>
 </table>
 
+
+<a name="postimg">Postimg</a>
+--
+Post Panel to send message with image<br/>
+![Postimg](https://raw.githubusercontent.com/byn9826/ReactUI-Thousanday/master/~markdown/postimg.JPG)<br/>
+[Example](http://www.thousanday.com/react#postimg)<br/>
+```
+import {Postimg} from 'thousanday-react';
+```
+```
+//Init the component
+<Postimg content="" max="150" title="New post" submitImg={this.submitImg.bind(this)} />
+
+//Get the new post content and img by a function
+submitImg(message, img) {
+    console.log(message);
+    console.log(img);
+    //Then send by ajax to backend
+}
+
+```
+<b>Features:</b><br/>
+1. Automatically calc and restrict user's input according to "max" param<br/>
+2. Show error message when there's no content or no image or file type is not image.<br/>
+3. Preview selected image<br/>
+
+<b>Notice:</b><br/>
+This component used a GLYPHICONS png under CC BY 3.0 License<br/>
+[Reference](https://segmentfault.com/a/1190000000754560)<br/>
+
+<b>Params:</b><br/>
+<table>
+	<tr>
+		<td>Params</td>
+		<td>Usage</td>
+		<td>Default</td>
+		<td>Example</td>
+	</tr>
+	<tr>
+		<td>content</td>
+		<td>Optional. Init text box with content.</td>
+		<td>""</td>
+		<td>"New update"
+		</td>
+	</tr>
+	<tr>
+		<td>max</td>
+		<td>Mandatory. Define max number of characters users could input</td>
+		<td></td>
+		<td>"100"</td>
+	</tr>
+    <tr>
+		<td>Title</td>
+		<td>Optional. Show a title message above text box</td>
+		<td>""</td>
+		<td>"Create a new post:"</td>
+	</tr>
+	<tr>
+		<td>submitImg</td>
+		<td>Mandatory. Create a function to get the content and image.</td>
+		<td></td>
+		<td>submitImg={this.submitImg.bind(this)}</td>
+	</tr>
+	<tr>
+		<td>fontFamily</td>
+		<td>Optional. Define the fontFamily.</td>
+		<td>"Times New Roman"</td>
+		<td>"Arial"</td>
+	</tr>
+    <tr>
+		<td>width</td>
+		<td>Optional. Define the width of this component.</td>
+		<td>"100%"</td>
+		<td>"80%"</td>
+	</tr>
+    <tr>
+		<td>border</td>
+		<td>Optional. Define border style of the text box.</td>
+		<td>"2px solid #f7d7b4"</td>
+		<td>"1px solid black"</td>
+	</tr>
+    <tr>
+		<td>fontSize</td>
+		<td>Optional. Define fontsize of the text box.</td>
+		<td>"14px"</td>
+		<td>"16px"</td>
+	</tr>
+</table>
 
 
 <a name="updateprofile">Updateprofile</a>
