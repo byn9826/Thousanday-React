@@ -526,7 +526,7 @@ submitInput(){
 <a name="inputarea">Inputarea</a>
 --
 Create textarea with characters counter<br />
-![Inputbox](https://raw.githubusercontent.com/byn9826/ReactUI-Thousanday/master/~markdown/inputarea.JPG)<br />
+![Inputarea](https://raw.githubusercontent.com/byn9826/ReactUI-Thousanday/master/~markdown/inputarea.JPG)<br />
 [Simple Example](http://www.thousanday.com/react#inputarea)<br />
 ```
 import {Inputarea} from 'thousanday-react';
@@ -567,10 +567,16 @@ submitInput(){
 		<td>"50"</td>
 	</tr>
 	<tr>
-		<td>font</td>
+		<td>fontSize</td>
 		<td>Optional. Define the font size of the input</td>
-		<td>"13px"</td>
+		<td>"14px"</td>
 		<td>"15px"</td>
+	</tr>
+	<tr>
+		<td>fontFamily</td>
+		<td>Optional. Define the font family of the input</td>
+		<td>"Times New Roman"</td>
+		<td>"Arial"</td>
 	</tr>
 	<tr>
 		<td>width</td>
@@ -587,7 +593,7 @@ submitInput(){
 	<tr>
 		<td>border</td>
 		<td>Optional. Define the border style</td>
-		<td>"1px solid #1d4077"</td>
+		<td>"2px solid #f7d7b4"</td>
 		<td>"1px dashed black"</td>
 	</tr>
 </table>
