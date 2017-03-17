@@ -4,12 +4,13 @@ class Inputarea extends Component {
 		super(props);
 		this.state = {
 			width: this.props.width || "100%",
-      		border: this.props.border || "1px solid #1d4077",
+      		border: this.props.border || "2px solid #f7d7b4",
       		height: this.props.height || "50px",
-      		fontSize: this.props.font || "13px",
+      		fontSize: this.props.fontSize || "14px",
      		content: this.props.content || "",
       		count: parseInt(this.props.max) - this.props.content.length,
-      		length: parseInt(this.props.max)
+      		length: parseInt(this.props.max),
+			fontFamily: this.props.fontFamily || "Times New Roman"
 		};
 	}
 	editInput(event) {
@@ -20,22 +21,31 @@ class Inputarea extends Component {
 	render() {
 		let spanStyle = {
 			width: this.state.width,
-			display: "inline-block"
+			display: "inline-block",
+			verticalAlign: "top"
 		};
 		let inputStyle = {
-			width: "100%",
+			display: "block",
+			width: "98%",
+			paddingTop: "5px",
+			paddingBottom: "5px",
 			border: this.state.border,
 			height: this.state.height,
-			fontFamily: "Times New Roman",
+			fontFamily: this.state.fontFamily,
 			fontSize: this.state.fontSize,
 			paddingLeft: "1%",
-			outline: "none"
+			outline: "none",
+			borderRadius: "5px",
+			border: this.state.border,
+			resize: "none"
 		};
 		let countStyle = {
-			display: "inline-block",
-			fontFamily: "Times New Roman",
+			display: "block",
+			fontFamily: this.state.fontFamily,
 			fontSize: "11px",
-			width: "100%"
+			width: "99%",
+			marginLeft: "1%",
+			marginTop: "5px"
 		};
 		return (
 			<span style={spanStyle}>

@@ -45,7 +45,7 @@ class Inputbox extends Component {
 		};
 		return(
 			<span style={spanStyle}>
-				<input id={this.state.id} style={inputStyle} value={this.state.content} placeholder={this.props.hint} onChange={this.editInput.bind(this)} />
+				<input type="text" id={this.state.id} style={inputStyle} value={this.state.content} placeholder={this.props.hint} onChange={this.editInput.bind(this)} />
 				<span style={countStyle}>{this.state.count} / {this.state.length}</span>
 			</span>
 		);
