@@ -20,14 +20,6 @@ var _Postimg = require('./lib/input/Postimg.js');
 
 var _Postimg2 = _interopRequireDefault(_Postimg);
 
-var _Vote = require('./lib/attitude/Vote.js');
-
-var _Vote2 = _interopRequireDefault(_Vote);
-
-var _AddtoList = require('./lib/list/AddtoList.js');
-
-var _AddtoList2 = _interopRequireDefault(_AddtoList);
-
 var _Like = require('./lib/attitude/Like.js');
 
 var _Like2 = _interopRequireDefault(_Like);
@@ -39,10 +31,6 @@ var _Progress2 = _interopRequireDefault(_Progress);
 var _Waterfall = require('./lib/display/Waterfall.js');
 
 var _Waterfall2 = _interopRequireDefault(_Waterfall);
-
-var _Ovaledit = require('./lib/button/Ovaledit.js');
-
-var _Ovaledit2 = _interopRequireDefault(_Ovaledit);
 
 var _Updateprofile = require('./lib/button/Updateprofile.js');
 

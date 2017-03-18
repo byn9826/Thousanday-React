@@ -1,5 +1,5 @@
 # React-Thousanday
-A list of React UI components, will update step by step.
+A list of reusable React UI components, will update weekly.
 
 
 Install
@@ -13,20 +13,15 @@ Components List
 --
 [Waterfall](#waterfall): Responsive Pinterest-Stlye Image Gallery<br/><br/>
 [Postimg](#postimg): Post Panel to send message with image<br/><br/>
-
-[Updateprofile](#updateprofile): Update profile img<br/><br/>
-[Delmember](#delmember): Disapear img with shake effect<br/><br/>
-[Getlocation](#getlocation): Display/catch geolocation<br/><br/>
-[Rate](#rate): collect rating form users by stars<br /><br/>
-[Inputbox](#inputbox): text input with characters couting<br /><br/>
-[Inputarea](#inputarea): textarea with characters couting<br /><br/>
-[Like](#like): show/collect like from users<br /><br/>
-[Progress](#progress): show/update the progress of something<br /><br/>
-[Random](#random): show random content from an array<br /><br/>
-[AddtoList](#addtolist): choose an option from a list<br /><br/>
-[Vote](#vote): display/collect agree or disagree<br /><br/>
-[Ovaledit](#ovaledit): React edit on hover<br /><br/>
-
+[Getlocation](#getlocation): Display/Get users' geolocation<br/><br/>
+[Delmember](#delmember): Disapear images with shake effect<br/><br/>
+[Inputbox](#inputbox): Text input with characters couting and restriction<br/><br/>
+[Inputarea](#inputarea): Textarea with characters couting and restriction<br /><br/>
+[Updateprofile](#updateprofile): Update profile image<br/><br/>
+[Like](#like): Show/Collect like from users<br/><br/>
+[Progress](#progress): Show/Update the progress bar<br/><br/>
+[Rate](#rate): Show/Collect rate form users by stars<br /><br/>
+[Random](#random): Show random content from a list of options<br /><br/>
 
 
 <a name="waterfall">Waterfall</a>
@@ -216,190 +211,37 @@ This component used a GLYPHICONS png under CC BY 3.0 License<br/>
 </table>
 
 
-<a name="updateprofile">Updateprofile</a>
---
-Update users profile as png format. <br/>
-This component is depend on [react-avatar-editor](https://github.com/mosch/react-avatar-editor) under MIT<br/>
-![updateprofile](https://raw.githubusercontent.com/byn9826/ReactUI-Thousanday/master/~markdown/updateprofile.JPG)<br/>
-[Example](http://www.thousanday.com/react#updateprofile)<br/>
-```
-import {Updateprofile} from 'thousanday-react';
-```
-```
-saveProfile(finalUrl) {
-	let formData = new FormData();
-	formData.append('file', finalUrl, "profile_name.png");
-	//send by ajax
-}
-...
-<Updateprofile src="url/profile.png" width="200" saveProfile={this.saveProfile.bind(this)} />
-```
-<b>Send new profile png to server</b><br/>
-You should bind saveProfile params with a function:
-```
-<Updateprofile src="url/profile.png" width="200" saveProfile={this.saveProfile.bind(this)} />
-```
-Then you should create a saveProfile function to send new image by ajax:
-```
-saveProfile(finalUrl) {
-	let formData = new FormData();
-	formData.append('file', finalUrl, "profile_name.png");
-	reqwest({
-		url: "/upateProfile",
-		method: "POST",
-		data: formData,
-		contentType: false,
-		processData: false
-	});
-}
-```
-<table>
-	<tr>
-		<td>Params</td>
-		<td>Usage</td>
-		<td>Default</td>
-		<td>Example</td>
-	</tr>
-	<tr>
-		<td>src</td>
-		<td>Mandatory. The original profile src address.</td>
-		<td>null</td>
-		<td>"/img/0/profile.png"</td>
-	</tr>
-	<tr>
-		<td>width</td>
-		<td>Mandatory. Define the width and height of the profile image</td>
-		<td>null</td>
-		<td>"200"</td>
-	</tr>
-	<tr>
-		<td>saveProfile</td>
-		<td>Mandatory. Bind with a function to send the new image</td>
-		<td></td>
-		<td>{this.saveProfile.bind(this)}</td>
-	</tr>
-	<tr>
-		<td>fontFamily</td>
-		<td>Optional. Define the fontFamily.</td>
-		<td>"Times New Roman"</td>
-		<td>"Arial"</td>
-	</tr>
-</table>
-
-
-
-<a name="rate">Delmember</a>
---
-Disapear img with shake effect by delete button<br/>
-![delmember](https://raw.githubusercontent.com/byn9826/ReactUI-Thousanday/master/~markdown/delmember.JPG)<br/>
-[Example](http://www.thousanday.com/react#delmember)<br/>
-```
-import {Delmember} from 'thousanday-react';
-```
-```
-clickDel(index) {
-	console.log(index);
-}
-...
-<Delmember profile={"0.jpg"} index={0} clickDel={this.clickDel.bind(this)} />
-```
-<b>Know which image has been clicked</b><br/>
-This component is used to indicate remove some member by click the - button on their profile image:
-```
-<Delmember profile={"0.jpg"} index={0} clickDel={this.clickDel.bind(this)} />
-```
-Then you should create a clickDel function receive the index you passed in order to know which image has been clicked:
-```
-clickDel(index) {
-	console.log(index);
-	//del row in db according to index
-}
-```
-<table>
-	<tr>
-		<td>Params</td>
-		<td>Usage</td>
-		<td>Default</td>
-		<td>Example</td>
-	</tr>
-	<tr>
-		<td>profile</td>
-		<td>Mandatory. Define the img src address.</td>
-		<td>null</td>
-		<td>"0.jpg"</td>
-	</tr>
-	<tr>
-		<td>index</td>
-		<td>Mandatory. Will return this index after click to indicate which img disapeared</td>
-		<td></td>
-		<td>0</td>
-	</tr>
-	<tr>
-		<td>clickDel</td>
-		<td>Mandatory. Bind with a function to receive the index of the image has been clicked and disapeared</td>
-		<td></td>
-		<td>{this.clickDel.bind(this)}</td>
-	</tr>
-	<tr>
-		<td>width</td>
-		<td>Optinal. Define the width of the image</td>
-		<td>100 (will turn to 100 px)</td>
-		<td>300 (will turn to 300 px)</td>
-	</tr>
-	<tr>
-		<td>height</td>
-		<td>Optinal. Define the height of the image</td>
-		<td>100 (will turn to 100 px)</td>
-		<td>300 (will turn to 300 px)</td>
-	</tr>
-	<tr>
-		<td>marginLR</td>
-		<td>Optional. Define the margin-left and margin-right</td>
-		<td>10 (will turn to 10 px)</td>
-		<td>30  (will turn to 30 px)</td>
-	</tr>
-	<tr>
-		<td>fontFamily</td>
-		<td>Optional. Define the font family of the - button</td>
-		<td>"Times New Roman"</td>
-		<td>"Arial"</td>
-	</tr>
-</table>
-
-
-
 <a name="getlocation">Getlocation</a>
 --
-Show/catch geolocation by map. #This component is depend on [openlayers](https://openlayers.org/) under BSD<br/>
+Display/Get users' geolocation.
 ![getlocation](https://raw.githubusercontent.com/byn9826/ReactUI-Thousanday/master/~markdown/getlocation.JPG)<br/>
 [Example](http://www.thousanday.com/react#getlocation)<br/>
 ```
 import {Getlocation} from 'thousanday-react';
 ```
 ```
-saveLocation(coordinate) {
-	console.log(coordinate);
-}
-...
-<Getlocation center={[-79, 43]} saveLocation={this.saveLocation.bind(this)} />
-<Getlocation zoom="1" display="true" /> //This one only for display, didn't return coordinate
-```
-<b>Display a map with location</b><br/>
-
-```
+//Init the component for display location only by define display="true"
 <Getlocation center={[0,0]} zoom="1" display="true" />
 ```
-<b>Get location from users</b><br/>
-
 ```
+//Init the component to get users' location
+<Getlocation center={[-79, 43]} saveLocation={this.saveLocation.bind(this)} />
+//Get new coordinate stand for user's location by a function
 saveLocation(coordinate) {
 	console.log(coordinate);
-	//send to db
+    //update db
 }
-...
-<Getlocation center={this.state.location} saveLocation={this.saveLocation.bind(this)} />
 ```
-Chrome and android might need https for this feature<br/>
+<b>Features:</b><br/>
+1. zoom in, zoom out, get location by GPS<br/>
+2. Preset zoom level for display<br/>
+3. Return coordinate ([lon, lat]) stand for user's location<br/>
+
+<b>Notice:</b><br/>
+The map service is depend on [openlayers](https://openlayers.org/) under BSD License<br/>
+Chrome and android require https for GPS locate feature<br/>
+
+<b>Params:</b><br/>
 <table>
 	<tr>
 		<td>Params</td>
@@ -409,31 +251,31 @@ Chrome and android might need https for this feature<br/>
 	</tr>
 	<tr>
 		<td>center</td>
-		<td>Optional. The original center location of the map.</td>
+		<td>Optional. Set the center location at the starting point.</td>
 		<td>[-147, -31] (somewhere in Pacific)</td>
 		<td>[100, 30] (must be array)</td>
 	</tr>
 	<tr>
 		<td>zoom</td>
-		<td>Optional. The original zoom level of the map</td>
+		<td>Optional. Set the zoom level at the starting point</td>
 		<td>15 (district level)</td>
 		<td>"1" (global level)</td>
 	</tr>
 	<tr>
 		<td>setZoom</td>
-		<td>Optional. The zoom level when user click save location</td>
+		<td>Optional. Set the zoom level after users click save location</td>
 		<td>15</td>
 		<td>"10"</td>
 	</tr>
 	<tr>
 		<td>maxZoom</td>
-		<td>Optional. The maximum zoom level when user click + button</td>
+		<td>Optional. Set the maximum zoom level when user click "+" button</td>
 		<td>15</td>
 		<td>"17"</td>
 	</tr>
 	<tr>
 		<td>display</td>
-		<td>Optional. Onlye for display mode. Hide buttons, only display location on the map</td>
+		<td>Optional. Set it as "true" to show map for display only.</td>
 		<td>"false"</td>
 		<td>"true"</td>
 	</tr>
@@ -457,7 +299,7 @@ Chrome and android might need https for this feature<br/>
 	</tr>
 	<tr>
 		<td>saveLocation</td>
-		<td>Optional. Mandatory for default mode. Get the coordinate the users set</td>
+		<td>Optional. Mandatory to return the center of the map</td>
 		<td></td>
 		<td>{this.saveLocation.bind(this)}</td>
 	</tr>
@@ -470,31 +312,30 @@ Chrome and android might need https for this feature<br/>
 </table>
 
 
-
-<a name="rate">Rate</a>
+<a name="delmember">Delmember</a>
 --
-Display or Receive rate from users<br/>
-![Rating](https://raw.githubusercontent.com/byn9826/ReactUI-Thousanday/master/~markdown/rate.PNG)<br/>
-[Example](http://www.thousanday.com/react#rate)<br/>
+Disapear images with shake effect<br/>
+![delmember](https://raw.githubusercontent.com/byn9826/ReactUI-Thousanday/master/~markdown/delmember.JPG)<br/>
+[Example](http://www.thousanday.com/react#delmember)<br/>
 ```
-import {Rate} from 'thousanday-react';
+import {Delmember} from 'thousanday-react';
 ```
 ```
-<Rate rate="3" max="5" interact="true" rateChange={this.rateChange.bind(this)} />
-```
-<b>Get new rate from user</b><br/>
-
-You should bind ratechange params with a function, and define interact params as "true" first:
-```
-<Rate rate={this.state.currentRate} max="5" interact="true" rateChange={this.rateChange.bind(this)}/>
-```
-Then you should create a rateChange function to deal with new rate:
-```
-rateChange(rateNum){
-    //rateNum is the new rate from current user
-    this.setState({currentRate:rateNum});
+//Init components with clickDel function and index
+<Delmember profile={"0.jpg"} index={0} clickDel={this.clickDel.bind(this)} />
+<Delmember profile={"1.jpg"} index={1} clickDel={this.clickDel.bind(this)} />
+//Create clickDel function to get index of the image has been clicked by users
+clickDel(index) {
+	console.log(index);
+    //update db according to index
 }
 ```
+<b>Features:</b><br/>
+1. Show a delete button on top-right corner of the image<br/>
+2. Image shakes after users click it then diaspear<br/>
+3. Return index to indicate which image has been clicked<br/>
+
+<b>Params:</b><br/>
 <table>
 	<tr>
 		<td>Params</td>
@@ -503,69 +344,72 @@ rateChange(rateNum){
 		<td>Example</td>
 	</tr>
 	<tr>
-		<td>rate</td>
-		<td>Mandatory. Define the default rates. Define it as 0 for no initial rate.</td>
-		<td>null</td>
-		<td>"4"</td>
-	</tr>
-	<tr>
-		<td>max</td>
-		<td>Mandatory. Define the maximum number of stars</td>
-		<td>"5"</td>
-		<td>"6"</td>
-	</tr>
-	<tr>
-		<td>interact</td>
-		<td>Optinal. If current user are allowed to change the defaut rate</td>
-		<td>false</td>
-		<td>"true"</td>
-	</tr>
-	<tr>
-		<td>font</td>
-		<td>Optional. Adjust size of this component</td>
-		<td>"18px"</td>
-		<td>"14px"</td>
-	</tr>
-	<tr>
-		<td>color</td>
-		<td>Optional. Define color of this component</td>
-		<td>"orange"</td>
-		<td>"black"</td>
-	</tr>
-	<tr>
-		<td>rateChange</td>
-		<td>Optinal. Bind with a function to receive new rate from users</td>
+		<td>profile</td>
+		<td>Mandatory. Define img src.</td>
 		<td></td>
-		<td>{this.rateChange.bind(this)}</td>
+		<td>"0.jpg"</td>
+	</tr>
+	<tr>
+		<td>index</td>
+		<td>Mandatory. An index to indicate current image</td>
+		<td></td>
+		<td>0</td>
+	</tr>
+	<tr>
+		<td>clickDel</td>
+		<td>Mandatory. Use a function to receive the index of the image has been clicked</td>
+		<td></td>
+		<td>{this.clickDel.bind(this)}</td>
+	</tr>
+	<tr>
+		<td>width</td>
+		<td>Optinal. Define the width of the image</td>
+		<td>100 (will turn into 100 px)</td>
+		<td>300 (will turn into 300 px)</td>
+	</tr>
+	<tr>
+		<td>height</td>
+		<td>Optinal. Define the height of the image</td>
+		<td>100 (will turn into 100 px)</td>
+		<td>300 (will turn into 300 px)</td>
+	</tr>
+	<tr>
+		<td>marginLR</td>
+		<td>Optional. Define the margin-left and margin-right</td>
+		<td>10 (will turn into 10 px)</td>
+		<td>30  (will turn into 30 px)</td>
+	</tr>
+	<tr>
+		<td>fontFamily</td>
+		<td>Optional. Define the font family of the button</td>
+		<td>"Times New Roman"</td>
+		<td>"Arial"</td>
 	</tr>
 </table>
 
 
-
 <a name="inputbox">Inputbox</a>
 --
-Create text input with characters counter<br />
+Text input with characters couting and restriction<br />
 ![Inputbox](https://raw.githubusercontent.com/byn9826/ReactUI-Thousanday/master/~markdown/inputbox.JPG)<br />
 [Simple Example](http://www.thousanday.com/react#inputbox)<br />
 ```
 import {Inputbox} from 'thousanday-react';
 ```
 ```
-<Inputbox content="Inital content here" max="30" />
-```
-<b>Get new input from users</b><br/>
-If you want to get the new input from users, you show define the ref params for this component first:
-```
+//Init component with ref name
 <Inputbox ref="newInput" content="" max="150" />
-```
-Then you could get the new input by use this.refs.newInput.state.content inside functions:
-```
+//Get the content from any function
 submitInput(){
     console.log(this.refs.newInput.state.content);//this is users new input
 }
-...
 <button onClick={this.submitInput.bind(this)} />
 ```
+<b>Features:</b><br/>
+1. Counting input characters<br/>
+2. Restrict input after reaching maximun characters<br/>
+
+<b>Params:</b><br/>
 <table>
 	<tr>
 		<td>Params</td>
@@ -575,20 +419,20 @@ submitInput(){
 	</tr>
 	<tr>
 		<td>content</td>
-		<td>Mandatory. Define the content show in the input. Inital Empty one by ""</td>
-		<td>null</td>
+		<td>Mandatory. Define the input value at the starting point. Inital Empty by ""</td>
+		<td></td>
 		<td>"Initial content"</td>
 	</tr>
 	<tr>
 		<td>max</td>
 		<td>Mandatory. Define the maximun number of characters users could input</td>
-		<td>Must Define it</td>
+		<td></td>
 		<td>"20"</td>
 	</tr>
 	<tr>
 		<td>hint</td>
 		<td>Optional. Define the placehold attribute for input tag</td>
-		<td>null</td>
+		<td></td>
 		<td>"Your name here"</td>
 	</tr>
 	<tr>
@@ -618,31 +462,28 @@ submitInput(){
 </table>
 
 
-
 <a name="inputarea">Inputarea</a>
 --
-Create textarea with characters counter<br />
+Textarea with characters couting and restriction<br />
 ![Inputarea](https://raw.githubusercontent.com/byn9826/ReactUI-Thousanday/master/~markdown/inputarea.JPG)<br />
 [Simple Example](http://www.thousanday.com/react#inputarea)<br />
 ```
 import {Inputarea} from 'thousanday-react';
 ```
 ```
-<Inputarea content="Inital content here" max="300" />
-```
-<b>Get new input from users</b><br/>
-If you want to get the new input from users, you show define the ref params for this component first:
-```
-<Inputarea ref="newInput" content="" max="150" />
-```
-Then you could get the new input by use this.refs.newInput.state.content inside functions:
-```
+//Init this component with ref name
+<Inputarea ref="newInput" content="" max="300" />
+//Get the input content from any function
 submitInput(){
-    console.log(this.refs.newInput.state.content);//this is users new input
+    console.log(this.refs.newInput.state.content);
 }
-...
 <button onClick={this.submitInput.bind(this)} />
 ```
+<b>Features:</b><br/>
+1. Counting inputarea characters<br/>
+2. Restrict input after reaching maximun characters<br/>
+
+<b>Params:</b><br/>
 <table>
 	<tr>
 		<td>Params</td>
@@ -652,14 +493,14 @@ submitInput(){
 	</tr>
 	<tr>
 		<td>content</td>
-		<td>Mandatory. Define the content show in the input. Inital Empty one by ""</td>
-		<td>null</td>
+		<td>Mandatory. Textarea value at the starting point. Inital Empty one by ""</td>
+		<td></td>
 		<td>"Initial content"</td>
 	</tr>
 	<tr>
 		<td>max</td>
 		<td>Mandatory. Define the maximun number of characters users could input</td>
-		<td>Must Define it</td>
+		<td></td>
 		<td>"50"</td>
 	</tr>
 	<tr>
@@ -695,23 +536,91 @@ submitInput(){
 </table>
 
 
+<a name="updateprofile">Updateprofile</a>
+--
+Update profile image. <br/>
+![updateprofile](https://raw.githubusercontent.com/byn9826/ReactUI-Thousanday/master/~markdown/updateprofile.JPG)<br/>
+[Example](http://www.thousanday.com/react#updateprofile)<br/>
+```
+import {Updateprofile} from 'thousanday-react';
+```
+```
+//Init component with saveProfile function
+<Updateprofile src="url/profile.png" width="200" saveProfile={this.saveProfile.bind(this)} />
+saveProfile(finalUrl) {
+    let formData = new FormData();
+	formData.append('file', finalUrl, "profile_name.png");
+	reqwest({
+		url: "/upateProfile",
+		method: "POST",
+		data: formData,
+		contentType: false,
+		processData: false
+	});
+}
+```
+<b>Features:</b><br/>
+1. Show new profile image<br/>
+2. Return new profile image information which could send and save to backend<br/>
+<b>Notice:</b><br/>
+The image crop function is realized by  [react-avatar-editor](https://github.com/mosch/react-avatar-editor) under MIT<br/>
+<b>Params:</b><br/>
+<table>
+	<tr>
+		<td>Params</td>
+		<td>Usage</td>
+		<td>Default</td>
+		<td>Example</td>
+	</tr>
+	<tr>
+		<td>src</td>
+		<td>Mandatory. The image src at the starting point.</td>
+		<td></td>
+		<td>"/img/0/profile.png"</td>
+	</tr>
+	<tr>
+		<td>width</td>
+		<td>Mandatory. Define the width and height of the profile image</td>
+		<td></td>
+		<td>"200" (Return into 200px)</td>
+	</tr>
+	<tr>
+		<td>saveProfile</td>
+		<td>Mandatory. Use a function to send the new image</td>
+		<td></td>
+		<td>{this.saveProfile.bind(this)}</td>
+	</tr>
+	<tr>
+		<td>fontFamily</td>
+		<td>Optional. Define the fontFamily.</td>
+		<td>"Times New Roman"</td>
+		<td>"Arial"</td>
+	</tr>
+</table>
+
 
 <a name="like">Like</a>
 --
-Show and receive likes from users.<br/>
+Show/Collect like from users<br/>
 ![Like](https://raw.githubusercontent.com/byn9826/ReactUI-Thousanday/master/~markdown/like.JPG)<br/>
 [Example](http://www.thousanday.com/react#like)<br/>
 ```
 import {Like} from 'thousanday-react';
 ```
 ```
+//init component with newTotal function
+<Like agree={this.state.like} newTotal={this.updateLike.bind(this)}/>
+//Get +1 or -1 based on users action
 updateLike(change) {
   let like = this.state.like;
   this.setState({like: like + change});
 }
-...
-<Like agree={this.state.like} newTotal={this.updateLike.bind(this)}/>
 ```
+<b>Features:</b><br/>
+1. Show total like numbers<br/>
+2. Change total like numbers based on users action<br/>
+
+<b>Params:</b><br/>
 <table>
 	<tr>
 		<td>Params</td>
@@ -721,13 +630,13 @@ updateLike(change) {
 	</tr>
 	<tr>
 		<td>agree</td>
-		<td>Mandatory. Initial total likes.</td>
-		<td>null</td>
+		<td>Mandatory. Initial total like numbers.</td>
+		<td></td>
 		<td>"0"</td>
 	</tr>
 	<tr>
 		<td>newTotal</td>
-		<td>Mandatory. Update new total after users clicked the like button</td>
+		<td>Mandatory. Use a function to update total like numbers after users clicked the like button</td>
 		<td></td>
 		<td>{this.updateLike.bind(this)}</td>
 	</tr>
@@ -736,16 +645,22 @@ updateLike(change) {
 
 <a name="progress">Progress</a>
 --
-Show a bar to display users' progress.<br/>
+Show/Update the progress bar<br/>
 ![Progress](https://raw.githubusercontent.com/byn9826/ReactUI-Thousanday/master/~markdown/progress.JPG)<br/>
 [Example](http://www.thousanday.com/react#progress)<br/>
 ```
 import {Progress} from 'thousanday-react';
 ```
 ```
+//Init progress bar show progress by percentage
 <Progress progress={this.state.progress} max="100" />
+//Init progress bar set percentage="false" show progress by value
 <Progress progress={this.state.progress} max="100" percentage="false" />
 ```
+<b>Features:</b><br/>
+1. Show progress by percentage or value<br/>
+
+<b>Params:</b><br/>
 <table>
 	<tr>
 		<td>Params</td>
@@ -756,18 +671,18 @@ import {Progress} from 'thousanday-react';
 	<tr>
 		<td>progress</td>
 		<td>Mandatory. Provie a number to stand for the default progress.</td>
-		<td>null</td>
+		<td></td>
 		<td>"20"</td>
 	</tr>
 	<tr>
 		<td>max</td>
 		<td>Mandatory. Provide a number to stand for the maximum progress.</td>
-		<td>null</td>
+		<td></td>
 		<td>"100"</td>
 	</tr>
 	<tr>
 		<td>percentage</td>
-		<td>Optional. Show the progress as percentage format or not.</td>
+		<td>Optional. Show the progress as percentage or value.</td>
 		<td>true</td>
 		<td>"false"</td>
 	</tr>
@@ -804,19 +719,96 @@ import {Progress} from 'thousanday-react';
 </table>
 
 
+<a name="rate">Rate</a>
+--
+Show/Collect rate form users by stars<br/>
+![Rating](https://raw.githubusercontent.com/byn9826/ReactUI-Thousanday/master/~markdown/rate.PNG)<br/>
+[Example](http://www.thousanday.com/react#rate)<br/>
+```
+import {Rate} from 'thousanday-react';
+```
+```
+//Init component by define interact="true" with rateChange function
+<Rate rate={this.state.currentRate} max="5" interact="true" rateChange={this.rateChange.bind(this)} />
+//Update to new rate by rateChange function
+rateChange(rateNum){
+    this.setState({currentRate:rateNum});
+}
+```
+```
+//Init a display only rate
+<Rate rate = "3" max = "5" />
+```
+<b>Features:</b><br/>
+1. Show rate by stars<br/>
+2. Update rate after user add/update a new rate<br/>
+
+<b>Params:</b><br/>
+<table>
+	<tr>
+		<td>Params</td>
+		<td>Usage</td>
+		<td>Default</td>
+		<td>Example</td>
+	</tr>
+	<tr>
+		<td>rate</td>
+		<td>Mandatory. Define the default rates. 0 for unrated.</td>
+		<td></td>
+		<td>"4"</td>
+	</tr>
+	<tr>
+		<td>max</td>
+		<td>Mandatory. Define the maximum number of stars</td>
+		<td>"5"</td>
+		<td>"6"</td>
+	</tr>
+	<tr>
+		<td>interact</td>
+		<td>Optinal. Define as "true" if users are allowed to change the rate</td>
+		<td>false</td>
+		<td>"true"</td>
+	</tr>
+	<tr>
+		<td>font</td>
+		<td>Optional. Adjust size of this component</td>
+		<td>"18px"</td>
+		<td>"14px"</td>
+	</tr>
+	<tr>
+		<td>color</td>
+		<td>Optional. Define color of this component</td>
+		<td>"orange"</td>
+		<td>"black"</td>
+	</tr>
+	<tr>
+		<td>rateChange</td>
+		<td>Optinal. Use a function to receive new rate from users</td>
+		<td></td>
+		<td>{this.rateChange.bind(this)}</td>
+	</tr>
+</table>
+
+
 <a name="random">Random</a>
 --
-Output one random contents from a list of content you provided inside a designated html tag.<br/>
+Show random content from a list of options<br/>
 ![Random](https://raw.githubusercontent.com/byn9826/ReactUI-Thousanday/master/~markdown/random.JPG)<br/>
 [Example](http://www.thousanday.com/react#random)<br/>
 ```
 import {Random} from 'thousanday-react';
 ```
 ```
+//Define a list of content in array
 let randomContent = ["Slogan 1", "Slogan 2", "Slogan 3"];
-...
+//Init the component with the array
 <Random random={randomContent} font="h3" />
 ```
+<b>Features:</b><br/>
+1. Randomly show content based on list of options<br/>
+2. Insert content into a desired html tag<br/>
+
+<b>Params:</b><br/>
 <table>
 	<tr>
 		<td>Params</td>
@@ -826,221 +818,24 @@ let randomContent = ["Slogan 1", "Slogan 2", "Slogan 3"];
 	</tr>
 	<tr>
 		<td>content</td>
-		<td>Mandatory. Provie list of content you want to show randomly.</td>
-		<td>null</td>
+		<td>Mandatory. Provide list of contents to show randomly.</td>
+		<td></td>
 		<td>["123", "234", "345"]</td>
 	</tr>
 	<tr>
 		<td>font</td>
 		<td>Mandatory. Provide a tag name to hold the output.</td>
-		<td>null</td>
+		<td></td>
 		<td>"h3"</td>
 	</tr>
 	<tr>
 		<td>style</td>
-		<td>Optional. Define a style name could be used to styling this component.</td>
-		<td>null</td>
+		<td>Optional. Define a style name could be used to styling this component in CSS.</td>
+		<td></td>
 		<td>"randomStyle"</td>
 	</tr>
 </table>
 
-
-<a name="addtolist">AddtoList</a>
---
-Show a list of options for users to select(multi).<br/>
-![AddtoList](https://raw.githubusercontent.com/byn9826/ReactUI-Thousanday/master/~markdown/addtolist.JPG)<br/>
-[Example](http://www.thousanday.com/react#addtolist)<br/>
-```
-import {AddtoList} from 'thousanday-react';
-```
-```
-let options = ["list 1", "list 2", "list 3"];
-let choice = [0, 1, 0];
-...
-<AddtoList content={options} choice={choice} />
-```
-<b>Receive users choices</b><br/>
-If users have selected several options, you could know the result by refs inside function
-```
-submitPlan() {
-  console.log(this.refs.planChoice.state.choice);
-}
-<AddtoList ref="planChoice" title="Add to your plans:" content={this.state.plan} />
-<button onClick={this.submitPlan.bind(this)}>submit</button>
-```
-You will get an array like [0,1,1,0] or similar to [null,null,1,0], null and 0 means options in the same order has not been selected. 1 means options in the same order has been selected.
-<table>
-	<tr>
-		<td>Params</td>
-		<td>Usage</td>
-		<td>Default</td>
-		<td>Example</td>
-	</tr>
-	<tr>
-		<td>content</td>
-		<td>Mandatory. Provie a list of options.</td>
-		<td>null</td>
-		<td>["option 1", "option 2", "option 3"]</td>
-	</tr>
-	<tr>
-		<td>title</td>
-		<td>Optional. Provie a title for all the options.</td>
-		<td>null</td>
-		<td>"Please choose some options:</td>
-	</tr>
-	<tr>
-		<td>choice</td>
-		<td>Optional. Use a list to stand for inital choice status. 0,null for not selected. 1 for selected</td>
-		<td>all not selected</td>
-		<td>[0,1,1,0]</td>
-	</tr>
-	<tr>
-		<td>width</td>
-		<td>Optional. Define the width of the component.</td>
-		<td>"100%"</td>
-		<td>"200px"</td>
-	</tr>
-</table>
-
-
-
-<a name="vote">Vote</a>
---
-Display or Receive vote from users<br/>
-![Vote](https://raw.githubusercontent.com/byn9826/ReactUI-Thousanday/master/~markdown/vote.JPG)<br/>
-[Example](http://www.thousanday.com/react#vote)<br/>
-```
-import {Vote} from 'thousanday-react';
-```
-```
-<Vote left = "Agree" right = "Disagree" agree = "100" disagree = "60" />
-<Vote left = "Good" right = "Bad" interact = "true" choice = {this.state.choice} newChoice = {this.newChoice.bind(this)} />
-```
-<b>Show new vote</b><br/>
-If you just want to display a vote, just define left, right, agree, disagree
-```
-<Vote left = "Agree" right = "Disagree" agree = "100" disagree = "60" />
-```
-<b>Receive vote from users</b><br/>
-
-You should define interact, choice, newChoice for receive vote
-```
-this.state = {choice: "2"};
-...
-<Vote left = "Good" right = "Bad" interact = "true" choice = {this.state.choice} newChoice = {this.newChoice.bind(this)} />
-```
-Then you can get user's choice by a newChoice function
-```
-newChoice(newNum) {
-    this.setState({userVote: newNum});
-}
-//this.state.choice would be 0 if user choose no, 1 for yes, 2 for no choice
-```
-<table>
-	<tr>
-		<td>Params</td>
-		<td>Usage</td>
-		<td>Default</td>
-		<td>Example</td>
-	</tr>
-	<tr>
-		<td>Left</td>
-		<td>Mandatory. Words stand for your yes answer, show on left side.</td>
-		<td>"Agree"</td>
-		<td>"Good"</td>
-	</tr>
-	<tr>
-		<td>Right</td>
-		<td>Mandatory. Words stand for your no answer, show on right side.</td>
-		<td>"Disagree"</td>
-		<td>"Bad"</td>
-	</tr>
-	<tr>
-		<td>agree</td>
-		<td>Optinal. Define the number show on left for vote display</td>
-		<td>0</td>
-		<td>"100"</td>
-	</tr>
-	<tr>
-		<td>disagree</td>
-		<td>Optional. Define the number show on the right for vote display</td>
-		<td>0</td>
-		<td>"60"</td>
-	</tr>
-	<tr>
-		<td>Interact</td>
-		<td>Mandatory for collecting vote. No use for display vote</td>
-		<td>"true"</td>
-		<td>"false"</td>
-	</tr>
-	<tr>
-		<td>Choice</td>
-		<td>Mandatory for collecting vote. Initial user's choice. "0" for no, 1 for yes, 2 for no choice before. "0" must be string</td>
-		<td>"1"</td>
-		<td>"2"</td>
-	</tr>
-	<tr>
-		<td>newChoice</td>
-		<td>Optinal. Bind with a function to show new choice from users</td>
-		<td></td>
-		<td>{this.newChoice.bind(this)}</td>
-	</tr>
-</table>
-
-
-
-<a name="ovaledit">Ovaledit</a>
---
-Show an edit button react on hover and click<br/>
-![Ovaledit](https://raw.githubusercontent.com/byn9826/ReactUI-Thousanday/master/~markdown/ovaledit.JPG)<br/>
-[Example](http://www.thousanday.com/react#ovaledit)<br/>
-```
-import {Ovaledit} from 'thousanday-react';
-```
-```
-clickEdit(event) {}
-...
-<Ovaledit value="Edit" clickEdit={this.clickEdit.bind(this)} color="black" />
-```
-<table>
-	<tr>
-		<td>Params</td>
-		<td>Usage</td>
-		<td>Default</td>
-		<td>Example</td>
-	</tr>
-	<tr>
-		<td>value</td>
-		<td>Mandatory. Provie content to display.</td>
-		<td>null</td>
-		<td>"Edit"</td>
-	</tr>
-	<tr>
-		<td>color</td>
-		<td>Optional.Define the color and borderbottom.</td>
-		<td>"#ef8513"</td>
-		<td>"red"</td>
-	</tr>
-	<tr>
-		<td>href</td>
-		<td>Optional.Go to other page when click.</td>
-		<td>"#ef8513"</td>
-		<td>"red"</td>
-	</tr>
-	<tr>
-		<td>fontFamily</td>
-		<td>Optional.Change default fontFamily.</td>
-		<td>"Times New Roman"</td>
-		<td>"sans-serif"</td>
-	</tr>
-	<tr>
-		<td>clickEdit</td>
-		<td>Optional. Create a function to catach click events.</td>
-		<td></td>
-		<td></td>
-	</tr>
-</table>
-Can't use both href and clickEdit attri at the same time.
 
 License
 --

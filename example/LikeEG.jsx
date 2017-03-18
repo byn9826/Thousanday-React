@@ -16,12 +16,19 @@ class LikeEG extends Component {
             <section id = "like" className = "example">
                 <header className = "example-header">
                     <h2>Like</h2>
-                    <h3>Display and Collect likes from users</h3>
+                    <h3>Show/Collect like from users</h3>
                 </header>
                 <span className="example-span">
                     {"<Like agree='100' /> "}
                 </span>
-                <h4>If you like this components:</h4>
+                <h4>
+                    <b>Features:</b><br/>
+                    1. Show total like numbers<br/>
+                    2. Change total like numbers based on users action<br/>
+                </h4>
+                <h4>
+                    <b>Demo:</b><br/>
+                </h4>
                 <Like agree={this.state.like} newTotal={this.updateLike.bind(this)}/>
                 <h4>
                     <a href = "https://github.com/byn9826/Thousanday-React#like" target = "__blank">Check docs</a>

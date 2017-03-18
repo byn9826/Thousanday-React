@@ -7,13 +7,12 @@ import RateEG from './RateEG';
 import WaterfallEG from './WaterfallEG';
 import InputboxEG from './InputboxEG';
 import InputareaEG from './InputareaEG';
-import AddtolistEG from './AddtolistEG';
-import VoteEG from './VoteEG';
 import LikeEG from './LikeEG';
-import OvaleditEG from './OvaleditEG';
 import ProgressEG from './ProgressEG';
 import UpdateprofileEG from './UpdateprofileEG';
 import GetlocationEG from './GetlocationEG';
+import DelmemberEG from './DelmemberEG';
+import PostimgEG from './PostimgEG';
 class Reactui extends Component {
 	constructor() {
 		super();
@@ -32,37 +31,34 @@ class Reactui extends Component {
 					<a className = "github-button" href = "https://github.com/byn9826/thousanday-react" data-style = "mega" aria-label = "Star byn9826/thousanday-react on GitHub">Star</a>
 					<section>
 						<h3 className = "main-list">Display</h3>
-						<h4 className = "orange-box"><a href ="#random">Random</a></h4>
-						<h4 className = "orange-box"><a href ="#waterfall">Waterfall</a></h4>
-						<h4 className = "orange-box"><a href ="#getlocation">Getlocation</a></h4>
-						<h4 className = "orange-box"><a href ="#progress">Progress</a></h4>
-						<h3 className = "main-list">List</h3>
-						<h4 className = "orange-box"><a href ="#addtolist">AddtoList</a></h4>
-						<h3 className = "main-list">Attitude</h3>
-						<h4 className = "orange-box"><a href ="#rate">Rate</a></h4>
-						<h4 className = "orange-box"><a href ="#vote">Vote</a></h4>
-						<h4 className = "orange-box"><a href ="#like">Like</a></h4>
-						<h3 className = "main-list">Input</h3>
-						<h4 className = "orange-box"><a href = "#inputbox">Inputbox</a></h4>
-						<h4 className = "orange-box"><a href = "#inputarea">Inputarea</a></h4>
+						<h6 className = "orange-box"><a href ="#random">Random</a></h6>
+						<h6 className = "orange-box"><a href ="#waterfall">Waterfall</a></h6>
+						<h6 className = "orange-box"><a href ="#getlocation">Getlocation</a></h6>
+						<h6 className = "orange-box"><a href ="#progress">Progress</a></h6>
 						<h3 className = "main-list">Button</h3>
-						<h4 className = "orange-box"><a href ="#updateprofile">Updateprofile</a></h4>
-						<h4 className = "orange-box"><a href ="#ovaledit">Ovaledit</a></h4>
+						<h6 className = "orange-box"><a href ="#updateprofile">Updateprofile</a></h6>
+						<h6 className = "orange-box"><a href ="#delmember">Delmember</a></h6>
+						<h3 className = "main-list">Attitude</h3>
+						<h6 className = "orange-box"><a href ="#rate">Rate</a></h6>
+						<h6 className = "orange-box"><a href ="#like">Like</a></h6>
+						<h3 className = "main-list">Input</h3>
+						<h6 className = "orange-box"><a href = "#postimg">Postimg</a></h6>
+						<h6 className = "orange-box"><a href = "#inputbox">Inputbox</a></h6>
+						<h6 className = "orange-box"><a href = "#inputarea">Inputarea</a></h6>
 					</section>
 				</main>
 				<section id="right">
 					<WaterfallEG />
-					<UpdateprofileEG />
+					<PostimgEG />
 					<GetlocationEG />
-					<RateEG />
+					<DelmemberEG />
 					<InputboxEG />
 					<InputareaEG />
+					<UpdateprofileEG />
 					<LikeEG />
 					<ProgressEG />
+					<RateEG />
 					<RandomEG />
-					<AddtolistEG />
-					<VoteEG />
-					<OvaleditEG />
 				</section>
 				<Footer />
 			</div>

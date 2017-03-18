@@ -25,6 +25,9 @@ class PostimgEG extends Component {
                     This component used a GLYPHICONS png under CC BY 3.0 License<br/>
                     <a href="https://segmentfault.com/a/1190000000754560">Reference</a><br/>
                 </h4>
+                <h4>
+                    <b>Demo:</b><br/>
+                </h4>
                 <Postimg content="" max="150" title="New post" width="80%" submitImg={this.submitImg.bind(this)} />
                 <h4>
                     <a href="https://github.com/byn9826/Thousanday-React#postimg" target="__blank">Check docs</a>

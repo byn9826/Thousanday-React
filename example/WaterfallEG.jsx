@@ -16,8 +16,7 @@ class WaterfallEG extends Component {
             ["/img/pet/1/moment/1.jpg", "Boring, sleep"],
             ["/img/pet/1/moment/2.jpg", "Unhappy"],
             ["/img/pet/1/moment/3.jpg", "I'm sunflower"],
-            ["/img/pet/1/moment/4.jpg", "Love the bed"],
-            ["/img/pet/1/moment/5.jpg", "Just leave me alone"],
+            ["/img/pet/1/moment/4.jpg", "Love the bed"]
         ];
         return (
             <section id = "waterfall" className = "example">
@@ -25,20 +24,25 @@ class WaterfallEG extends Component {
                     <h2>Waterfall</h2>
                     <h3>Responsive Pinterest Style Image Gallery</h3>
                 </header>
-                <h4>
-                    1. Automatically layout images based on columns you defined.<br />
-                    2. Show messages about each image on mouse over<br />
-                    3. Images and messages are all responsive based on screen width<br />
-                    4. Balance the height of each columns automatically <br />
-                    5. Return the index of the images when users click on it
-                </h4>
                 <span className="example-span">
                     {"<Waterfall column='3' image={images} />"}
                 </span>
-                <h4>Show Images by 3 columns. You clicked on the image with index of {this.state.click}</h4>
+                <h4>
+                    <b>Features:</b><br/>
+                    1. Automatically layout all the images based on the “column” param<br/>
+                    2. Show related message above each image when mouse hover.<br/>
+                    3. Responsive images and message<br/>
+                    4. Balance the height of each column automatically<br/>
+                    5. Return the index of each image or redirect to somewhere after click<br/>
+                </h4>
+                <h4>
+                    <b>Demo:</b><br/>
+                    Show Images by 3 columns.<br/>
+                    You clicked on the image with index of {this.state.click}
+                </h4>
                 <Waterfall column="3" image={images} clickNumber={this.clickNumber.bind(this)} fontFamily="'Rubik', sans-serif" />
                 <h4>
-                    <a href = "https://github.com/byn9826/Thousanday-React#waterfall" target = "__blank">Check docs</a>
+                    <a href="https://github.com/byn9826/Thousanday-React#waterfall" target="__blank">Check docs</a>
                 </h4>
             </section>
         );

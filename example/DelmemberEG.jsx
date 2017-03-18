@@ -15,12 +15,21 @@ class DelmemberEG extends Component {
             <section id="delmember" className="example">
                 <header className="example-header">
                     <h2>Delmember</h2>
-                    <h3>Disapear image after click with shake effect</h3>
+                    <h3>Disapear images with shake effect</h3>
                 </header>
                 <span className="example-span">
                     {"<Delmember profile={'0.jpg'} index={0} clickDel={this.clickDel.bind(this)} />"}
                 </span>
-                <h4>You deleted the profile with index: {this.state.index}</h4>
+                <h4>
+                    <b>Features:</b><br/>
+                    1. Show a delete button on top-right corner of the image<br/>
+                    2. Image shakes after users click it then diaspear<br/>
+                    3. Return index to indicate which image has been clicked<br/>
+                </h4>
+                <h4>
+                    <b>Demo:</b><br/>
+                    You deleted the profile with index: {this.state.index}
+                </h4>
                 <Delmember profile={"/img/pet/1/cover/0.png"} index={0} clickDel={this.clickDel.bind(this)} width="80" height="80" fontFamily="'Rubik', sans-serif" />
                 <Delmember profile={"/img/pet/2/cover/0.jpg"} index={1} clickDel={this.clickDel.bind(this)} width="80" height="80" fontFamily="'Rubik', sans-serif" />
                 <Delmember profile={"/img/pet/3/cover/0.jpg"} index={2} clickDel={this.clickDel.bind(this)} width="80" height="80" fontFamily="'Rubik', sans-serif" />

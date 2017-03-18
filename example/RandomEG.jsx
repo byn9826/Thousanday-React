@@ -12,12 +12,19 @@ class RandomEG extends Component {
             <section id="random" className="example">
                 <header className="example-header">
                     <h2>Random</h2>
-                    <h3>Display random content from a list</h3>
+                    <h3>Show random content from a list of options</h3>
                 </header>
                 <span className="example-span">
                     {"<Random content='[content1,content2...]' font='h3' />"}
                 </span>
-                <h4>Show random outputs:</h4>
+                <h4>
+                    <b>Features:</b><br/>
+                    1. Randomly show content based on list of options<br/>
+                    2. Insert content into a desired html tag<br/>
+                </h4>
+                <h4>
+                    <b>Demo:</b><br/>
+                </h4>
                 <Random content={randomContent} font="h3" />
                 <Random content={randomContent} font="h3" />
                 <Random content={randomContent} font="h3" />

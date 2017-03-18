@@ -15,12 +15,20 @@ class RateEG extends Component {
             <section id = "rate" className = "example">
                 <header className = "example-header">
                     <h2>Rate</h2>
-                    <h3>Display and receive rate from users</h3>
+                    <h3>Show/Collect rate form users by stars</h3>
                 </header>
                 <span className="example-span">
                     {"<Rate rate='3' max='5' />"}
                 </span>
-                <h4>Rate for display only:</h4>
+                <h4>
+                    <b>Features:</b><br/>
+                    1. Show rate by stars<br/>
+                    2. Update rate after user add/update a new rate<br/>
+                </h4>
+                <h4>
+                    <b>Demo:</b><br/>
+                    Display only<br/>
+                </h4>
                 <Rate rate = "3" max = "5" />
                 <h4>User could change the rate:</h4>
                 <Rate rate = {this.state.rate} max = "5" interact = "true" rateChange = {this.changeRate.bind(this)}/>

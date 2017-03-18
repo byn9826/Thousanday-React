@@ -19,12 +19,19 @@ class ProgressEG extends Component {
             <section id = "progress" className = "example">
                 <header className = "example-header">
                     <h2>Progress</h2>
-                    <h3>Show and update progress</h3>
+                    <h3>Show/Update the progress bar</h3>
                 </header>
                 <span className="example-span">
                     {"<Progress progress='50' max='100' />"}
                 </span>
-                <h4>Show progress by value:</h4>
+                <h4>
+                    <b>Features:</b><br/>
+                    1. Show progress by percentage or value<br/>
+                </h4>
+                <h4>
+                    <b>Demo:</b><br/>
+                    Show progress by value:<br/>
+                </h4>
                 <Progress progress="50" max="100" percentage="false" width="50%" />
                 <h4>Show progress by percentage:</h4>
                 <Progress progress={this.state.progress} max="100" width="50%" /> <br/>
