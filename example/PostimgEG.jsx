@@ -1,8 +1,16 @@
 import React, {Component} from 'react';
 import {Postimg} from 'thousanday-react';
 class PostimgEG extends Component {
+    constructor(props) {
+        super(props);
+		this.state = {
+            //use to trigger reset Postimg
+            reset: 0,
+		};
+	}
     submitImg(message, image) {
-        console.log(message, image);
+        let reset = this.state.reset + 1;
+		this.setState({reset: reset});
     }
     render() {
         return (
@@ -28,7 +36,7 @@ class PostimgEG extends Component {
                 <h4>
                     <b>Demo:</b><br/>
                 </h4>
-                <Postimg content="" max="150" title="New post" width="80%" submitImg={this.submitImg.bind(this)} />
+                <Postimg content="" max="150" title="New post" width="80%" reset={this.state.reset}  submitImg={this.submitImg.bind(this)} fontFamily="'Rubik', sans-serif"/>
                 <h4>
                     <a href="https://github.com/byn9826/Thousanday-React#postimg" target="__blank">Check docs</a>
                 </h4>
