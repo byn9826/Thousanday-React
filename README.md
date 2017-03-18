@@ -132,13 +132,20 @@ import {Postimg} from 'thousanday-react';
 ```
 ```
 //Init the component
-<Postimg content="" max="150" title="New post" submitImg={this.submitImg.bind(this)} />
-
+<Postimg content="" max="150" title="New post" submitImg={this.submitImg.bind(this)} reset={this.state.reset} />
+//Define this.state.reset as 0
+this.state = {
+    //use to trigger reset Postimg
+    reset: 0,
+};
 //Get the new post content and img by a function
 submitImg(message, img) {
     console.log(message);
     console.log(img);
     //Then send by ajax to backend
+    //If success, update this.state.reset to clear message and image of this component
+    let reset = this.state.reset + 1;
+    this.setState({reset: reset});
 }
 
 ```
@@ -184,6 +191,12 @@ This component used a GLYPHICONS png under CC BY 3.0 License<br/>
 		<td></td>
 		<td>submitImg={this.submitImg.bind(this)}</td>
 	</tr>
+    <tr>
+		<td>reset</td>
+		<td>Mandatory. Init a reset code, update this code to indicate post success and reset component.</td>
+		<td></td>
+		<td>{this.state.reset}</td>
+	</tr>
 	<tr>
 		<td>fontFamily</td>
 		<td>Optional. Define the fontFamily.</td>
@@ -215,6 +228,7 @@ This component used a GLYPHICONS png under CC BY 3.0 License<br/>
 --
 Display/Get users' geolocation.
 ![getlocation](https://raw.githubusercontent.com/byn9826/ReactUI-Thousanday/master/~markdown/getlocation.JPG)<br/>
+[Idea](https://medium.com/@byn9826/play-with-openlayers-to-display-get-location-in-react-2e0ed3e7d89f)<br/>
 [Example](http://www.thousanday.com/react#getlocation)<br/>
 ```
 import {Getlocation} from 'thousanday-react';
