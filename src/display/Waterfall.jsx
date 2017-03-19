@@ -16,7 +16,7 @@ class Waterfall extends Component {
     componentDidUpdate() {
         let columnNumber = parseInt(this.props.column);
         let oldImage = this.state.image;
-        if (this.props.image != oldImage) {
+        if ((this.props.image.length > columnNumber) && (this.props.image != oldImage)) {
             this.setState({image: this.props.image});
             let columnLow = 0;
             let columnHigh = 0;
