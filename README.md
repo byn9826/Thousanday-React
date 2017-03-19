@@ -75,6 +75,7 @@ let images = [
 3. Responsive images and message<br/>
 4. Balance the height of each column automatically<br/>
 5. Return the index of each image or redirect to somewhere after click<br/><br/>
+6. You could directly show more images by set attribute like image={this.state.images}<br/><br/>
 <b>Params:</b><br/>
 <table>
 	<tr>

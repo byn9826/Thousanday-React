@@ -6,46 +6,75 @@ class Waterfall extends Component {
             active: "",
             fontFamily: this.props.fontFamily || "Times New Roman",
             link: this.props.link || "false",
+            image: this.props.image,
             fire: false
 		};
 	}
     componentDidMount() {
-        let columnLow = 0;
-        let columnHigh = 0;
-        let oneColumn = document.getElementsByName("reactWaterfallColumn");
-        let exchangeChild;
+        this.setState({fire: true});
+    }
+    componentDidUpdate() {
         let columnNumber = parseInt(this.props.column);
-        let j;
-        window.addEventListener("scroll", () => {
-            if (this.state.fire === false && this.props.image.length > columnNumber) {
-                for (j = 1; j < columnNumber ; j++) {
+        let oldImage = this.state.image;
+        if (this.props.image != oldImage) {
+            this.setState({image: this.props.image});
+            let columnLow = 0;
+            let columnHigh = 0;
+            let oneColumn = document.getElementsByName("reactWaterfallColumn");
+            let exchangeChild;
+            let j;
+            for (j = 1; j < columnNumber ; j++) {
+                if (oneColumn[j].offsetHeight <= oneColumn[columnLow].offsetHeight) {
+                    columnLow = j;
+                } else if (oneColumn[j].offsetHeight > oneColumn[columnHigh].offsetHeight) {
+                    columnHigh = j;
+                }
+            }
+            while ((oneColumn[columnHigh].offsetHeight - oneColumn[columnLow].offsetHeight) > oneColumn[columnHigh].lastChild.offsetHeight ) {
+                exchangeChild = oneColumn[columnHigh].lastChild;
+                oneColumn[columnHigh].removeChild(oneColumn[columnHigh].lastChild);
+                oneColumn[columnLow].appendChild(exchangeChild);
+                for (j = 1; j < columnNumber; j++) {
                     if (oneColumn[j].offsetHeight <= oneColumn[columnLow].offsetHeight) {
                         columnLow = j;
                     } else if (oneColumn[j].offsetHeight > oneColumn[columnHigh].offsetHeight) {
                         columnHigh = j;
                     }
                 }
-                while ((oneColumn[columnHigh].offsetHeight - oneColumn[columnLow].offsetHeight) > oneColumn[columnHigh].lastChild.offsetHeight ) {
-                    exchangeChild = oneColumn[columnHigh].lastChild;
-                    oneColumn[columnHigh].removeChild(oneColumn[columnHigh].lastChild);
-                    oneColumn[columnLow].appendChild(exchangeChild);
-                    for (j = 1; j < columnNumber; j++) {
-                        if (oneColumn[j].offsetHeight <= oneColumn[columnLow].offsetHeight) {
-                            columnLow = j;
-                        } else if (oneColumn[j].offsetHeight > oneColumn[columnHigh].offsetHeight) {
-                            columnHigh = j;
-                        }
+            }
+        } else {
+            let waterfall = document.getElementById("reactWaterfall");
+            if (waterfall) {
+                waterfall.style.top = "-" + waterfall.offsetHeight + "px";
+                waterfall.style.marginBottom = "-" + waterfall.offsetHeight + "px";
+            }
+        }
+        if ((this.props.image.length > columnNumber) && this.state.fire ) {
+            let columnLow = 0;
+            let columnHigh = 0;
+            let oneColumn = document.getElementsByName("reactWaterfallColumn");
+            let exchangeChild;
+            let j;
+            for (j = 1; j < columnNumber ; j++) {
+                if (oneColumn[j].offsetHeight <= oneColumn[columnLow].offsetHeight) {
+                    columnLow = j;
+                } else if (oneColumn[j].offsetHeight > oneColumn[columnHigh].offsetHeight) {
+                    columnHigh = j;
+                }
+            }
+            while ((oneColumn[columnHigh].offsetHeight - oneColumn[columnLow].offsetHeight) > oneColumn[columnHigh].lastChild.offsetHeight ) {
+                exchangeChild = oneColumn[columnHigh].lastChild;
+                oneColumn[columnHigh].removeChild(oneColumn[columnHigh].lastChild);
+                oneColumn[columnLow].appendChild(exchangeChild);
+                for (j = 1; j < columnNumber; j++) {
+                    if (oneColumn[j].offsetHeight <= oneColumn[columnLow].offsetHeight) {
+                        columnLow = j;
+                    } else if (oneColumn[j].offsetHeight > oneColumn[columnHigh].offsetHeight) {
+                        columnHigh = j;
                     }
                 }
-                this.setState({fire: true});
             }
-        });
-    }
-    componentDidUpdate() {
-        let waterfall = document.getElementById("reactWaterfall");
-        if (waterfall) {
-            waterfall.style.top = "-" + waterfall.offsetHeight + "px";
-            waterfall.style.marginBottom = "-" + waterfall.offsetHeight + "px";
+            this.setState({fire: false});
         }
     }
     showContent(event) {

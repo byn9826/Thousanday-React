@@ -20,13 +20,13 @@ class Inputarea extends Component {
 	}
 	componentDidUpdate() {
 		if (this.state.reset != this.props.reset) {
-			this.setState({content: "", rawUrl: null, reset: this.props.reset, error: "Success!"});
+			this.setState({content: "", rawUrl: null, reset: this.props.reset, error: "Success!", count: this.state.length});
 		}
 	}
 	editInput(event) {
 		let changedInput = event.target.value.substr(0, this.state.length);
 		this.setState({content: changedInput});
-		if (changedInput.replace(/^\s+/, '').replace(/\s+$/, '') !== "" && this.state.error !== "") {
+		if (changedInput.replace(/^\s+/, "").replace(/\s+$/, "") !== "" && this.state.error !== "") {
 			this.setState({error: ""});
 		}
       	this.setState({count: this.state.length - changedInput.length});
@@ -44,18 +44,18 @@ class Inputarea extends Component {
         reader.readAsDataURL(file);
 	}
 	submitPost() {
-		let content = this.state.content.replace(/^\s+/, '').replace(/\s+$/, '');
+		let content = this.state.content.replace(/^\s+/, "").replace(/\s+$/, "");
 		if (content === "") {
 			this.setState({error: "Please say something"});
 		} else if (!this.state.rawUrl) {
 			this.setState({error: "Please upload an image"});
 		} else {
 			let url = this.state.rawUrl;
-			let type = url.split(',')[0];
-			type = type.split(':')[1];
-			type = type.split(';')[0];
-			if (type == 'image/jpeg' || type == 'image/png') {
-				let src = url.split(',')[1];
+			let type = url.split(",")[0];
+			type = type.split(":")[1];
+			type = type.split(";")[0];
+			if (type == "image/jpeg" || type == "image/png") {
+				let src = url.split(",")[1];
 				src = window.atob(src);
 				let blobSrc = new Uint8Array(src.length);
 				for (let i = 0; i < src.length; i++) {
