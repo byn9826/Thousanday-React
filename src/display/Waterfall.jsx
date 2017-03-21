@@ -6,12 +6,46 @@ class Waterfall extends Component {
             active: "",
             fontFamily: this.props.fontFamily || "Times New Roman",
             link: this.props.link || "false",
-            image: this.props.image,
-            fire: false
+            image: this.props.image
 		};
 	}
     componentDidMount() {
-        this.setState({fire: true});
+        let self = this;
+        let interval = setInterval(() => {
+            if(document.readyState === 'complete') {
+                clearInterval(interval);
+                relayout(self);
+            }    
+        }, 500);
+        function relayout(self) {
+            let columnNumber = parseInt(self.props.column);
+            if (self.props.image.length > columnNumber) {
+                let columnLow = 0;
+                let columnHigh = 0;
+                let oneColumn = document.getElementsByName("reactWaterfallColumn");
+                let exchangeChild;
+                let j;
+                for (j = 1; j < columnNumber ; j++) {
+                    if (oneColumn[j].offsetHeight <= oneColumn[columnLow].offsetHeight) {
+                        columnLow = j;
+                    } else if (oneColumn[j].offsetHeight > oneColumn[columnHigh].offsetHeight) {
+                        columnHigh = j;
+                    }
+                }
+                while ((oneColumn[columnHigh].offsetHeight - oneColumn[columnLow].offsetHeight) > oneColumn[columnHigh].lastChild.offsetHeight ) {
+                    exchangeChild = oneColumn[columnHigh].lastChild;
+                    oneColumn[columnHigh].removeChild(oneColumn[columnHigh].lastChild);
+                    oneColumn[columnLow].appendChild(exchangeChild);
+                    for (j = 1; j < columnNumber; j++) {
+                        if (oneColumn[j].offsetHeight <= oneColumn[columnLow].offsetHeight) {
+                            columnLow = j;
+                        } else if (oneColumn[j].offsetHeight > oneColumn[columnHigh].offsetHeight) {
+                            columnHigh = j;
+                        }
+                    }
+                }
+            }
+        }
     }
     componentDidUpdate() {
         let columnNumber = parseInt(this.props.column);
@@ -48,33 +82,6 @@ class Waterfall extends Component {
                 waterfall.style.top = "-" + waterfall.offsetHeight + "px";
                 waterfall.style.marginBottom = "-" + waterfall.offsetHeight + "px";
             }
-        }
-        if ((this.props.image.length > columnNumber) && this.state.fire ) {
-            let columnLow = 0;
-            let columnHigh = 0;
-            let oneColumn = document.getElementsByName("reactWaterfallColumn");
-            let exchangeChild;
-            let j;
-            for (j = 1; j < columnNumber ; j++) {
-                if (oneColumn[j].offsetHeight <= oneColumn[columnLow].offsetHeight) {
-                    columnLow = j;
-                } else if (oneColumn[j].offsetHeight > oneColumn[columnHigh].offsetHeight) {
-                    columnHigh = j;
-                }
-            }
-            while ((oneColumn[columnHigh].offsetHeight - oneColumn[columnLow].offsetHeight) > oneColumn[columnHigh].lastChild.offsetHeight ) {
-                exchangeChild = oneColumn[columnHigh].lastChild;
-                oneColumn[columnHigh].removeChild(oneColumn[columnHigh].lastChild);
-                oneColumn[columnLow].appendChild(exchangeChild);
-                for (j = 1; j < columnNumber; j++) {
-                    if (oneColumn[j].offsetHeight <= oneColumn[columnLow].offsetHeight) {
-                        columnLow = j;
-                    } else if (oneColumn[j].offsetHeight > oneColumn[columnHigh].offsetHeight) {
-                        columnHigh = j;
-                    }
-                }
-            }
-            this.setState({fire: false});
         }
     }
     showContent(event) {
@@ -188,7 +195,9 @@ class Waterfall extends Component {
         }
 		return (
             <section style={rootStyle}>
-                {allColumn}
+                <div>
+                    {allColumn}
+                </div>
             </section>
 		);
 	}

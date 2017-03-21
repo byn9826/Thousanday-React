@@ -19,6 +19,7 @@ Components List
 [Inputarea](#inputarea): Textarea with characters couting and restriction<br /><br/>
 [Updateprofile](#updateprofile): Update profile image<br/><br/>
 [Like](#like): Show/Collect like from users<br/><br/>
+[Glogin](#glogin): Button for Google Login<br/><br/>
 [Progress](#progress): Show/Update the progress bar<br/><br/>
 [Rate](#rate): Show/Collect rate form users by stars<br /><br/>
 [Random](#random): Show random content from a list of options<br /><br/>
@@ -654,6 +655,52 @@ updateLike(change) {
 		<td>Mandatory. Use a function to update total like numbers after users clicked the like button</td>
 		<td></td>
 		<td>{this.updateLike.bind(this)}</td>
+	</tr>
+</table>
+
+
+<a name="glogin">Glogin</a>
+--
+Button for Google Login<br/>
+![glogin](https://raw.githubusercontent.com/byn9826/ReactUI-Thousanday/master/~markdown/glogin.JPG)<br/>
+[Example](http://www.thousanday.com/react#glogin)<br/>
+```
+import {Glogin} from 'thousanday-react';
+```
+```
+//Get your google client id
+let id = "Your google client id";
+//init component
+<Glogin clientId={id} googleLogin={this.googleLogin.bind(this)}/>
+//Get users info by googleLogin Function
+googleLogin(user) {
+  console.log(user);
+  //user.id, user.name, user.fname, user.lname, user.image, user.email, user.token
+}
+```
+<b>Features:</b><br/>
+1. Show Google Login button<br/>
+2. Get users information from user after login successfully<br/>
+
+<b>Params:</b><br/>
+<table>
+	<tr>
+		<td>Params</td>
+		<td>Usage</td>
+		<td>Default</td>
+		<td>Example</td>
+	</tr>
+	<tr>
+		<td>clientId</td>
+		<td>Mandatory. Define your own client Id.</td>
+		<td></td>
+		<td>"string from Google"</td>
+	</tr>
+	<tr>
+		<td>googleLogin</td>
+		<td>Mandatory. Use a function to get user's info from Google</td>
+		<td></td>
+		<td>{this.googleLogin.bind(this)}</td>
 	</tr>
 </table>
 

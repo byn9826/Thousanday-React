@@ -4,6 +4,10 @@ var _Random = require('./lib/display/Random.js');
 
 var _Random2 = _interopRequireDefault(_Random);
 
+var _Glogin = require('./lib/social/Glogin.js');
+
+var _Glogin2 = _interopRequireDefault(_Glogin);
+
 var _Rate = require('./lib/attitude/Rate.js');
 
 var _Rate2 = _interopRequireDefault(_Rate);
@@ -57,5 +61,6 @@ module.exports = {
 	Updateprofile: _Updateprofile2.default,
 	Getlocation: _Getlocation2.default,
 	Delmember: _Delmember2.default,
-	Postimg: _Postimg2.default
+	Postimg: _Postimg2.default,
+	Glogin: _Glogin.default
 };

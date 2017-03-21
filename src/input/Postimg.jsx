@@ -1,6 +1,5 @@
 import React, {Component} from "react";
 import camera from "./glyphicons-camera.png";
-
 class Inputarea extends Component {
 	constructor(props) {
 		super(props);
@@ -166,7 +165,7 @@ class Inputarea extends Component {
 				<span style={titleStyle}>{this.state.title}</span>
 				<textarea style={inputStyle} value={this.state.content} onChange={this.editInput.bind(this)} />
 				<div style={lineStyle}>
-					<img style={cameraStyle} src={camera} />
+					<img style={cameraStyle} src={camera} alt="ADD" />
 					<input style={fileStyle} type="file" accept="image/*" onChange={this.loadImg.bind(this)} />
 					<span style={countStyle}>{this.state.count}/{this.state.length}</span>
 					<div style={postStyle} onClick={this.submitPost.bind(this)}>Post</div>

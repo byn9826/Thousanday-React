@@ -8,6 +8,7 @@ import WaterfallEG from './WaterfallEG';
 import InputboxEG from './InputboxEG';
 import InputareaEG from './InputareaEG';
 import LikeEG from './LikeEG';
+import GloginEG from './GloginEG';
 import ProgressEG from './ProgressEG';
 import UpdateprofileEG from './UpdateprofileEG';
 import GetlocationEG from './GetlocationEG';
@@ -45,6 +46,8 @@ class Reactui extends Component {
 						<h6 className = "orange-box"><a href = "#postimg">Postimg</a></h6>
 						<h6 className = "orange-box"><a href = "#inputbox">Inputbox</a></h6>
 						<h6 className = "orange-box"><a href = "#inputarea">Inputarea</a></h6>
+						<h3 className = "main-list">Social</h3>
+						<h6 className = "orange-box"><a href = "#glogin">Glogin</a></h6>
 					</section>
 				</main>
 				<section id="right">
@@ -56,6 +59,7 @@ class Reactui extends Component {
 					<InputareaEG />
 					<UpdateprofileEG />
 					<LikeEG />
+					<GloginEG />
 					<ProgressEG />
 					<RateEG />
 					<RandomEG />

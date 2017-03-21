@@ -16,7 +16,9 @@ class WaterfallEG extends Component {
             ["/img/pet/1/moment/1.jpg", "Boring, sleep"],
             ["/img/pet/1/moment/2.jpg", "Unhappy"],
             ["/img/pet/1/moment/3.jpg", "I'm sunflower"],
-            ["/img/pet/1/moment/4.jpg", "Love the bed"]
+            ["/img/pet/1/moment/4.jpg", "Love the bed"],
+            ["/img/pet/1/moment/5.jpg", "Leave me alone"],
+            ["/img/pet/1/moment/0.jpg", "I'm a beauty guy with long legs"]
         ];
         return (
             <section id = "waterfall" className = "example">
@@ -34,6 +36,7 @@ class WaterfallEG extends Component {
                     3. Responsive images and message<br/>
                     4. Balance the height of each column automatically<br/>
                     5. Return the index of each image or redirect to somewhere after click<br/>
+                    6. You could directly show more images by set attribute like image={this.state.images}<br/>
                 </h4>
                 <h4>
                     <b>Demo:</b><br/>
