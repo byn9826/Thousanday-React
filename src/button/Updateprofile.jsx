@@ -1,5 +1,4 @@
 import React, {Component} from 'react';
-import reqwest from "reqwest";
 import AvatarEditor from "react-avatar-editor";
 class Updateprofile extends Component {
     constructor(props) {

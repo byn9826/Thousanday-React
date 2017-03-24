@@ -8,6 +8,27 @@ Install
 npm install thousanday-react --save
 ```
 
+Prerequisite - Webpack config
+--
+```
+module: {
+    loaders: [
+	   {
+        	test: /\.(js|jsx)$/,
+            exclude: /(node_modules|bower_components)/,
+            loader: 'babel-loader',
+            query: {
+                presets: ["react", "es2015"]
+            }
+        },
+        {
+            test: /\.png$/,
+            loader: 'url-loader?mimetype=image/png'
+        }
+    ]
+}
+```
+
 
 Components List
 --
