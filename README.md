@@ -684,7 +684,7 @@ updateLike(change) {
 <a name="facebooklogin">Facebooklogin</a>
 --
 Button for Facebook Login<br/>
-![flogin](https://raw.githubusercontent.com/byn9826/ReactUI-Thousanday/master/~markdown/flogin.JPG)<br/>
+![flogin](https://raw.githubusercontent.com/byn9826/ReactUI-Thousanday/master/~markdown/fLogin.JPG)<br/>
 [Example](http://www.thousanday.com/react#facebooklogin)<br/>
 ```
 import {Facebooklogin} from 'thousanday-react';
