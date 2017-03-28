@@ -40,6 +40,7 @@ Components List
 [Inputarea](#inputarea): Textarea with characters couting and restriction<br /><br/>
 [Updateprofile](#updateprofile): Update profile image<br/><br/>
 [Like](#like): Show/Collect like from users<br/><br/>
+[Facebooklogin](#facebooklogin): Button for Facebook Login<br/><br/>
 [Googlelogin](#googlelogin): Button for Google Login<br/><br/>
 [Progress](#progress): Show/Update the progress bar<br/><br/>
 [Rate](#rate): Show/Collect rate form users by stars<br /><br/>
