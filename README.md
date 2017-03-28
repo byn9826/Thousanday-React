@@ -8,7 +8,7 @@ Install
 npm install thousanday-react --save
 ```
 
-Prerequisite - Webpack config
+<a name="prerequisite">Prerequisite - Webpack config</a>
 --
 ```
 module: {
