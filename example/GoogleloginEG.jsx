@@ -1,15 +1,16 @@
 import React, {Component} from 'react';
-import {Glogin} from 'thousanday-react';
-class GloginEG extends Component {
+import {Googlelogin} from 'thousanday-react';
+class GoogleloginEG extends Component {
     constructor(props) {
         super(props);
 		this.state = {
-            image: null,
-            email: null
+            image: "",
+            email: ""
         };
 	}
     googleLogin(user) {
-        this.setState({image: user.image, email: user.email});
+        console.log(user);
+        this.setState({image: user.imageUrl, email: user.email});
     }
     render() {
         let imageStyle = {
@@ -17,13 +18,13 @@ class GloginEG extends Component {
             width: "30%"
         };
         return (
-            <section id="glogin" className="example">
+            <section id="googlelogin" className="example">
                 <header className="example-header">
-                    <h2>Glogin</h2>
+                    <h2>Googlelogin</h2>
                     <h3>Button for Google Login</h3>
                 </header>
                 <span className="example-span">
-                    {"<Glogin clientId={id} />"}
+                    {"<Googlelogin clientId={id} />"}
                 </span>
                 <h4>
                     <b>Features:</b><br/>
@@ -33,7 +34,7 @@ class GloginEG extends Component {
                 <h4>
                     <b>Demo:</b><br/>
                 </h4>
-                <Glogin googleLogin={this.googleLogin.bind(this)} clientId=".......apps.googleusercontent.com" width="50%" />
+                <Googlelogin gLogin={this.googleLogin.bind(this)} clientId="168098850234-fsq84pk4cae97mlj0k464joc21cgqjvv.apps.googleusercontent.com" width="200px" />
                 <h4>{"Hello, " + this.state.email}</h4>
                 <img style={imageStyle} src={this.state.image} />
                 <h4>
@@ -43,4 +44,4 @@ class GloginEG extends Component {
         );
     }
 };
-export default GloginEG;
+export default GoogleloginEG;

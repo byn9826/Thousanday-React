@@ -8,7 +8,8 @@ import WaterfallEG from './WaterfallEG';
 import InputboxEG from './InputboxEG';
 import InputareaEG from './InputareaEG';
 import LikeEG from './LikeEG';
-import GloginEG from './GloginEG';
+import GloginEG from './GoogleloginEG';
+import FacebookloginEG from './FacebookloginEG';
 import ProgressEG from './ProgressEG';
 import UpdateprofileEG from './UpdateprofileEG';
 import GetlocationEG from './GetlocationEG';
@@ -19,6 +20,9 @@ class Reactui extends Component {
 		super();
 	}
 	render() {
+		let webpackConfig = {
+			color: "black"
+		};
 		return (
 			<div id = "container">
 				<Header />
@@ -26,8 +30,10 @@ class Reactui extends Component {
 					<h1>Thousanday-React</h1>
 					<h2>A list of React UI components</h2>
 					<h3>
-						<b>install:</b><br />
-						npm install thousanday-react --save
+						<b>Install:</b><br />
+						npm install thousanday-react<br /><br />
+						<b>Webpack Config Required:</b><br />
+						url-loader - <a style={webpackConfig} href="https://github.com/byn9826/Thousanday-React/blob/master/README.md#prerequisite---webpack-config">Example</a>
 					</h3>
 					<a className = "github-button" href = "https://github.com/byn9826/thousanday-react" data-style = "mega" aria-label = "Star byn9826/thousanday-react on GitHub">Star</a>
 					<section>
@@ -47,7 +53,8 @@ class Reactui extends Component {
 						<h6 className = "orange-box"><a href = "#inputbox">Inputbox</a></h6>
 						<h6 className = "orange-box"><a href = "#inputarea">Inputarea</a></h6>
 						<h3 className = "main-list">Social</h3>
-						<h6 className = "orange-box"><a href = "#glogin">Glogin</a></h6>
+						<h6 className = "orange-box"><a href = "#facebooklogin">Facebooklogin</a></h6>
+						<h6 className = "orange-box"><a href = "#googlelogin">Googlelogin</a></h6>
 					</section>
 				</main>
 				<section id="right">
@@ -59,6 +66,7 @@ class Reactui extends Component {
 					<InputareaEG />
 					<UpdateprofileEG />
 					<LikeEG />
+					<FacebookloginEG />
 					<GloginEG />
 					<ProgressEG />
 					<RateEG />

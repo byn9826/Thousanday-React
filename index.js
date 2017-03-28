@@ -4,9 +4,13 @@ var _Random = require('./lib/display/Random.js');
 
 var _Random2 = _interopRequireDefault(_Random);
 
-var _Glogin = require('./lib/social/Glogin.js');
+var _Googlelogin = require('./lib/social/Googlelogin.js');
 
-var _Glogin2 = _interopRequireDefault(_Glogin);
+var _Googlelogin2 = _interopRequireDefault(_Googlelogin);
+
+var _Facebooklogin = require('./lib/social/Facebooklogin.js');
+
+var _Facebooklogin2 = _interopRequireDefault(_Facebooklogin);
 
 var _Rate = require('./lib/attitude/Rate.js');
 
@@ -62,5 +66,6 @@ module.exports = {
 	Getlocation: _Getlocation2.default,
 	Delmember: _Delmember2.default,
 	Postimg: _Postimg2.default,
-	Glogin: _Glogin.default
+	Googlelogin: _Googlelogin.default,
+	Facebooklogin: _Facebooklogin.default
 };
