@@ -56,6 +56,10 @@ var _Delmember = require('./lib/button/Delmember.js');
 
 var _Delmember2 = _interopRequireDefault(_Delmember);
 
+var _Selectbox = require('./lib/box/Selectbox.js');
+
+var _Selectbox2 = _interopRequireDefault(_Selectbox);
+
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 module.exports = {
@@ -71,6 +75,7 @@ module.exports = {
 	Delmember: _Delmember2.default,
 	Confirmdel: _Confirmdel2.default,
 	Postimg: _Postimg2.default,
-	Googlelogin: _Googlelogin.default,
-	Facebooklogin: _Facebooklogin.default
+	Googlelogin: _Googlelogin2.default,
+	Facebooklogin: _Facebooklogin2.default,
+	Selectbox: _Selectbox2.default,
 };

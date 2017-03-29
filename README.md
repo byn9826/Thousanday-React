@@ -44,6 +44,7 @@ Components List
 [Facebooklogin](#facebooklogin): Button for Facebook Login<br/><br/>
 [Googlelogin](#googlelogin): Button for Google Login<br/><br/>
 [Progress](#progress): Show/Update the progress bar<br/><br/>
+[Selectbox](#selectbox): Select members from several options<br/><br/>
 [Rate](#rate): Show/Collect rate form users by stars<br /><br/>
 [Random](#random): Show random content from a list of options<br /><br/>
 
@@ -909,6 +910,109 @@ import {Progress} from 'thousanday-react';
 		<td>Optional. Define the color of the font.</td>
 		<td>"black"</td>
 		<td>"blue"</td>
+	</tr>
+</table>
+
+
+<a name="selectbox">Selectbox</a>
+--
+Select members from several options<br/>
+![Progress](https://raw.githubusercontent.com/byn9826/ReactUI-Thousanday/master/~markdown/selectbox.JPG)<br/>
+[Example](http://www.thousanday.com/react#selectbox)<br/>
+```
+import {Selectbox} from 'thousanday-react';
+```
+```
+//Prepare an array of members you want to display as options
+let members = [
+    ["member name 1", "image_src_1.jpg", "message1"],
+    ["member name 2", "image_src_2.jpg", "message2"],
+    ["member name 3", "image_src_3.jpg", "message3"],
+    ...
+]
+//init component, which allow users choose 2 members
+<Selectbox options={members} max="2" closeBox={this.closeTeam.bind(this)}  />
+//init component with preset choice (members with index 0, 1 in the members array)
+<Selectbox options={members} max="2" decisions={[0,1]} closeBox={this.closeBox.bind(this)}  />
+
+//Catch user's closebox action
+closeBox(newDecision, changed) {
+    //newDecision is the array which contains users choice
+    if (newDecision.length > 0) {
+		firstChoice = members[newDecision[0]][3];
+	}
+	if (newDecision.length > 1) {
+		secondChoice = members[newDecision[1]][3];
+	}
+    //changed stand for if users changed their choice
+    if (changed) {
+        //update db, close box
+    } else {
+        //do nothing, close box
+    }
+}
+
+```
+
+<b>Features:</b><br/>
+1. Show list of options with name, profile, message from an array<br/>
+2. Return index of members in the option array, after users confirm choice<br/>
+3. Know if users changed their default choice<br/>
+<b>Params:</b><br/>
+<table>
+	<tr>
+		<td>Params</td>
+		<td>Usage</td>
+		<td>Default</td>
+		<td>Example</td>
+	</tr>
+	<tr>
+		<td>options</td>
+		<td>Mandatory. A nested array contains name, profile src, message.</td>
+		<td></td>
+		<td>[["name1","src1","message1"],["name2","src2","message2"]...]</td>
+	</tr>
+	<tr>
+		<td>max</td>
+		<td>Optional. Maxinum choices from the list.</td>
+		<td>1</td>
+		<td>"2"</td>
+	</tr>
+	<tr>
+		<td>decisions</td>
+		<td>Optional. An array contain index of default choices.</td>
+		<td></td>
+		<td>{[0,1]}</td>
+	</tr>
+    <tr>
+		<td>closeBox</td>
+		<td>Mandatory. Use a function to catch users confirm choice action</td>
+		<td></td>
+		<td>{this.closeBox.bind(this)}</td>
+	</tr>
+	<tr>
+		<td>height</td>
+		<td>Optional. Define the height of this component.</td>
+		<td>"380px"</td>
+		<td>"400px"</td>
+	</tr>
+	<tr>
+		<td>width</td>
+		<td>Optional. Define the width of the component.</td>
+		<td>"100%"</td>
+		<td>"200px"</td>
+	</tr>
+	<tr>
+		<td>fontFamily</td>
+		<td>Optional. Define the fontFamily.</td>
+		<td>"Times New Roman"</td>
+		<td>"Arial"</td>
+	</tr>
+	<tr>
+		<td>scroll</td>
+		<td>Optional. Show scroll bar on the right or not</td>
+		<td>"on"</td>
+		<td>"off"</td>
 	</tr>
 </table>
 
