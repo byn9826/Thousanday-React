@@ -44,6 +44,10 @@ var _Updateprofile = require('./lib/button/Updateprofile.js');
 
 var _Updateprofile2 = _interopRequireDefault(_Updateprofile);
 
+var _Confirmdel = require('./lib/button/Confirmdel.js');
+
+var _Confirmdel2 = _interopRequireDefault(_Confirmdel);
+
 var _Getlocation = require('./lib/display/Getlocation.js');
 
 var _Getlocation2 = _interopRequireDefault(_Getlocation);
@@ -65,6 +69,7 @@ module.exports = {
 	Updateprofile: _Updateprofile2.default,
 	Getlocation: _Getlocation2.default,
 	Delmember: _Delmember2.default,
+	Confirmdel: _Confirmdel2.default,
 	Postimg: _Postimg2.default,
 	Googlelogin: _Googlelogin.default,
 	Facebooklogin: _Facebooklogin.default

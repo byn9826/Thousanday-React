@@ -15,6 +15,7 @@ import UpdateprofileEG from './UpdateprofileEG';
 import GetlocationEG from './GetlocationEG';
 import DelmemberEG from './DelmemberEG';
 import PostimgEG from './PostimgEG';
+import ConfirmdelEG from './ConfirmdelEG';
 class Reactui extends Component {
 	constructor() {
 		super();
@@ -45,6 +46,7 @@ class Reactui extends Component {
 						<h3 className = "main-list">Button</h3>
 						<h6 className = "orange-box"><a href ="#updateprofile">Updateprofile</a></h6>
 						<h6 className = "orange-box"><a href ="#delmember">Delmember</a></h6>
+						<h6 className = "orange-box"><a href ="#confirmdel">Confirmdel</a></h6>
 						<h3 className = "main-list">Attitude</h3>
 						<h6 className = "orange-box"><a href ="#rate">Rate</a></h6>
 						<h6 className = "orange-box"><a href ="#like">Like</a></h6>
@@ -65,6 +67,7 @@ class Reactui extends Component {
 					<InputboxEG />
 					<InputareaEG />
 					<UpdateprofileEG />
+					<ConfirmdelEG />
 					<LikeEG />
 					<FacebookloginEG />
 					<GloginEG />

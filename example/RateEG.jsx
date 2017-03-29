@@ -12,8 +12,8 @@ class RateEG extends Component {
     }
     render() {
         return (
-            <section id = "rate" className = "example">
-                <header className = "example-header">
+            <section id="rate" className="example">
+                <header className="example-header">
                     <h2>Rate</h2>
                     <h3>Show/Collect rate form users by stars</h3>
                 </header>

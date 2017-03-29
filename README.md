@@ -642,22 +642,22 @@ The image crop function is realized by  [react-avatar-editor](https://github.com
 --
 Require user to confirm delete action by input<br/>
 ![confirmdel](https://raw.githubusercontent.com/byn9826/ReactUI-Thousanday/master/~markdown/confirmDel.JPG)<br/>
-[Example](http://www.thousanday.com/react#like)<br/>
+[Example](http://www.thousanday.com/react#confirmdel)<br/>
 ```
-import {Like} from 'thousanday-react';
+import {Confirmdel} from 'thousanday-react';
 ```
 ```
-//init component with newTotal function
-<Like agree={this.state.like} newTotal={this.updateLike.bind(this)}/>
-//Get +1 or -1 based on users action
-updateLike(change) {
-  let like = this.state.like;
-  this.setState({like: like + change});
+//init component with a confirm message and confirmDel function
+<Confirmdel message="End Relationship" confirmDel={this.confirmDel.bind(this)} />
+//Whenever user inputed the same confirm message and click confirm delete
+conformDel() {
+   //any follow up actions
 }
 ```
 <b>Features:</b><br/>
-1. Show total like numbers<br/>
-2. Change total like numbers based on users action<br/>
+1. Require users to input the preset confirm message<br/>
+2. Confirm button only available after the input is the same<br/>
+3. Get call back when users click confirm button<br/>
 
 <b>Params:</b><br/>
 <table>
@@ -668,16 +668,22 @@ updateLike(change) {
 		<td>Example</td>
 	</tr>
 	<tr>
-		<td>agree</td>
-		<td>Mandatory. Initial total like numbers.</td>
+		<td>message</td>
+		<td>Mandatory. The confirm message the users need to input.</td>
 		<td></td>
-		<td>"0"</td>
+		<td>"Confirm delete it"</td>
 	</tr>
 	<tr>
-		<td>newTotal</td>
-		<td>Mandatory. Use a function to update total like numbers after users clicked the like button</td>
+		<td>confirmDel</td>
+		<td>Mandatory. Use a function to know when users click confirm delete button</td>
 		<td></td>
-		<td>{this.updateLike.bind(this)}</td>
+		<td>{this.confirmDel.bind(this)}</td>
+	</tr>
+    <tr>
+		<td>fontFamily</td>
+		<td>Optional. Font family of this component</td>
+		<td>"Times new roman"</td>
+		<td>"Arial"</td>
 	</tr>
 </table>
 

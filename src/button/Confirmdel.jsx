@@ -72,8 +72,17 @@ class Confirmdel extends Component {
 			fontFamily: this.state.fontFamily,
 			fontSize: "13px",
             padding: "5px 0",
-			outline: "none"
+			outline: "none",
+            cursor: "pointer"
         };
+        let requireStyle = {
+			display: "block",
+			textAlign: "center",
+			marginTop: "15px",
+			marginBottom: "15px",
+            fontFamily: this.state.fontFamily,
+            fontSize: "14px",
+		};
         let input;
         if (!this.state.focus) {
             input = (
@@ -96,6 +105,7 @@ class Confirmdel extends Component {
         }
 		return (
             <div style={containerStyle}>
+                <p style={requireStyle}>Please type in <b>{this.props.message}</b></p>
                 {input}
                 {button}
             </div>
