@@ -39,6 +39,7 @@ Components List
 [Inputbox](#inputbox): Text input with characters couting and restriction<br/><br/>
 [Inputarea](#inputarea): Textarea with characters couting and restriction<br /><br/>
 [Updateprofile](#updateprofile): Update profile image<br/><br/>
+[Confirmdel](#confirmdel): Require user to confirm delete action by input<br/><br/>
 [Like](#like): Show/Collect like from users<br/><br/>
 [Facebooklogin](#facebooklogin): Button for Facebook Login<br/><br/>
 [Googlelogin](#googlelogin): Button for Google Login<br/><br/>
@@ -635,6 +636,52 @@ The image crop function is realized by  [react-avatar-editor](https://github.com
 		<td>"Arial"</td>
 	</tr>
 </table>
+
+
+<a name="confirmdel">Confirmdel</a>
+--
+Require user to confirm delete action by input<br/>
+![confirmdel](https://raw.githubusercontent.com/byn9826/ReactUI-Thousanday/master/~markdown/confirmDel.JPG)<br/>
+[Example](http://www.thousanday.com/react#like)<br/>
+```
+import {Like} from 'thousanday-react';
+```
+```
+//init component with newTotal function
+<Like agree={this.state.like} newTotal={this.updateLike.bind(this)}/>
+//Get +1 or -1 based on users action
+updateLike(change) {
+  let like = this.state.like;
+  this.setState({like: like + change});
+}
+```
+<b>Features:</b><br/>
+1. Show total like numbers<br/>
+2. Change total like numbers based on users action<br/>
+
+<b>Params:</b><br/>
+<table>
+	<tr>
+		<td>Params</td>
+		<td>Usage</td>
+		<td>Default</td>
+		<td>Example</td>
+	</tr>
+	<tr>
+		<td>agree</td>
+		<td>Mandatory. Initial total like numbers.</td>
+		<td></td>
+		<td>"0"</td>
+	</tr>
+	<tr>
+		<td>newTotal</td>
+		<td>Mandatory. Use a function to update total like numbers after users clicked the like button</td>
+		<td></td>
+		<td>{this.updateLike.bind(this)}</td>
+	</tr>
+</table>
+
+
 
 
 <a name="like">Like</a>

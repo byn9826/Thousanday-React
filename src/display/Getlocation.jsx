@@ -30,12 +30,11 @@ class Getlocation extends Component {
         if (this.state.displayMode == "true") {
             map = new ol.Map({
                 target: this.state.id,
-                interactions: ol.interaction.defaults({
-                    shiftDragZoom: false
-                }),
+                interactions: ol.interaction.defaults().extend([
+                    new ol.interaction.DragRotateAndZoom()
+                ]),
                 layers: [layer],
-                view: view,
-                controls: []
+                view: view
             });
         } else {
             map = new ol.Map({
@@ -154,10 +153,10 @@ class Getlocation extends Component {
         };
         let groupLoveStyle = {
             position: "absolute",
-            width: "42px",
+            width: "44px",
             height: "18px",
             lineHeight: "18px",
-            left: (this.state.width / 2 - 21) + "px",
+            left: (this.state.width / 2 - 22) + "px",
             top: (this.state.height /2 - 9) + "px",
             fontFamily: "Times New Roman",
             fontSize: "14px",

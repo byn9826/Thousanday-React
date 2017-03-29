@@ -102,7 +102,7 @@ class Updateprofile extends Component {
                 <div style={containerStyle}>
                     <img style={containerImgStyle} src={this.state.src} alt="profile" />
                     <input style={containerButtonStyle}  type="button" value="Upload New" />
-                    <input style={containerFileStyle} type="file" onChange={this.clickUpload.bind(this)} />
+                    <input style={containerFileStyle} type="file" accept="image/*" onChange={this.clickUpload.bind(this)} />
                 </div>
             );
         } else {
