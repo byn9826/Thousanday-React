@@ -7,7 +7,8 @@ class Updateprofile extends Component {
             src: this.props.src,
             rawUrl: null,
             scale: 1,
-            fontFamily: this.props.fontFamily || "Times New Roman"
+            fontFamily: this.props.fontFamily || "Times New Roman",
+            format: this.props.format || "image/png"
 		};
 	}
     handleScale(event) {
@@ -38,7 +39,7 @@ class Updateprofile extends Component {
         for (var i = 0; i < newUrl.length; i++) {
             blobUrl[i] = newUrl.charCodeAt(i);
         };
-        let finalUrl = new Blob([blobUrl], {type: "image/png"});
+        let finalUrl = new Blob([blobUrl], {type: this.state.format});
         this.props.saveProfile(finalUrl);
     }
     render() {

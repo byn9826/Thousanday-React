@@ -1,6 +1,6 @@
 {
   "name": "thousanday-react",
-  "version": "0.8.12",
+  "version": "0.8.13",
   "author": "Baozier",
   "email": "byn9826@gmail.com",
   "description": "A list of React UI Components",
@@ -18,8 +18,7 @@
   "dependencies": {
     "openlayers": "^4.0.1",
     "react": "^15.3.2",
-    "react-avatar-editor": "^8.0.0",
-    "url-loader": "^0.5.8"
+    "react-avatar-editor": "^8.0.0"
   },
   "devDependencies": {
     "babel-cli": "^6.18.0",

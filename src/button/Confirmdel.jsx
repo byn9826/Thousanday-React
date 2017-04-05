@@ -100,7 +100,7 @@ class Confirmdel extends Component {
             );
         } else {
             button = (
-                <input type="button" style={buttonStyle} value="Confirm Delete" />
+                <input type="button" style={buttonStyle} value="Confirm" />
             );
         }
 		return (

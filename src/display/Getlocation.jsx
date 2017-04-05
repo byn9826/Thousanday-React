@@ -1,5 +1,5 @@
-import React, {Component} from 'react';
-import ol from 'openlayers';
+import React, {Component} from "react";
+import ol from "openlayers";
 //This component use http://openlayers.org/ api under BSD 2-clause license
 class Getlocation extends Component {
     constructor(props) {
@@ -21,7 +21,7 @@ class Getlocation extends Component {
         let layer = new ol.layer.Tile({
             source: new ol.source.OSM()
         });
-        let center = ol.proj.transform(this.state.center, 'EPSG:4326', 'EPSG:3857');
+        let center = ol.proj.transform(this.state.center, "EPSG:4326", "EPSG:3857");
         let view = new ol.View({
             center: center,
             zoom: this.state.zoom
@@ -51,9 +51,9 @@ class Getlocation extends Component {
     clickGeo() {
         let geolocation = new ol.Geolocation({tracking: true});
         let self = this;
-        geolocation.on('change:position', function() {
+        geolocation.on("change:position", function() {
             let p = geolocation.getPosition();
-            let newCenter = ol.proj.transform([parseFloat(p[0]), parseFloat(p[1])], 'EPSG:4326', 'EPSG:3857');
+            let newCenter = ol.proj.transform([parseFloat(p[0]), parseFloat(p[1])], "EPSG:4326", "EPSG:3857");
             self.state.view.setCenter(newCenter);
             self.state.view.setZoom(15);
         });
@@ -72,7 +72,7 @@ class Getlocation extends Component {
     }
     clickSave() {
         this.state.view.setZoom(this.state.set);
-        let coor = ol.proj.transform(this.state.view.getCenter(), 'EPSG:3857', 'EPSG:4326');
+        let coor = ol.proj.transform(this.state.view.getCenter(), "EPSG:3857", "EPSG:4326");
         this.props.saveLocation(coor);
     }
     render() {
