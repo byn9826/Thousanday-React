@@ -31,6 +31,7 @@ class Googlelogin extends Component {
                         result.lastname = profile.getFamilyName();
                         result.imageUrl = profile.getImageUrl();
                         result.email = profile.getEmail();
+                        result.token = user.getAuthResponse().id_token;
                         self.props.gLogin(result);
                         self.setState({result: result});
                     }
@@ -52,6 +53,7 @@ class Googlelogin extends Component {
                     result.lastname = profile.getFamilyName();
                     result.imageUrl = profile.getImageUrl();
                     result.email = profile.getEmail();
+                    result.token = user.getAuthResponse().id_token;
                     this.props.gLogin(result);
                     this.setState({result: result});
                 } else {
