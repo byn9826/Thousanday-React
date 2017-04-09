@@ -728,13 +728,14 @@ let id = "Your facebook client id";
 //init component
 <Facebooklogin clientId={id} fLogin={this.fLogin.bind(this)}/>
 //Get users info by fLogin Function
-fLogin(user) {
+fLogin(user, token) {
   console.log(user);
+  console.log(token);
 }
 ```
 <b>Features:</b><br/>
 1. Show Facebook Login button<br/>
-2. Get users information after login successfully<br/>
+2. Get users information, and token after login successfully<br/>
 
 <b>Params:</b><br/>
 <table>

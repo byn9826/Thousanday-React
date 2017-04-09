@@ -15,7 +15,13 @@ class Googlelogin extends Component {
     }   
     componentDidMount() {
         let self = this;
-        window.onload = () => {
+        let interval = setInterval(() => {
+            if(document.readyState === 'complete') {
+                clearInterval(interval);
+                relayout(self);
+            }    
+        }, 500);
+        function relayout(self) {
             gapi.load('auth2', function() {
                 let instance = gapi.auth2.init({
                     client_id: self.props.clientId

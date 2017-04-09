@@ -24,9 +24,10 @@ class Facebooklogin extends Component {
             });
             FB.getLoginStatus((response) => {
                 if (response.status === 'connected') {
+                    let token = response.authResponse.accessToken;
                     FB.api('/me', (response) => {
                         self.setState({response: response});
-                        self.props.fLogin(response);
+                        self.props.fLogin(response, token);
                     });
                 } else {
                     self.setState({response: false});
@@ -41,9 +42,10 @@ class Facebooklogin extends Component {
         } else {
             FB.login((response) => {
                 if (response.status === 'connected') {
+                    let token = response.authResponse.accessToken;
                     FB.api('/me', (response) => {
                         self.setState({response: response});
-                        self.props.fLogin(response);
+                        self.props.fLogin(response, token);
                     });
                 } else {
                     self.setState({response: false});
