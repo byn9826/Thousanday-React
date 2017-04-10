@@ -26,6 +26,7 @@ Components List
 [Selectbox](#selectbox): Select members from several options<br/><br/>
 [Rate](#rate): Show/Collect rate form users by stars<br /><br/>
 [Random](#random): Show random content from a list of options<br /><br/>
+[Facebookprofile](#facebookprofile): Catch clear square profile image by Facebook Id<br/><br/>
 
 
 <a name="waterfall">Waterfall</a>
@@ -1111,6 +1112,58 @@ let randomContent = ["Slogan 1", "Slogan 2", "Slogan 3"];
 		<td>Optional. Define a style name could be used to styling this component in CSS.</td>
 		<td></td>
 		<td>"randomStyle"</td>
+	</tr>
+</table>
+
+
+<a name="facebookprofile">facebookprofile</a>
+--
+Catch clear square profile image by Facebook Id<br/>
+![facebookprofile](https://raw.githubusercontent.com/byn9826/ReactUI-Thousanday/master/~markdown/facebookprofile.JPG)<br/>
+[Example](http://www.thousanday.com/react#facebookprofile)<br/>
+```
+import {Facebookprofile} from 'thousanday-react';
+```
+```
+//Get user's facebook id by facebook login
+let id = "1111111111111";
+//Display a clear square user's profile image
+<Facebookprofile ref="facebook" facebookId={id} />
+//use a function to send image to backend
+saveProfile() {
+    let file = this.refs.facebook.state.data;
+    console.log(file);
+}
+```
+<b>Features:</b><br/>
+1. Display a clear square 200*200 profile image by Facebook Id<br/>
+2. Be able to get data needed to save image in backend<br/>
+
+<b>Params:</b><br/>
+<table>
+	<tr>
+		<td>Params</td>
+		<td>Usage</td>
+		<td>Default</td>
+		<td>Example</td>
+	</tr>
+	<tr>
+		<td>facebookId</td>
+		<td>Mandatory. Provide facebook id of one user.</td>
+		<td></td>
+		<td>"1111213123"</td>
+	</tr>
+	<tr>
+		<td>width</td>
+		<td>Optional. Adjust width of the canvas.</td>
+		<td>200</td>
+		<td>"100"</td>
+	</tr>
+	<tr>
+		<td>height</td>
+		<td>Optional. Adjust height of the canvas.</td>
+		<td>200</td>
+		<td>"100"</td>
 	</tr>
 </table>
 

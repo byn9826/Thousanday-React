@@ -17,6 +17,7 @@ import DelmemberEG from './DelmemberEG';
 import PostimgEG from './PostimgEG';
 import ConfirmdelEG from './ConfirmdelEG';
 import SelectboxEG from './SelectboxEG';
+import FacebookprofileEG from './FacebookprofileEG';
 class Reactui extends Component {
 	constructor() {
 		super();
@@ -27,15 +28,13 @@ class Reactui extends Component {
 		};
 		return (
 			<div id = "container">
-				<Header />
+				<Header visitorName={this.props.visitorName} loginSuccess={null} logOut={null} hideName={true} />
 				<main id = "main">
 					<h1>Thousanday-React</h1>
 					<h2>A list of React UI components</h2>
 					<h3>
 						<b>Install:</b><br />
-						npm install thousanday-react<br /><br />
-						<b>Webpack Config Required:</b><br />
-						url-loader - <a style={webpackConfig} href="https://github.com/byn9826/Thousanday-React/blob/master/README.md#prerequisite---webpack-config">Example</a>
+						npm install thousanday-react<br />
 					</h3>
 					<a className = "github-button" href = "https://github.com/byn9826/thousanday-react" data-style = "mega" aria-label = "Star byn9826/thousanday-react on GitHub">Star</a>
 					<section>
@@ -58,6 +57,7 @@ class Reactui extends Component {
 						<h3 className = "main-list">Social</h3>
 						<h6 className = "orange-box"><a href = "#facebooklogin">Facebooklogin</a></h6>
 						<h6 className = "orange-box"><a href = "#googlelogin">Googlelogin</a></h6>
+						<h6 className = "orange-box"><a href = "#facebookprofile">Facebookprofile</a></h6>
 						<h3 className = "main-list">Box</h3>
 						<h6 className = "orange-box"><a href = "#selectbox">Selectbox</a></h6>
 					</section>
@@ -78,6 +78,7 @@ class Reactui extends Component {
 					<SelectboxEG />
 					<RateEG />
 					<RandomEG />
+					<FacebookprofileEG />
 				</section>
 				<Footer />
 			</div>
