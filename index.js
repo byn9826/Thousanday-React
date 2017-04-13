@@ -12,9 +12,9 @@ var _Facebooklogin = require('./lib/social/Facebooklogin.js');
 
 var _Facebooklogin2 = _interopRequireDefault(_Facebooklogin);
 
-var _Facebookprofile = require('./lib/social/Facebookprofile.js');
+var _Urltoprofile = require('./lib/social/Urltoprofile.js');
 
-var _Facebookprofile2 = _interopRequireDefault(_Facebookprofile);
+var _Urltoprofile2 = _interopRequireDefault(_Urltoprofile);
 
 var _Rate = require('./lib/attitude/Rate.js');
 
@@ -82,5 +82,5 @@ module.exports = {
 	Googlelogin: _Googlelogin2.default,
 	Facebooklogin: _Facebooklogin2.default,
 	Selectbox: _Selectbox2.default,
-	Facebookprofile: _Facebookprofile2.default
+	Urltoprofile: _Urltoprofile2.default
 };

@@ -9,11 +9,11 @@ class Facebookprofile extends Component {
 		};
 	}
     componentDidMount() {
-        let canvas = document.getElementById("thousanday-facebook-profile-canvas");
+        let canvas = document.getElementById("thousanday-changeto-profile-canvas");
         let context = canvas.getContext('2d');
         let profile = new Image();
         profile.setAttribute('crossOrigin', 'anonymous');
-        profile.src = "http://graph.facebook.com/" + this.props.facebookId + "/picture?type=square&w‌​idth=720&height=720";
+        profile.src = this.props.url;
         let itself = this;
         profile.onload = function () {
             let width;
@@ -31,7 +31,7 @@ class Facebookprofile extends Component {
             }    
         }, 500);
         function setImg() {
-            let image = document.getElementById("thousanday-facebook-profile-canvas");
+            let image = document.getElementById("thousanday-changeto-profile-canvas");
             let data = image.toDataURL();
             let url = data.split(',')[1];
             url = window.atob(url);
@@ -45,7 +45,7 @@ class Facebookprofile extends Component {
     }
     render() {
 		return (
-            <canvas id="thousanday-facebook-profile-canvas" width={this.state.width} height={this.state.height}></canvas>
+            <canvas id="thousanday-changeto-profile-canvas" width={this.state.width} height={this.state.height}></canvas>
 		);
 	}
 }
