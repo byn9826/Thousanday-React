@@ -6,7 +6,7 @@ class Inputbox extends Component {
       		width: this.props.width || "100%",
 			border: this.props.border || "2px solid #f7d7b4",
     		fontSize: this.props.font ||"15px",
-      		content: this.props.content,
+      		content: this.props.content.substr(0, parseInt(this.props.max)),
       		count: parseInt(this.props.max) - this.props.content.length,
       		length: parseInt(this.props.max),
 			id: this.props.id || null,
@@ -41,7 +41,8 @@ class Inputbox extends Component {
 			fontFamily: this.state.fontFamily,
 			fontSize: "11px",
 			width: "98%",
-			paddingLeft: "2%"
+			paddingLeft: "2%",
+			textAlign: "left"
 		};
 		return(
 			<span style={spanStyle}>
