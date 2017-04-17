@@ -1194,8 +1194,8 @@ getDecision(value) {
 }
 ```
 <b>Features:</b><br/>
-1. Show a list of options in dropdownlist<br/>
-2. Insert content into a desired html tag<br/>
+1. Show a list of options in drop-down list<br/>
+2. Return choice chosen by users<br/>
 
 <b>Params:</b><br/>
 <table>

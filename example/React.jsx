@@ -17,7 +17,8 @@ import DelmemberEG from './DelmemberEG';
 import PostimgEG from './PostimgEG';
 import ConfirmdelEG from './ConfirmdelEG';
 import SelectboxEG from './SelectboxEG';
-import FacebookprofileEG from './FacebookprofileEG';
+import UrltoprofileEG from './UrltoprofileEG';
+import DroplistEG from './DroplistEG';
 class Reactui extends Component {
 	constructor() {
 		super();
@@ -57,9 +58,10 @@ class Reactui extends Component {
 						<h3 className = "main-list">Social</h3>
 						<h6 className = "orange-box"><a href = "#facebooklogin">Facebooklogin</a></h6>
 						<h6 className = "orange-box"><a href = "#googlelogin">Googlelogin</a></h6>
-						<h6 className = "orange-box"><a href = "#facebookprofile">Facebookprofile</a></h6>
+						<h6 className = "orange-box"><a href = "#urltoprofile">Urltoprofile</a></h6>
 						<h3 className = "main-list">Box</h3>
 						<h6 className = "orange-box"><a href = "#selectbox">Selectbox</a></h6>
+						<h6 className = "orange-box"><a href = "#droplist">Droplist</a></h6>
 					</section>
 				</main>
 				<section id="right">
@@ -76,9 +78,10 @@ class Reactui extends Component {
 					<GloginEG />
 					<ProgressEG />
 					<SelectboxEG />
+					<UrltoprofileEG />
 					<RateEG />
 					<RandomEG />
-					<FacebookprofileEG />
+					<DroplistEG />
 				</section>
 				<Footer />
 			</div>
