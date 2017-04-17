@@ -8,7 +8,8 @@ class Updateprofile extends Component {
             rawUrl: null,
             scale: 1,
             fontFamily: this.props.fontFamily || "Times New Roman",
-            format: this.props.format || "image/png"
+            format: this.props.format || "image/png",
+            indicate: this.props.indicate || "Upload New"
 		};
 	}
     handleScale(event) {
@@ -102,7 +103,7 @@ class Updateprofile extends Component {
             profile = (
                 <div style={containerStyle}>
                     <img style={containerImgStyle} src={this.state.src} alt="Profile" />
-                    <input style={containerButtonStyle}  type="button" value="Upload New" />
+                    <input style={containerButtonStyle}  type="button" value={this.state.indicate} />
                     <input style={containerFileStyle} type="file" accept="image/*" onChange={this.clickUpload.bind(this)} />
                 </div>
             );

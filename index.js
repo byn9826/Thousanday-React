@@ -64,6 +64,10 @@ var _Selectbox = require('./lib/box/Selectbox.js');
 
 var _Selectbox2 = _interopRequireDefault(_Selectbox);
 
+var _Droplist = require('./lib/box/Droplist.js');
+
+var _Droplist2 = _interopRequireDefault(_Droplist);
+
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 module.exports = {
@@ -82,5 +86,6 @@ module.exports = {
 	Googlelogin: _Googlelogin2.default,
 	Facebooklogin: _Facebooklogin2.default,
 	Selectbox: _Selectbox2.default,
-	Urltoprofile: _Urltoprofile2.default
+	Urltoprofile: _Urltoprofile2.default,
+	Droplist: _Droplist2.default
 };

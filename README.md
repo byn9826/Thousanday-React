@@ -27,13 +27,13 @@ Components List
 [Urltoprofile](#urltoprofile): Turn image from url to canvas for upload<br/><br/>
 [Rate](#rate): Show/Collect rate form users by stars<br /><br/>
 [Random](#random): Show random content from a list of options<br /><br/>
-
+[Droplist](#droplist): Use a drop down list to make decision<br /><br />
 
 
 <a name="waterfall">Waterfall</a>
 --
 Responsive Pinterest-Stlye Image Gallery<br/>
-![Waterfall](https://raw.githubusercontent.com/byn9826/ReactUI-Thousanday/master/~markdown/waterfall.JPG)<br/>
+![Waterfall](https://raw.githubusercontent.com/byn9826/Thousanday-React/master/~markdown/waterfall.JPG)<br/>
 [Idea](https://medium.com/@byn9826/react-ui-responsive-pinterest-style-image-gallery-210c3869be6)<br/>
 [Example](http://www.thousanday.com/react#waterfall)<br/>
 ```
@@ -132,7 +132,7 @@ let images = [
 <a name="postimg">Postimg</a>
 --
 Post Panel to send message with image<br/>
-![Postimg](https://raw.githubusercontent.com/byn9826/ReactUI-Thousanday/master/~markdown/postimg.JPG)<br/>
+![Postimg](https://raw.githubusercontent.com/byn9826/Thousanday-React/master/~markdown/postimg.JPG)<br/>
 [Example](http://www.thousanday.com/react#postimg)<br/>
 ```
 import {Postimg} from 'thousanday-react';
@@ -234,7 +234,7 @@ This component used a GLYPHICONS png under CC BY 3.0 License<br/>
 <a name="getlocation">Getlocation</a>
 --
 Display/Get users' geolocation.
-![getlocation](https://raw.githubusercontent.com/byn9826/ReactUI-Thousanday/master/~markdown/getlocation.JPG)<br/>
+![getlocation](https://raw.githubusercontent.com/byn9826/Thousanday-React/master/~markdown/getlocation.JPG)<br/>
 [Idea](https://medium.com/@byn9826/play-with-openlayers-to-display-get-location-in-react-2e0ed3e7d89f)<br/>
 [Example](http://www.thousanday.com/react#getlocation)<br/>
 ```
@@ -336,7 +336,7 @@ Chrome and android require https for GPS locate feature<br/>
 <a name="delmember">Delmember</a>
 --
 Disapear images with shake effect<br/>
-![delmember](https://raw.githubusercontent.com/byn9826/ReactUI-Thousanday/master/~markdown/delmember.JPG)<br/>
+![delmember](https://raw.githubusercontent.com/byn9826/Thousanday-React/master/~markdown/delmember.JPG)<br/>
 [Example](http://www.thousanday.com/react#delmember)<br/>
 ```
 import {Delmember} from 'thousanday-react';
@@ -412,7 +412,7 @@ clickDel(index) {
 <a name="inputbox">Inputbox</a>
 --
 Text input with characters couting and restriction<br />
-![Inputbox](https://raw.githubusercontent.com/byn9826/ReactUI-Thousanday/master/~markdown/inputbox.JPG)<br />
+![Inputbox](https://raw.githubusercontent.com/byn9826/Thousanday-React/master/~markdown/inputbox.JPG)<br />
 [Simple Example](http://www.thousanday.com/react#inputbox)<br />
 ```
 import {Inputbox} from 'thousanday-react';
@@ -486,7 +486,7 @@ submitInput(){
 <a name="inputarea">Inputarea</a>
 --
 Textarea with characters couting and restriction<br />
-![Inputarea](https://raw.githubusercontent.com/byn9826/ReactUI-Thousanday/master/~markdown/inputarea.JPG)<br />
+![Inputarea](https://raw.githubusercontent.com/byn9826/Thousanday-React/master/~markdown/inputarea.JPG)<br />
 [Simple Example](http://www.thousanday.com/react#inputarea)<br />
 ```
 import {Inputarea} from 'thousanday-react';
@@ -560,7 +560,7 @@ submitInput(){
 <a name="updateprofile">Updateprofile</a>
 --
 Update profile image. <br/>
-![updateprofile](https://raw.githubusercontent.com/byn9826/ReactUI-Thousanday/master/~markdown/updateprofile.JPG)<br/>
+![updateprofile](https://raw.githubusercontent.com/byn9826/Thousanday-React/master/~markdown/updateprofile.JPG)<br/>
 [Example](http://www.thousanday.com/react#updateprofile)<br/>
 ```
 import {Updateprofile} from 'thousanday-react';
@@ -611,6 +611,12 @@ The image crop function is realized by  [react-avatar-editor](https://github.com
 		<td></td>
 		<td>{this.saveProfile.bind(this)}</td>
 	</tr>
+    <tr>
+		<td>indicate</td>
+		<td>Optional. Content show on the upload button.</td>
+		<td>"Upload new"</td>
+		<td>"Upload profile"</td>
+	</tr>
 	<tr>
 		<td>fontFamily</td>
 		<td>Optional. Define the fontFamily.</td>
@@ -623,7 +629,7 @@ The image crop function is realized by  [react-avatar-editor](https://github.com
 <a name="confirmdel">Confirmdel</a>
 --
 Require user to confirm delete action by input<br/>
-![confirmdel](https://raw.githubusercontent.com/byn9826/ReactUI-Thousanday/master/~markdown/confirmDel.JPG)<br/>
+![confirmdel](https://raw.githubusercontent.com/byn9826/Thousanday-React/master/~markdown/confirmDel.JPG)<br/>
 [Example](http://www.thousanday.com/react#confirmdel)<br/>
 ```
 import {Confirmdel} from 'thousanday-react';
@@ -675,7 +681,7 @@ conformDel() {
 <a name="like">Like</a>
 --
 Show/Collect like from users<br/>
-![Like](https://raw.githubusercontent.com/byn9826/ReactUI-Thousanday/master/~markdown/like.JPG)<br/>
+![Like](https://raw.githubusercontent.com/byn9826/Thousanday-React/master/~markdown/like.JPG)<br/>
 [Example](http://www.thousanday.com/react#like)<br/>
 ```
 import {Like} from 'thousanday-react';
@@ -719,7 +725,7 @@ updateLike(change) {
 <a name="facebooklogin">Facebooklogin</a>
 --
 Button for Facebook Login<br/>
-![flogin](https://raw.githubusercontent.com/byn9826/ReactUI-Thousanday/master/~markdown/fLogin.JPG)<br/>
+![flogin](https://raw.githubusercontent.com/byn9826/Thousanday-React/master/~markdown/fLogin.JPG)<br/>
 [Example](http://www.thousanday.com/react#facebooklogin)<br/>
 ```
 import {Facebooklogin} from 'thousanday-react';
@@ -771,7 +777,7 @@ fLogin(user, token) {
 <a name="googlelogin">Googlelogin</a>
 --
 Button for Google Login<br/>
-![glogin](https://raw.githubusercontent.com/byn9826/ReactUI-Thousanday/master/~markdown/glogin.JPG)<br/>
+![glogin](https://raw.githubusercontent.com/byn9826/Thousanday-React/master/~markdown/glogin.JPG)<br/>
 [Example](http://www.thousanday.com/react#googlelogin)<br/>
 ```
 import {Googlelogin} from 'thousanday-react';
@@ -823,7 +829,7 @@ gLogin(user) {
 <a name="progress">Progress</a>
 --
 Show/Update the progress bar<br/>
-![Progress](https://raw.githubusercontent.com/byn9826/ReactUI-Thousanday/master/~markdown/progress.JPG)<br/>
+![Progress](https://raw.githubusercontent.com/byn9826/Thousanday-React/master/~markdown/progress.JPG)<br/>
 [Example](http://www.thousanday.com/react#progress)<br/>
 ```
 import {Progress} from 'thousanday-react';
@@ -899,7 +905,7 @@ import {Progress} from 'thousanday-react';
 <a name="selectbox">Selectbox</a>
 --
 Select members from several options<br/>
-![Progress](https://raw.githubusercontent.com/byn9826/ReactUI-Thousanday/master/~markdown/selectbox.JPG)<br/>
+![Progress](https://raw.githubusercontent.com/byn9826/Thousanday-React/master/~markdown/selectbox.JPG)<br/>
 [Example](http://www.thousanday.com/react#selectbox)<br/>
 ```
 import {Selectbox} from 'thousanday-react';
@@ -1002,7 +1008,7 @@ closeBox(newDecision, changed) {
 <a name="urltoprolile">Urltoprofile</a>
 --
 Turn image url into canvas for upload<br/>
-![urltoprofile](https://raw.githubusercontent.com/byn9826/ReactUI-Thousanday/master/~markdown/facebookprofile.JPG)<br/>
+![urltoprofile](https://raw.githubusercontent.com/byn9826/Thousanday-React/master/~markdown/facebookprofile.JPG)<br/>
 [Example](http://www.thousanday.com/react#urltoprofile)<br/>
 ```
 import {Urltoprofile} from 'thousanday-react';
@@ -1054,7 +1060,7 @@ saveProfile() {
 <a name="rate">Rate</a>
 --
 Show/Collect rate form users by stars<br/>
-![Rating](https://raw.githubusercontent.com/byn9826/ReactUI-Thousanday/master/~markdown/rate.PNG)<br/>
+![Rating](https://raw.githubusercontent.com/byn9826/Thousanday-React/master/~markdown/rate.PNG)<br/>
 [Example](http://www.thousanday.com/react#rate)<br/>
 ```
 import {Rate} from 'thousanday-react';
@@ -1125,7 +1131,7 @@ rateChange(rateNum){
 <a name="random">Random</a>
 --
 Show random content from a list of options<br/>
-![Random](https://raw.githubusercontent.com/byn9826/ReactUI-Thousanday/master/~markdown/random.JPG)<br/>
+![Random](https://raw.githubusercontent.com/byn9826/Thousanday-React/master/~markdown/random.JPG)<br/>
 [Example](http://www.thousanday.com/react#random)<br/>
 ```
 import {Random} from 'thousanday-react';
@@ -1168,6 +1174,80 @@ let randomContent = ["Slogan 1", "Slogan 2", "Slogan 3"];
 	</tr>
 </table>
 
+
+<a name="droplist">Droplist</a>
+--
+Use drop-down list to make decision<br/>
+![Droplist](https://raw.githubusercontent.com/byn9826/Thousanday-React/master/~markdown/droplist.JPG)<br/>
+[Example](http://www.thousanday.com/react#droplist)<br/>
+```
+import {Droplist} from 'thousanday-react';
+```
+```
+//Define a list of options in array
+let options = ["Choice 1", "Choice 2", "Choice 3"];
+//Init the component with the array
+<Droplist options={options} title="Choose your option" showTitle="true" changeValue={this.getDecision.bind(this)}  
+//get users' decision by function
+getDecision(value) {
+    console.log(value)
+}
+```
+<b>Features:</b><br/>
+1. Show a list of options in dropdownlist<br/>
+2. Insert content into a desired html tag<br/>
+
+<b>Params:</b><br/>
+<table>
+	<tr>
+		<td>Params</td>
+		<td>Usage</td>
+		<td>Default</td>
+		<td>Example</td>
+	</tr>
+	<tr>
+		<td>options</td>
+		<td>Mandatory. Provide list of choice.</td>
+		<td></td>
+		<td>["option1", "option2", "option3"]</td>
+	</tr>
+	<tr>
+		<td>showTitle</td>
+		<td>Optional. Display a title in drop-down list or not.</td>
+		<td>"false"</td>
+		<td>"true"</td>
+	</tr>
+	<tr>
+		<td>title</td>
+		<td>Optional. Define the content to show for the title.</td>
+		<td>"Please choose"</td>
+		<td>"Choose one option here"</td>
+	</tr>
+    <tr>
+		<td>default</td>
+		<td>Optional. Make one value chosen by default.</td>
+		<td></td>
+		<td>"option1"</td>
+	</tr>
+    <tr>
+		<td>changeValue</td>
+		<td>Optinal. Use a function to receive new choice from users</td>
+		<td></td>
+		<td>{this.getValue.bind(this)}</td>
+	</tr>
+    <tr>
+		<td>width</td>
+		<td>Optinal. Define the width of this component</td>
+		<td>"100%"</td>
+		<td>"300px"</td>
+	</tr>
+    <tr>
+		<td>fontFamily</td>
+		<td>Optinal. Define the font family of this component</td>
+		<td>"Arial"</td>
+		<td>"Times New Roman"</td>
+	</tr>
+</table>
 
 License
 --
