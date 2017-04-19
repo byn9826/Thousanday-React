@@ -19,6 +19,7 @@ Components List
 [Inputarea](#inputarea): Textarea with characters couting and restriction<br /><br/>
 [Updateprofile](#updateprofile): Update profile image<br/><br/>
 [Confirmdel](#confirmdel): Require user to confirm delete action by input<br/><br/>
+[Pickgender](#pickgender): Let user choose a gender<br/><br/>
 [Like](#like): Show/Collect like from users<br/><br/>
 [Facebooklogin](#facebooklogin): Button for Facebook Login<br/><br/>
 [Googlelogin](#googlelogin): Button for Google Login<br/><br/>
@@ -323,6 +324,12 @@ Chrome and android require https for GPS locate feature<br/>
 		<td>Optional. Mandatory to return the center of the map</td>
 		<td></td>
 		<td>{this.saveLocation.bind(this)}</td>
+	</tr>
+    <tr>
+		<td>indicate</td>
+		<td>Optional. The content show on the save location button.</td>
+		<td>"Save"</td>
+		<td>"Update location"</td>
 	</tr>
 	<tr>
 		<td>fontFamily</td>
@@ -675,6 +682,43 @@ conformDel() {
 	</tr>
 </table>
 
+
+<a name="pickgender">pickgender</a>
+--
+Let user pick a gender<br/>
+![Pickgender](https://raw.githubusercontent.com/byn9826/Thousanday-React/master/~markdown/pickgender.JPG)<br/>
+[Example](http://www.thousanday.com/react#pickgender)<br/>
+```
+import {Pickgender} from 'thousanday-react';
+```
+```
+//init component with chooseGender function
+ <Pickgender chooseGender={this.chooseGender.bind(this)} />
+//Get user's choice by chooseGender function
+chooseGender(choice) {
+  console.log(choice);
+  //0 for male, 1 for female, 2 for no choice
+}
+```
+<b>Features:</b><br/>
+1. Display male and female symbol<br/>
+2. Return user's choice after click<br/>
+
+<b>Params:</b><br/>
+<table>
+	<tr>
+		<td>Params</td>
+		<td>Usage</td>
+		<td>Default</td>
+		<td>Example</td>
+	</tr>
+	<tr>
+		<td>chooseGender</td>
+		<td>Mandatory. Use a function to catch user's choice</td>
+		<td></td>
+		<td>{this.chooseGender.bind(this)}</td>
+	</tr>
+</table>
 
 
 

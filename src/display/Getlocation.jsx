@@ -14,7 +14,8 @@ class Getlocation extends Component {
             set: parseInt(this.props.setZoom) || 15,
             center: this.props.center || [-147, -31],
             displayMode: this.props.display || "false",
-            fontFamily: this.props.fontFamily || "Times New Roman"
+            fontFamily: this.props.fontFamily || "Times New Roman",
+            indicate: this.props.indicate || "Save"
 		};
 	}
     componentDidMount() {
@@ -142,9 +143,10 @@ class Getlocation extends Component {
         let containerSaveStyle = {
             position: "block",
             marginTop: "10px",
-            marginLeft: "2px",
+            marginLeft: "1%",
             border: "1px solid #052456",
             color: "black",
+            width: "98%",
             backgroundColor: "white",
             borderRadius: "3px",
             outline: "none",
@@ -197,7 +199,7 @@ class Getlocation extends Component {
                     <span style={groupLoveStyle}>Y ♥ U</span>
                 </div>
             );
-            save = <input type="button" style={containerSaveStyle} value="Save" onClick={this.clickSave.bind(this)} />;
+            save = <input type="button" style={containerSaveStyle} value={this.state.indicate} onClick={this.clickSave.bind(this)} />;
         }
 		return (
             <div style={containerStyle}>

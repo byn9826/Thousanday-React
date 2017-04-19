@@ -19,6 +19,7 @@ import ConfirmdelEG from './ConfirmdelEG';
 import SelectboxEG from './SelectboxEG';
 import UrltoprofileEG from './UrltoprofileEG';
 import DroplistEG from './DroplistEG';
+import PickgenderEG from './PickgenderEG';
 class Reactui extends Component {
 	constructor() {
 		super();
@@ -62,6 +63,7 @@ class Reactui extends Component {
 						<h3 className = "main-list">Box</h3>
 						<h6 className = "orange-box"><a href = "#selectbox">Selectbox</a></h6>
 						<h6 className = "orange-box"><a href = "#droplist">Droplist</a></h6>
+						<h6 className = "orange-box"><a href = "#pickgender">Pickgender</a></h6>
 					</section>
 				</main>
 				<section id="right">
@@ -73,6 +75,7 @@ class Reactui extends Component {
 					<InputareaEG />
 					<UpdateprofileEG />
 					<ConfirmdelEG />
+					<PickgenderEG />
 					<LikeEG />
 					<FacebookloginEG />
 					<GloginEG />
