@@ -19,6 +19,7 @@ Components List
 [Inputarea](#inputarea): Textarea with characters couting and restriction<br /><br/>
 [Updateprofile](#updateprofile): Update profile image<br/><br/>
 [Confirmdel](#confirmdel): Require user to confirm delete action by input<br/><br/>
+[Commentlist](#commentlist): Show and load a list of comments<br/><br/>
 [Pickgender](#pickgender): Let user choose a gender<br/><br/>
 [Like](#like): Show/Collect like from users<br/><br/>
 [Facebooklogin](#facebooklogin): Button for Facebook Login<br/><br/>
@@ -683,6 +684,74 @@ conformDel() {
 </table>
 
 
+<a name="commentlist">Commentlist</a>
+--
+Show and load a list of comments<br/>
+![commentlist](https://raw.githubusercontent.com/byn9826/Thousanday-React/master/~markdown/commentlist.JPG)<br/>
+[Example](http://www.thousanday.com/react#commentlist)<br/>
+```
+import {Commentlist} from 'thousanday-react';
+```
+```
+//prepare nested array contains comment information
+let comments = [
+    ["content 1", "avatar src 1", "avatar href 1", "comment time 1"],
+    ["content 2", "avatar src 2", "avatar href 2", "comment time 2"],
+    ["content 3", "avatar src 3", "avatar href 3", "comment time 3"],
+    ......
+];
+this.state = {comments: comments}
+//Leave load more locker as on
+this.state = {locker: "off"}
+//init component width comments
+<Commentlist data={this.state.comments} locker={this.state.locker} loadMore={this.loadComment.bind(this)} />
+//use a function to load more comment
+loadComment() {
+    //get new comments from ajax
+    let newComments = this.state.comments.concat(ajaxResult);
+    this.setState({comments: newComments});
+    //To disable load more function
+    this.setState({locker: "on"});
+}
+```
+<b>Features:</b><br/>
+1. Show a list of comments based on init data<br/>
+2. Catch load more events<br/>
+
+<b>Params:</b><br/>
+<table>
+	<tr>
+		<td>Params</td>
+		<td>Usage</td>
+		<td>Default</td>
+		<td>Example</td>
+	</tr>
+	<tr>
+		<td>data</td>
+		<td>Mandatory. Init a list of comments</td>
+		<td></td>
+		<td>[["content 1", "avatar src 1", "avatar href 1", "comment time 1"],...]</td>
+	</tr>
+	<tr>
+		<td>locker</td>
+		<td>Mandatory. Determine user could load more comment or not</td>
+		<td>"off"</td>
+		<td>"on"</td>
+	</tr>
+    <tr>
+		<td>fontFamily</td>
+		<td>Optional. Font family of this component</td>
+		<td>"Times new roman"</td>
+		<td>"Arial"</td>
+	</tr>
+    <tr>
+		<td>loadMore</td>
+		<td>Optional. Use a function to create load more effect</td>
+		<td></td>
+		<td>loadMore={this.loadComment.bind(this)}</td>
+	</tr>
+</table>
+
 <a name="pickgender">pickgender</a>
 --
 Let user pick a gender<br/>
@@ -756,6 +825,18 @@ updateLike(change) {
 		<td>Mandatory. Initial total like numbers.</td>
 		<td></td>
 		<td>"0"</td>
+	</tr>
+    <tr>
+		<td>liked</td>
+		<td>Optional. Indicate current user liked it before or not.</td>
+		<td>"false"</td>
+		<td>"true"</td>
+	</tr>
+    <tr>
+		<td>interact</td>
+		<td>Optional. Indicate accept click action or not.</td>
+		<td>"true"</td>
+		<td>"false"</td>
 	</tr>
 	<tr>
 		<td>newTotal</td>

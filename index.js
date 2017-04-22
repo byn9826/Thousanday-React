@@ -72,6 +72,10 @@ var _Pickgender = require('./lib/box/Pickgender.js');
 
 var _Pickgender2 = _interopRequireDefault(_Pickgender);
 
+var _Commentlist = require('./lib/attitude/Commentlist.js');
+
+var _Commentlist2 = _interopRequireDefault(_Commentlist);
+
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 module.exports = {
@@ -92,5 +96,6 @@ module.exports = {
 	Selectbox: _Selectbox2.default,
 	Urltoprofile: _Urltoprofile2.default,
 	Droplist: _Droplist2.default,
-	Pickgender: _Pickgender2.default
+	Pickgender: _Pickgender2.default,
+	Commentlist: _Commentlist2.default
 };
