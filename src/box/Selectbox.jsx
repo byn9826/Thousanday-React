@@ -126,23 +126,31 @@ class Selectbox extends Component {
             );
         }
         let options = [];
-        for (let i = 0; i < this.props.options.length; i++) {
-            if (this.state.decisions.indexOf(i) === -1) {
-                options[i] = (
-                    <div key={"thousandayselectbox" + i} style={containerOptionStyle} onClick={this.chooseOption.bind(this, i)}>
-                        <img style={optionImageStyle} alt={this.props.options[i][0]} src={this.props.options[i][1]} />
-                        <div style={optionNameStyle}>{this.props.options[i][0]}</div>
-                        <div style={optionDescStyle}>{this.props.options[i][2]}</div>
-                    </div>
-                )
-            } else {
-                options[i] = (
-                    <div key={"thousandayselectbox" + i} style={containerSetStyle} onClick={this.chooseOption.bind(this, i)}>
-                        <img style={optionImageStyle} alt={this.props.options[i][0]} src={this.props.options[i][1]} />
-                        <div style={optionNameStyle}>{this.props.options[i][0]}</div>
-                        <div style={optionDescStyle}>{this.props.options[i][2]}</div>
-                    </div>
-                )
+        if (this.props.options.length === 0) {
+            options[0] = (
+                <div key={"thousandayselectbox" + 0} style={containerOptionStyle}>
+                    <div style={optionNameStyle}>No option provided</div>
+                </div>
+            )
+        } else {
+            for (let i = 0; i < this.props.options.length; i++) {
+                if (this.state.decisions.indexOf(i) === -1) {
+                    options[i] = (
+                        <div key={"thousandayselectbox" + i} style={containerOptionStyle} onClick={this.chooseOption.bind(this, i)}>
+                            <img style={optionImageStyle} alt={this.props.options[i][0]} src={this.props.options[i][1]} />
+                            <div style={optionNameStyle}>{this.props.options[i][0]}</div>
+                            <div style={optionDescStyle}>{this.props.options[i][2]}</div>
+                        </div>
+                    )
+                } else {
+                    options[i] = (
+                        <div key={"thousandayselectbox" + i} style={containerSetStyle} onClick={this.chooseOption.bind(this, i)}>
+                            <img style={optionImageStyle} alt={this.props.options[i][0]} src={this.props.options[i][1]} />
+                            <div style={optionNameStyle}>{this.props.options[i][0]}</div>
+                            <div style={optionDescStyle}>{this.props.options[i][2]}</div>
+                        </div>
+                    )
+                }
             }
         }
 		return (

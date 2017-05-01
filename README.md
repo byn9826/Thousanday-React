@@ -36,34 +36,12 @@ Components List
 --
 Responsive Pinterest-Stlye Image Gallery<br/>
 ![Waterfall](https://raw.githubusercontent.com/byn9826/Thousanday-React/master/~markdown/waterfall.JPG)<br/>
-[Idea](https://medium.com/@byn9826/react-ui-responsive-pinterest-style-image-gallery-210c3869be6)<br/>
 [Example](http://www.thousanday.com/react#waterfall)<br/>
 ```
 import {Waterfall} from 'thousanday-react';
 ```
 ```
 //Define an array
-let images = [
-    ["url/0.jpg", "message0"],
-    ["url/1.jpg", "message1"],
-    ["url/2.jpg", "message2"],
-    ["url/3.jpg", "message3"],
-    ["url/4.jpg", "message4"],
-    ["url/5.jpg", "message5"],
-    ...
-];
-
-//Init the component
-<Waterfall column="5" image={images} clickNumber={this.clickNumber.bind(this)} />
-
-//Get the index number (in the images array) when user click on one image.
-clickNumber(index) {
-    console.log(index);
-}
-
-```
-```
-//If you want each image redirect to somewhere
 let images = [
     ["url/0.jpg", "message0", "http://href0"],
     ["url/1.jpg", "message1", "http://href1"],
@@ -74,16 +52,14 @@ let images = [
     ...
 ];
 
-//Init the component, define link="true"
-<Waterfall column="3" image={images} link="true"/>
+//Init the component
+<Waterfall column="5" image={images} />
+
 ```
+
 <b>Features:</b><br/>
 1. Automatically layout all the images based on the “column” param<br/>
 2. Show related message above each image when mouse hover.<br/>
-3. Responsive images and message<br/>
-4. Balance the height of each column automatically<br/>
-5. Return the index of each image or redirect to somewhere after click<br/>
-6. You could directly show more images by set attribute like image={this.state.images}<br/>
 <b>Params:</b><br/>
 <table>
 	<tr>
@@ -97,9 +73,9 @@ let images = [
 		<td>Mandatory. Provie an array contains urls, messages, or hrefs of all the images you want to show.</td>
 		<td></td>
 		<td>[
-				["url/0.jpg", "message0"],
-				["url/1.jpg", "message1"],
-				["url/2.jpg", "message2"],
+				["url/0.jpg", "message0", "url0"],
+				["url/1.jpg", "message1", "url1"],
+				["url/2.jpg", "message2", "url2"],
 				...
 			]
 		</td>
@@ -111,16 +87,10 @@ let images = [
 		<td>"3"</td>
 	</tr>
 	<tr>
-		<td>clickNumber</td>
-		<td>Optional. Create a function to get the index of each image after click.</td>
-		<td></td>
-		<td>clickNumber={this.clickNumber.bind(this)}</td>
-	</tr>
-	<tr>
-		<td>link</td>
-		<td>Optional. Dedine as "true" to redirect to related href after click on any image</td>
-		<td>"false"</td>
-		<td>"true"</td>
+		<td>height</td>
+		<td>Optional. Dedine the height of each image</td>
+		<td>"180px"</td>
+		<td>"200px"</td>
 	</tr>
 	<tr>
 		<td>fontFamily</td>

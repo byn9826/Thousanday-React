@@ -49,7 +49,7 @@ class Inputarea extends Component {
 		return (
 			<span style={spanStyle}>
 				<textarea style={inputStyle} value={this.state.content} onChange={this.editInput.bind(this)} />
-        		<span style={countStyle}>{this.state.count}/{this.state.length}</span>
+        		<span style={countStyle}>{this.state.count} / {this.state.length}</span>
 			</span>
 		);
 	}
