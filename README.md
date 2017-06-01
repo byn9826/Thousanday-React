@@ -1,9 +1,9 @@
 # React-Thousanday
 A list of reusable React UI components, will update weekly.
 
-Example
+Project
 --
-[Instagram-Like website for pets by React](https://github.com/byn9826/Thousand-Day)<br/>
+[Instagram-Like web app for pets by React](https://github.com/byn9826/Thousanday-web)<br/>
 [Instagram-Like mobile app for pets by React Native](https://github.com/byn9826/Thousanday-mobile)
 
 Install
