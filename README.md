@@ -14,12 +14,12 @@ npm install thousanday-react --save
 
 Components List
 --
-[Waterfall](#waterfall): Responsive Pinterest-Stlye Image Gallery<br/><br/>
+[Waterfall](#waterfall): Responsive Pinterest-Style Image Gallery<br/><br/>
 [Postimg](#postimg): Post Panel to send message with image<br/><br/>
 [Getlocation](#getlocation): Display/Get users' geolocation<br/><br/>
-[Delmember](#delmember): Disapear images with shake effect<br/><br/>
-[Inputbox](#inputbox): Text input with characters couting and restriction<br/><br/>
-[Inputarea](#inputarea): Textarea with characters couting and restriction<br /><br/>
+[Delmember](#delmember): Disappear images with shake effect<br/><br/>
+[Inputbox](#inputbox): Text input with characters counting and restriction<br/><br/>
+[Inputarea](#inputarea): Textarea with characters counting and restriction<br /><br/>
 [Updateprofile](#updateprofile): Update profile image<br/><br/>
 [Confirmdel](#confirmdel): Require user to confirm delete action by input<br/><br/>
 [Commentlist](#commentlist): Show and load a list of comments<br/><br/>
@@ -30,7 +30,7 @@ Components List
 [Progress](#progress): Show/Update the progress bar<br/><br/>
 [Selectbox](#selectbox): Select members from several options<br/><br/>
 [Urltoprofile](#urltoprofile): Turn image from url to canvas for upload<br/><br/>
-[Rate](#rate): Show/Collect rate form users by stars<br /><br/>
+[Rate](#rate): Show/Collect rate from users by stars<br /><br/>
 [Random](#random): Show random content from a list of options<br /><br/>
 [Droplist](#droplist): Use a drop down list to make decision<br /><br />
 
