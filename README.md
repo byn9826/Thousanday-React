@@ -1238,7 +1238,7 @@ import {Random} from 'thousanday-react';
 //Define a list of content in array
 let randomContent = ["Slogan 1", "Slogan 2", "Slogan 3"];
 //Init the component with the array
-<Random random={randomContent} font="h3" />
+<Random content={randomContent} font="h3" />
 ```
 <b>Features:</b><br/>
 1. Randomly show content based on list of options<br/>
